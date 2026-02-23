@@ -1,0 +1,362 @@
+---
+const testimonials = [
+  {
+    quote: 'Il suo supporto è stato affidabile, preciso, concreto e SEMPRE disponibile: insomma ci siamo tolti delle belle soddisfazioni insieme! Le sue profonde competenze e capacità di interpretare la necessità del cliente mi invitano a consigliarlo senza se e senza ma!',
+    name: 'Mauro Berruto',
+    role: 'Head Coach Nazionale Italiana Pallavolo 2010-2015',
+    detail: 'Bronzo Olimpico Londra 2012 · Inspirational Speaker · Docente Scuola Holden',
+  },
+  {
+    quote: 'Ti confermo che il lavoro è stato assolutamente perfetto ed apprezzato, direi che hai confermato e forse superato le aspettative.',
+    name: 'Antonio Gentili',
+    role: 'Founding Partner, Fractional Manager Italia',
+    detail: 'Go-to-market Umpi / Digital Platforms S.p.A.',
+  },
+  {
+    quote: 'Professionista di gran valore sia dal punto di vista lavorativo che umano. Un professionista appassionato al suo lavoro che fa ciò che chiede di fare, che pratica ciò che predica e che continua ad imparare mentre insegna. Chapeau!',
+    name: 'Gabriele Zoffoli',
+    role: 'Field Sales Representative, Barilla Group',
+    detail: '',
+  },
+  {
+    quote: 'Segue i progetti in tutte le sue parti ed è un valido supporto per la creazione di strategie di marketing e comunicazione, soprattutto in campo web, con relativo studio e monitoraggio dei dati prodotti.',
+    name: 'Sara Ninfali',
+    role: 'Sr. Communication Manager, SGR Servizi',
+    detail: '',
+  },
+  {
+    quote: 'Quale che sia il budget messo a disposizione, un progetto gestito da Francesco si rivela un progetto di successo. Francesco non solo è persona competente e preparata ma segue scrupolosamente il progetto consigliandolo per il meglio.',
+    name: 'Michele Menciassi',
+    role: 'Manager, Technology Transformation & Digital Governance',
+    detail: '',
+  },
+  {
+    quote: 'I had a seamless and highly professional communication and collaboration with Francesco. He is not only a subject matter expert in Marketing & Communications but also a great collaborator who fosters a positive attitude and work ethic.',
+    name: 'Magdalini Koulouktsi',
+    role: 'Account Manager, Creative Problem Solving',
+    detail: '',
+  },
+  {
+    quote: 'Ho avuto il piacere di collaborare ripetutamente e in svariate circostanze con Francesco, che ho trovato un professionista serio, preparato, motivato e motivante.',
+    name: 'Fabio Parri',
+    role: 'Social Media Manager, Quartopiano Suite Restaurant',
+    detail: '',
+  },
+  {
+    quote: 'Francesco è un professionista attento, in grado di interpretare al meglio le esigenze del cliente. Lavorare con lui è stato stimolante e interessante.',
+    name: 'Paola Trane',
+    role: 'Recensione Google ★★★★★',
+    detail: '',
+  },
+  {
+    quote: 'Conosco Francesco da anni ed è garanzia di affidabilità, competenza e disponibilità (oltre che gentilezza). Lo consiglio come professionista a chiunque abbia bisogno di supporto in questo settore!',
+    name: 'Gabriele Scarpato',
+    role: 'Graphic and Web Designer',
+    detail: '',
+  },
+  {
+    quote: 'Francesco oltre che ad essere un ottimo amico si è rivelato un ottimo consulente per le strategie web in fatto di marketing. Con la sua consulenza abbiamo ottenuto ottimi risultati in termini di visibilità e di ritorno economico.',
+    name: 'Francesco Tomassini',
+    role: 'Studio Tomassini',
+    detail: '',
+  },
+  {
+    quote: 'Ho avuto modo di abbracciare il mondo del web per la prima volta grazie a Francesco. Attento, preciso, sempre aggiornato sulle ultime novità, ha saputo insegnarmi che l\'impegno e la passione per il proprio lavoro possono dare grandi soddisfazioni.',
+    name: 'Silvia Papi',
+    role: 'Digital Advertising Specialist, Google Ads',
+    detail: '',
+  },
+  {
+    quote: 'I was at the beginning of my career and I had the pleasure to work and learn from Francesco. His competence is very deep on Marketing and Digital solution. If you need to improve your marketing strategy, I would sincerely recommend him!',
+    name: 'Francesco Fabri',
+    role: 'Digital Marketing Specialist, SEMBOX',
+    detail: '',
+  },
+];
+---
+
+<section class="section testimonials">
+  <div class="container">
+    <div class="testimonials-header fade-in">
+      <h2 class="testimonials-title">Chi ha lavorato con me.</h2>
+      <p class="testimonials-sub">
+        <span class="reviews-stars">★★★★★</span>
+        Recensioni Google tutte 5/5 · Referenze LinkedIn verificabili
+      </p>
+    </div>
+  </div>
+
+  <div class="carousel-wrapper fade-in fade-in-delay-1">
+    <div class="carousel" id="testimonial-carousel">
+      <div class="carousel-track" id="carousel-track">
+        {testimonials.map((t) => (
+          <div class="testimonial-card">
+            <blockquote class="testimonial-quote">
+              <p>"{t.quote}"</p>
+            </blockquote>
+            <div class="testimonial-author">
+              <span class="author-name">{t.name}</span>
+              <span class="author-role">{t.role}</span>
+              {t.detail && <span class="author-detail">{t.detail}</span>}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <div class="carousel-controls">
+      <button class="carousel-btn" id="carousel-prev" aria-label="Precedente">
+        ←
+      </button>
+      <div class="carousel-counter">
+        <span id="carousel-current">1</span> / <span id="carousel-total">{testimonials.length}</span>
+      </div>
+      <button class="carousel-btn" id="carousel-next" aria-label="Successivo">
+        →
+      </button>
+    </div>
+  </div>
+</section>
+
+<style>
+  .testimonials {
+    background: var(--color-crema);
+    overflow: hidden;
+  }
+
+  .testimonials-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .testimonials-title {
+    font-size: clamp(1.75rem, 4vw, 2.75rem);
+    margin-bottom: 0.75rem;
+  }
+
+  .testimonials-sub {
+    font-size: 0.9375rem;
+    color: var(--color-testo-secondario);
+  }
+
+  .reviews-stars {
+    color: #f5a623;
+    letter-spacing: 0.05em;
+  }
+
+  .carousel-wrapper {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .carousel {
+    overflow: hidden;
+    cursor: grab;
+  }
+
+  .carousel:active {
+    cursor: grabbing;
+  }
+
+  .carousel-track {
+    display: flex;
+    gap: 1.5rem;
+    transition: transform 0.5s ease;
+  }
+
+  .testimonial-card {
+    flex: 0 0 calc(100% - 1.5rem);
+    background: var(--color-bianco);
+    border-radius: 6px;
+    padding: 2.5rem 2rem;
+    border: 1px solid var(--color-bordo);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 280px;
+  }
+
+  @media (min-width: 768px) {
+    .testimonial-card {
+      flex: 0 0 calc(50% - 1rem);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .testimonial-card {
+      flex: 0 0 calc(33.333% - 1rem);
+    }
+  }
+
+  .testimonial-quote {
+    margin: 0 0 2rem 0;
+    padding: 0;
+  }
+
+  .testimonial-quote p {
+    font-family: var(--font-body);
+    font-size: 0.9375rem;
+    font-style: italic;
+    line-height: 1.7;
+    color: var(--color-testo);
+    margin: 0;
+  }
+
+  .testimonial-author {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--color-bordo);
+  }
+
+  .author-name {
+    font-weight: 700;
+    font-size: 0.9375rem;
+    color: var(--color-navy);
+  }
+
+  .author-role {
+    font-size: 0.8125rem;
+    color: var(--color-testo-secondario);
+  }
+
+  .author-detail {
+    font-size: 0.75rem;
+    color: var(--color-testo-secondario);
+    opacity: 0.8;
+  }
+
+  .carousel-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+  }
+
+  .carousel-btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1.5px solid var(--color-navy);
+    background: transparent;
+    color: var(--color-navy);
+    font-size: 1.125rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+  }
+
+  .carousel-btn:hover {
+    background: var(--color-navy);
+    color: var(--color-bianco);
+  }
+
+  .carousel-counter {
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    color: var(--color-testo-secondario);
+    font-weight: 500;
+    min-width: 60px;
+    text-align: center;
+  }
+</style>
+
+<script>
+  const track = document.getElementById('carousel-track') as HTMLElement;
+  const prevBtn = document.getElementById('carousel-prev') as HTMLElement;
+  const nextBtn = document.getElementById('carousel-next') as HTMLElement;
+  const currentEl = document.getElementById('carousel-current') as HTMLElement;
+  const cards = track.querySelectorAll('.testimonial-card');
+  const totalCards = cards.length;
+
+  let currentIndex = 0;
+  let autoplayInterval: ReturnType<typeof setInterval>;
+  let visibleCards = 1;
+
+  function getVisibleCards() {
+    const width = window.innerWidth;
+    if (width >= 1024) return 3;
+    if (width >= 768) return 2;
+    return 1;
+  }
+
+  function updateCarousel() {
+    visibleCards = getVisibleCards();
+    const maxIndex = totalCards - visibleCards;
+    if (currentIndex > maxIndex) currentIndex = maxIndex;
+    if (currentIndex < 0) currentIndex = 0;
+
+    const card = cards[0] as HTMLElement;
+    const gap = 24;
+    const cardWidth = card.offsetWidth + gap;
+    const offset = currentIndex * cardWidth;
+
+    track.style.transform = `translateX(-${offset}px)`;
+    currentEl.textContent = String(currentIndex + 1);
+  }
+
+  function goNext() {
+    const maxIndex = totalCards - getVisibleCards();
+    currentIndex = currentIndex >= maxIndex ? 0 : currentIndex + 1;
+    updateCarousel();
+  }
+
+  function goPrev() {
+    const maxIndex = totalCards - getVisibleCards();
+    currentIndex = currentIndex <= 0 ? maxIndex : currentIndex - 1;
+    updateCarousel();
+  }
+
+  function startAutoplay() {
+    autoplayInterval = setInterval(goNext, 4000);
+  }
+
+  function stopAutoplay() {
+    clearInterval(autoplayInterval);
+  }
+
+  function restartAutoplay() {
+    stopAutoplay();
+    startAutoplay();
+  }
+
+  nextBtn.addEventListener('click', () => {
+    goNext();
+    restartAutoplay();
+  });
+
+  prevBtn.addEventListener('click', () => {
+    goPrev();
+    restartAutoplay();
+  });
+
+  // Pause on hover
+  track.addEventListener('mouseenter', stopAutoplay);
+  track.addEventListener('mouseleave', startAutoplay);
+
+  // Touch support
+  let touchStartX = 0;
+  track.addEventListener('touchstart', (e) => {
+    touchStartX = e.touches[0].clientX;
+    stopAutoplay();
+  }, { passive: true });
+
+  track.addEventListener('touchend', (e) => {
+    const diff = touchStartX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) {
+      diff > 0 ? goNext() : goPrev();
+    }
+    startAutoplay();
+  }, { passive: true });
+
+  window.addEventListener('resize', updateCarousel);
+
+  // Init
+  updateCarousel();
+  startAutoplay();
+</script>

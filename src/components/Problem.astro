@@ -1,0 +1,85 @@
+<section class="section problem">
+  <div class="container">
+    <div class="problem-inner fade-in">
+      <h2 class="problem-headline">
+        Conosci già il problema.<br />
+        <span class="problem-accent">Ti manca chi lo risolve.</span>
+      </h2>
+
+      <div class="problem-grid">
+        <div class="problem-card fade-in fade-in-delay-1">
+          <span class="problem-icon">→</span>
+          <p>La tua azienda cresce ma la struttura non tiene il passo. Servono decisioni strategiche, non solo operative.</p>
+        </div>
+
+        <div class="problem-card fade-in fade-in-delay-2">
+          <span class="problem-icon">→</span>
+          <p>Hai bisogno di un direttore marketing ma non puoi permetterti uno stipendio da C-level 12 mesi l'anno.</p>
+        </div>
+
+        <div class="problem-card fade-in fade-in-delay-3">
+          <span class="problem-icon">→</span>
+          <p>L'AI è ovunque ma nessuno ti dice dove serve davvero nella tua azienda — e dove è solo rumore.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .problem {
+    background: var(--color-navy);
+    color: var(--color-bianco);
+  }
+
+  .problem-inner {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .problem-headline {
+    font-size: clamp(1.75rem, 4vw, 2.75rem);
+    color: var(--color-bianco);
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  .problem-accent {
+    color: var(--color-rosso-light);
+  }
+
+  .problem-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .problem-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+  }
+
+  .problem-card {
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .problem-icon {
+    display: block;
+    font-size: 1.25rem;
+    color: var(--color-rosso-light);
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+
+  .problem-card p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+  }
+</style>

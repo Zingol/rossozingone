@@ -1,0 +1,358 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { siteConfig } from '../../config';
+---
+
+<BaseLayout
+  title="Contatti"
+  description="Parliamo del tuo business. Prenota un Discovery Day con Francesco Zingone — 30 minuti, nessun impegno, nessun costo."
+>
+
+  <section class="section contatti-hero">
+    <div class="container">
+      <div class="contatti-header fade-in">
+        <h1 class="contatti-title">Parliamo del tuo business.</h1>
+        <p class="contatti-sub">Compila il form o contattami direttamente. Rispondo entro 24 ore.</p>
+      </div>
+
+      <div class="contatti-grid">
+        <!-- Form -->
+        <div class="contatti-form-wrapper fade-in fade-in-delay-1">
+          <form id="contact-form" class="contact-form" action="https://formspree.io/f/mreaoarb" method="POST">
+            <div class="form-group">
+              <label for="azienda">Nome Azienda *</label>
+              <input type="text" id="azienda" name="azienda" required placeholder="Es. Acme Srl" />
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="nome">Nome e Cognome *</label>
+                <input type="text" id="nome" name="nome" required placeholder="Es. Marco Rossi" />
+              </div>
+              <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" required placeholder="Es. marco@acme.it" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="telefono">Telefono <span class="optional">(opzionale)</span></label>
+              <input type="tel" id="telefono" name="telefono" placeholder="Es. +39 333 123 4567" />
+            </div>
+
+            <div class="form-group">
+              <label for="messaggio">Come posso essere utile? *</label>
+              <textarea id="messaggio" name="messaggio" rows="5" required placeholder="Descrivi brevemente la tua situazione e cosa stai cercando."></textarea>
+            </div>
+
+            <div class="form-footer">
+              <button type="submit" class="btn btn-primary btn-submit" id="submit-btn">
+                <span class="btn-text">Invia messaggio</span>
+                <span class="btn-loading" style="display:none;">Invio in corso...</span>
+              </button>
+              <p class="form-privacy">Inviando il form accetti la <a href="/legal/privacy/">Privacy Policy</a>.</p>
+            </div>
+
+            <div class="form-feedback" id="form-feedback" style="display:none;"></div>
+          </form>
+        </div>
+
+        <!-- Sidebar contatti diretti -->
+        <div class="contatti-sidebar fade-in fade-in-delay-2">
+          <div class="sidebar-card">
+            <h3 class="sidebar-heading">Contatto diretto</h3>
+            <div class="sidebar-item">
+              <span class="sidebar-label">Email</span>
+              <a href={`mailto:${siteConfig.email}`} class="sidebar-value">{siteConfig.email}</a>
+            </div>
+            <div class="sidebar-item">
+              <span class="sidebar-label">Telefono / WhatsApp</span>
+              <a href={`tel:${siteConfig.phone}`} class="sidebar-value">{siteConfig.phoneDisplay}</a>
+            </div>
+            <div class="sidebar-item">
+              <span class="sidebar-label">LinkedIn</span>
+              <a href={siteConfig.linkedin} target="_blank" rel="noopener noreferrer" class="sidebar-value">Francesco Zingone →</a>
+            </div>
+          </div>
+
+          <div class="sidebar-card">
+            <h3 class="sidebar-heading">Sede</h3>
+            <p class="sidebar-address">
+              {siteConfig.legalName}<br />
+              {siteConfig.address.street}<br />
+              {siteConfig.address.cap} {siteConfig.address.city} ({siteConfig.address.province})
+            </p>
+          </div>
+
+          <div class="sidebar-card sidebar-discovery">
+            <h3 class="sidebar-heading">Discovery Day</h3>
+            <p class="sidebar-discovery-text">30 minuti per capire dove sei e dove vuoi andare. Nessun impegno, nessun costo.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .contatti-hero {
+    background: var(--color-crema);
+  }
+
+  .contatti-header {
+    max-width: 640px;
+    margin-bottom: 3.5rem;
+  }
+
+  .contatti-title {
+    font-size: clamp(2rem, 4.5vw, 3rem);
+    margin-bottom: 0.75rem;
+  }
+
+  .contatti-sub {
+    font-size: 1.0625rem;
+    color: var(--color-testo-secondario);
+  }
+
+  .contatti-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  @media (min-width: 1024px) {
+    .contatti-grid {
+      grid-template-columns: 1.4fr 0.6fr;
+      gap: 4rem;
+    }
+  }
+
+  /* Form */
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .form-row {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  label {
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-navy);
+  }
+
+  .optional {
+    font-weight: 400;
+    color: var(--color-testo-secondario);
+  }
+
+  input, textarea {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    padding: 0.875rem 1rem;
+    border: 1.5px solid var(--color-bordo);
+    border-radius: 4px;
+    background: var(--color-bianco);
+    color: var(--color-testo);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    outline: none;
+  }
+
+  input::placeholder, textarea::placeholder {
+    color: var(--color-testo-secondario);
+    opacity: 0.5;
+  }
+
+  input:focus, textarea:focus {
+    border-color: var(--color-rosso);
+    box-shadow: 0 0 0 3px rgba(165, 32, 32, 0.08);
+  }
+
+  input:invalid:not(:placeholder-shown) {
+    border-color: #c0392b;
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+
+  .form-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .btn-submit {
+    min-width: 200px;
+    justify-content: center;
+  }
+
+  .form-privacy {
+    font-size: 0.8125rem;
+    color: var(--color-testo-secondario);
+  }
+
+  .form-privacy a {
+    color: var(--color-rosso);
+    text-decoration: none;
+  }
+
+  .form-privacy a:hover {
+    text-decoration: underline;
+  }
+
+  .form-feedback {
+    padding: 1rem 1.25rem;
+    border-radius: 4px;
+    font-size: 0.9375rem;
+    font-weight: 500;
+  }
+
+  .form-feedback.success {
+    background: #e8f5e9;
+    color: #2e7d32;
+    border: 1px solid #a5d6a7;
+  }
+
+  .form-feedback.error {
+    background: #fbe9e7;
+    color: #c62828;
+    border: 1px solid #ef9a9a;
+  }
+
+  /* Sidebar */
+  .contatti-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .sidebar-card {
+    background: var(--color-bianco);
+    border: 1px solid var(--color-bordo);
+    border-radius: 6px;
+    padding: 2rem;
+  }
+
+  .sidebar-heading {
+    font-family: var(--font-body);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-testo-secondario);
+    margin-bottom: 1.25rem;
+  }
+
+  .sidebar-item {
+    margin-bottom: 1rem;
+  }
+
+  .sidebar-item:last-child {
+    margin-bottom: 0;
+  }
+
+  .sidebar-label {
+    display: block;
+    font-size: 0.8125rem;
+    color: var(--color-testo-secondario);
+    margin-bottom: 0.25rem;
+  }
+
+  .sidebar-value {
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--color-navy);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .sidebar-value:hover {
+    color: var(--color-rosso);
+  }
+
+  .sidebar-address {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--color-testo);
+  }
+
+  .sidebar-discovery {
+    background: var(--color-navy);
+    border-color: var(--color-navy);
+  }
+
+  .sidebar-discovery .sidebar-heading {
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  .sidebar-discovery-text {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+  }
+</style>
+
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement;
+  const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement;
+  const btnText = submitBtn.querySelector('.btn-text') as HTMLElement;
+  const btnLoading = submitBtn.querySelector('.btn-loading') as HTMLElement;
+  const feedback = document.getElementById('form-feedback') as HTMLElement;
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    // Loading state
+    submitBtn.disabled = true;
+    btnText.style.display = 'none';
+    btnLoading.style.display = 'inline';
+    feedback.style.display = 'none';
+
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' },
+      });
+
+      if (response.ok) {
+        feedback.textContent = 'Messaggio inviato. Ti rispondo entro 24 ore.';
+        feedback.className = 'form-feedback success';
+        feedback.style.display = 'block';
+        form.reset();
+      } else {
+        throw new Error('Errore invio');
+      }
+    } catch {
+      feedback.textContent = 'Errore nell\'invio. Scrivi direttamente a info@rossozingone.it';
+      feedback.className = 'form-feedback error';
+      feedback.style.display = 'block';
+    } finally {
+      submitBtn.disabled = false;
+      btnText.style.display = 'inline';
+      btnLoading.style.display = 'none';
+    }
+  });
+</script>

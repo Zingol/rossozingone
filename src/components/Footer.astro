@@ -1,0 +1,178 @@
+---
+import { siteConfig, navigation } from '../config';
+const year = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="footer-logo">
+          <span class="logo-rosso">ROSSO</span><span class="logo-zingone">ZINGONE</span>
+        </a>
+        <p class="footer-tagline">
+          Consulenza direzionale AI-integrated per PMI.<br />
+          Crescita controllata. Redditività sostenibile.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">Navigazione</h4>
+        <nav aria-label="Footer navigation">
+          {navigation.map((item) => (
+            <a href={item.href} class="footer-link">{item.label}</a>
+          ))}
+        </nav>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">Contatti</h4>
+        <a href={`mailto:${siteConfig.email}`} class="footer-link">{siteConfig.email}</a>
+        <a href={`tel:${siteConfig.phone}`} class="footer-link">{siteConfig.phoneDisplay}</a>
+        <a href={siteConfig.linkedin} target="_blank" rel="noopener noreferrer" class="footer-link">
+          LinkedIn →
+        </a>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">Sede</h4>
+        <p class="footer-text">
+          {siteConfig.address.street}<br />
+          {siteConfig.address.cap} {siteConfig.address.city} ({siteConfig.address.province})
+        </p>
+      </div>
+    </div>
+
+    <hr class="footer-divider" />
+
+    <div class="footer-bottom">
+      <p class="footer-legal">
+        © {year} {siteConfig.legalName} — P.IVA {siteConfig.piva}
+      </p>
+      <div class="footer-legal-links">
+        <a href="/legal/privacy/" class="footer-small-link">Privacy Policy</a>
+        <a href="/legal/cookie-policy/" class="footer-small-link">Cookie Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: var(--color-navy);
+    color: rgba(255, 255, 255, 0.75);
+    padding: 4rem 0 2rem;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .footer-grid {
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 3rem;
+    }
+  }
+
+  .footer-logo {
+    text-decoration: none;
+    font-family: var(--font-body);
+    font-size: 1.125rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    display: inline-block;
+    margin-bottom: 0.75rem;
+  }
+
+  .footer-logo .logo-rosso {
+    color: var(--color-rosso-light);
+  }
+
+  .footer-logo .logo-zingone {
+    color: var(--color-bianco);
+  }
+
+  .footer-tagline {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .footer-heading {
+    font-family: var(--font-body);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.4);
+    margin-bottom: 1rem;
+  }
+
+  .footer-col nav,
+  .footer-col {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .footer-link {
+    color: rgba(255, 255, 255, 0.75);
+    text-decoration: none;
+    font-size: 0.9375rem;
+    transition: color 0.2s ease;
+  }
+
+  .footer-link:hover {
+    color: var(--color-bianco);
+  }
+
+  .footer-text {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+  }
+
+  .footer-divider {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 3rem 0 1.5rem;
+  }
+
+  .footer-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: flex-start;
+  }
+
+  @media (min-width: 768px) {
+    .footer-bottom {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  .footer-legal {
+    font-size: 0.8125rem;
+    color: rgba(255, 255, 255, 0.4);
+  }
+
+  .footer-legal-links {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .footer-small-link {
+    font-size: 0.8125rem;
+    color: rgba(255, 255, 255, 0.4);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .footer-small-link:hover {
+    color: rgba(255, 255, 255, 0.75);
+  }
+</style>

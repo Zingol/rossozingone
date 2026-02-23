@@ -1,0 +1,43 @@
+---
+import { ctaHref } from '../config';
+---
+
+<section class="section cta-final">
+  <div class="container">
+    <div class="cta-inner fade-in">
+      <h2 class="cta-headline">Parliamo del tuo prossimo passo.</h2>
+      <p class="cta-sub">30 minuti. Nessun impegno. Nessun costo.</p>
+      <a href={ctaHref} class="btn btn-primary btn-large">Prenota un Discovery Day</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .cta-final {
+    background: var(--color-crema);
+  }
+
+  .cta-inner {
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 3rem 0;
+  }
+
+  .cta-headline {
+    font-size: clamp(2rem, 4.5vw, 3rem);
+    color: var(--color-navy);
+    margin-bottom: 1rem;
+  }
+
+  .cta-sub {
+    font-size: 1.0625rem;
+    color: var(--color-testo-secondario);
+    margin-bottom: 2.5rem;
+  }
+
+  .btn-large {
+    padding: 1.125rem 3rem;
+    font-size: 1rem;
+  }
+</style>

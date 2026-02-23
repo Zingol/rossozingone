@@ -1,0 +1,209 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Testimonials from '../../components/Testimonials.astro';
+import CtaFinal from '../../components/CtaFinal.astro';
+
+const clients = [
+  'Italian Exhibition Group (IEG)',
+  'Wienerberger',
+  'Gruppo SGR',
+  'CARP Trasporti',
+  'Labirinto Coop. Sociale',
+  'Prostand Exhibition Solutions',
+  'Quartopiano Suite Restaurant',
+  'SMG Gas e Luce',
+  'Centrex',
+  'San Giorgio Energie',
+  'SIFA',
+  'Olimar',
+  'Centro Congressi SGR',
+  'Intervento Pronto',
+  'Sherden Energia',
+  'Colorcom',
+  'Gill Edging',
+  'Giomm Srl',
+  'Demetra Srl',
+  'Hotel Plaza Pesaro',
+  'Hotel Galà Pesaro',
+  'Roseo Hotels Group',
+  'Symposium Ristorante',
+  'Cuochi di Marca',
+  'Caritas Pesaro',
+];
+
+const highlights = [
+  { name: 'Wienerberger AG', detail: 'Multinazionale — fatturato 3,12 MLD', work: 'Data Driven Marketing, campagne Google Ads, formazione 80 ore' },
+  { name: 'Gruppo SGR', detail: 'Fatturato 354M', work: 'Marketing multi-divisione: Oil & Gas, Centro Congressi, ristorazione, eventi' },
+  { name: 'CARP Trasporti', detail: 'Fatturato 32,33M', work: 'Strategia di comunicazione, gestione stakeholder, web e social' },
+  { name: 'Prostand / IEG', detail: 'Italian Exhibition Group', work: 'Piani marketing tattici e operativi, campagne integrate, funnel' },
+];
+---
+
+<BaseLayout
+  title="Clienti"
+  description="Portfolio clienti RossoZingone. Wienerberger, Gruppo SGR, CARP Trasporti, IEG e oltre 100 clienti serviti dal 1998."
+>
+
+  <section class="section clienti-hero">
+    <div class="container">
+      <div class="clienti-header fade-in">
+        <h1 class="clienti-title">100+ clienti dal 1998.<br /><span class="clienti-accent">Alcuni dei nomi con cui ho lavorato.</span></h1>
+      </div>
+
+      <div class="clienti-grid fade-in fade-in-delay-1">
+        {clients.map((client) => (
+          <div class="client-item">
+            <span class="client-text">{client}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Highlights -->
+  <section class="section clienti-highlights">
+    <div class="container">
+      <div class="highlights-header fade-in">
+        <h2 class="highlights-title">Progetti di rilievo.</h2>
+      </div>
+
+      <div class="highlights-grid">
+        {highlights.map((h, i) => (
+          <div class={`highlight-card fade-in fade-in-delay-${i + 1}`}>
+            <h3 class="highlight-name">{h.name}</h3>
+            <span class="highlight-detail">{h.detail}</span>
+            <p class="highlight-work">{h.work}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials (riuso componente) -->
+  <Testimonials />
+
+  <CtaFinal />
+
+</BaseLayout>
+
+<style>
+  .clienti-hero {
+    background: var(--color-navy);
+  }
+
+  .clienti-header {
+    margin-bottom: 3rem;
+  }
+
+  .clienti-title {
+    font-size: clamp(1.75rem, 4vw, 2.75rem);
+    color: var(--color-bianco);
+  }
+
+  .clienti-accent {
+    color: var(--color-rosso-light);
+  }
+
+  .clienti-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  @media (min-width: 768px) {
+    .clienti-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .clienti-grid {
+      grid-template-columns: repeat(5, 1fr);
+    }
+  }
+
+  .client-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem 1rem;
+    background: var(--color-navy);
+    transition: background 0.2s ease;
+  }
+
+  .client-item:hover {
+    background: var(--color-navy-light);
+  }
+
+  .client-text {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.6);
+    text-align: center;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+
+  .client-item:hover .client-text {
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  /* Highlights */
+  .clienti-highlights {
+    background: var(--color-bianco);
+  }
+
+  .highlights-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .highlights-title {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+  }
+
+  .highlights-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .highlights-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .highlight-card {
+    padding: 2rem;
+    background: var(--color-crema);
+    border-radius: 6px;
+    border: 1px solid var(--color-bordo);
+  }
+
+  .highlight-name {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    color: var(--color-navy);
+    margin-bottom: 0.25rem;
+  }
+
+  .highlight-detail {
+    display: block;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: var(--color-rosso);
+    margin-bottom: 1rem;
+  }
+
+  .highlight-work {
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    color: var(--color-testo-secondario);
+    margin: 0;
+  }
+</style>

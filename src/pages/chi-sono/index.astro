@@ -1,0 +1,358 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CtaFinal from '../../components/CtaFinal.astro';
+
+const formazione = [
+  { istituto: 'SDA Bocconi', titolo: 'Executive Business Management, Economia aziendale', anno: '2025' },
+  { istituto: 'MITx', titolo: 'Entrepreneurship 101, 102, 103', anno: '2024' },
+  { istituto: '24ORE Business School', titolo: 'Master24: Marketing & Comunicazione', anno: '' },
+  { istituto: 'Università di Urbino Carlo Bo', titolo: 'Laurea in Scienze della Comunicazione', anno: '' },
+  { istituto: 'Pontificia Università Lateranense', titolo: 'Alta Formazione Comunicazione e Cultura', anno: '' },
+];
+
+const certificazioni = [
+  'General Management nelle Piccole Imprese — SDA Bocconi (2025)',
+  'BDS Ambassador — AICIM (2025)',
+  'Google Ads Partner',
+  'Giornalista Pubblicista — Ordine Nazionale Giornalisti (dal 2009)',
+  'LaunchX: Becoming an Entrepreneur — EdX (2025)',
+];
+---
+
+<BaseLayout
+  title="Chi Sono"
+  description="Francesco Zingone — AI-Integrated Fractional Executive. 27 anni dentro le PMI italiane. Marketing, direzione, AI integration."
+>
+
+  <section class="section chi-hero">
+    <div class="container">
+      <div class="chi-grid">
+        <div class="chi-content fade-in">
+          <h1 class="chi-title">27 anni dentro le PMI italiane.<br /><span class="chi-accent">Marketing, direzione, ora anche AI.</span></h1>
+
+          <div class="chi-bio">
+            <p>Mi chiamo Francesco Zingone. Dal 1998 lavoro con imprenditori di piccole e medie imprese italiane — prima come consulente di marketing e comunicazione digitale, oggi come Fractional Executive.</p>
+
+            <p>Fractional significa che opero come direttore marketing o direttore generale della tua azienda, ma part-time: 1-3 giorni a settimana. Porti dentro competenze executive senza il costo di un manager a tempo pieno.</p>
+
+            <p>Nel 2024-2025 ho integrato la formazione in General Management (SDA Bocconi) e Imprenditorialità (MITx) con l'integrazione nativa dell'intelligenza artificiale nei processi aziendali. Non sono il "tecnico AI" e non sono il "consulente tradizionale" — sono il ponte tra strategia di business e tecnologia applicata.</p>
+
+            <p>Lavoro con PMI di settori diversi: manufacturing, servizi B2B, retail, hospitality, cooperative, trasporti. In ogni settore, il metodo è lo stesso: diagnostico, pianifico, eseguo, misuro. Niente documenti da scaffale.</p>
+          </div>
+        </div>
+
+        <div class="chi-aside fade-in fade-in-delay-1">
+          <img src="/francesco-zingone.jpg" alt="Francesco Zingone — Fractional CMO e CEO" class="chi-photo" />
+
+          <div class="chi-quick">
+            <div class="quick-item">
+              <span class="quick-label">Ruolo</span>
+              <span class="quick-value">Fractional CMO / CEO</span>
+            </div>
+            <div class="quick-item">
+              <span class="quick-label">Esperienza</span>
+              <span class="quick-value">27 anni (dal 1998)</span>
+            </div>
+            <div class="quick-item">
+              <span class="quick-label">Base</span>
+              <span class="quick-value">Pesaro, Italia</span>
+            </div>
+            <div class="quick-item">
+              <span class="quick-label">Network</span>
+              <span class="quick-value">Fractional Manager Italia<br />FederManager<br />AICIM BDS Ambassador</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section chi-approccio">
+    <div class="container">
+      <div class="approccio-inner fade-in">
+        <h2 class="approccio-title">Come ragiono.</h2>
+        <div class="approccio-grid">
+          <div class="approccio-card">
+            <h3>Diagnostico prima di proporre</h3>
+            <p>Il Discovery Day esiste per questo. Prima di qualsiasi strategia, capisco dove sei davvero — non dove pensi di essere.</p>
+          </div>
+          <div class="approccio-card">
+            <h3>Eseguo, non delego</h3>
+            <p>Non lascio slide e me ne vado. Lavoro dentro la tua azienda, con il tuo team, fino ai risultati.</p>
+          </div>
+          <div class="approccio-card">
+            <h3>Costruisco autonomia</h3>
+            <p>L'obiettivo è che tu non abbia più bisogno di me. Trasferisco competenze, non creo dipendenza.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section chi-formazione">
+    <div class="container">
+      <div class="formazione-inner fade-in">
+        <h2 class="formazione-title">Formazione.</h2>
+
+        <div class="formazione-timeline">
+          {formazione.map((f) => (
+            <div class="timeline-item">
+              <div class="timeline-left">
+                <span class="timeline-istituto">{f.istituto}</span>
+                {f.anno && <span class="timeline-anno">{f.anno}</span>}
+              </div>
+              <div class="timeline-right">
+                <span class="timeline-titolo">{f.titolo}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section chi-certificazioni">
+    <div class="container">
+      <div class="cert-inner fade-in">
+        <h2 class="cert-title">Certificazioni.</h2>
+        <div class="cert-list">
+          {certificazioni.map((c) => (
+            <div class="cert-item">
+              <span class="cert-dot"></span>
+              <span class="cert-text">{c}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CtaFinal />
+
+</BaseLayout>
+
+<style>
+  .chi-hero {
+    background: var(--color-crema);
+  }
+
+  .chi-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  @media (min-width: 1024px) {
+    .chi-grid {
+      grid-template-columns: 1.3fr 0.7fr;
+      gap: 4rem;
+    }
+  }
+
+  .chi-title {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    margin-bottom: 2rem;
+  }
+
+  .chi-accent {
+    color: var(--color-rosso);
+  }
+
+  .chi-bio p {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: var(--color-testo);
+    margin-bottom: 1.25rem;
+  }
+
+  .chi-bio p:last-child {
+    margin-bottom: 0;
+  }
+
+  .chi-photo {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 2rem;
+  }
+
+  .chi-quick {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .quick-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .quick-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-testo-secondario);
+  }
+
+  .quick-value {
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--color-navy);
+    line-height: 1.5;
+  }
+
+  .chi-approccio {
+    background: var(--color-bianco);
+  }
+
+  .approccio-inner {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .approccio-title {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    margin-bottom: 2.5rem;
+    text-align: center;
+  }
+
+  .approccio-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  @media (min-width: 768px) {
+    .approccio-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .approccio-card {
+    padding: 2rem;
+    background: var(--color-crema);
+    border-radius: 6px;
+  }
+
+  .approccio-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.125rem;
+    color: var(--color-navy);
+    margin-bottom: 0.75rem;
+  }
+
+  .approccio-card p {
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    color: var(--color-testo-secondario);
+    margin: 0;
+  }
+
+  .chi-formazione {
+    background: var(--color-crema);
+  }
+
+  .formazione-inner {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .formazione-title {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    margin-bottom: 2.5rem;
+  }
+
+  .formazione-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .timeline-item {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--color-bordo);
+  }
+
+  @media (min-width: 768px) {
+    .timeline-item {
+      grid-template-columns: 0.4fr 0.6fr;
+      gap: 2rem;
+      align-items: baseline;
+    }
+  }
+
+  .timeline-item:first-child {
+    padding-top: 0;
+  }
+
+  .timeline-left {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .timeline-istituto {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--color-navy);
+  }
+
+  .timeline-anno {
+    font-size: 0.8125rem;
+    color: var(--color-rosso);
+    font-weight: 500;
+  }
+
+  .timeline-titolo {
+    font-size: 0.9375rem;
+    color: var(--color-testo-secondario);
+    line-height: 1.5;
+  }
+
+  .chi-certificazioni {
+    background: var(--color-bianco);
+  }
+
+  .cert-inner {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .cert-title {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    margin-bottom: 2.5rem;
+  }
+
+  .cert-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .cert-item {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+  }
+
+  .cert-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--color-rosso);
+    flex-shrink: 0;
+    margin-top: 0.5em;
+  }
+
+  .cert-text {
+    font-size: 0.9375rem;
+    color: var(--color-testo);
+    line-height: 1.5;
+  }
+</style>

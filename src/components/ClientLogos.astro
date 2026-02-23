@@ -1,0 +1,114 @@
+---
+const clients = [
+  'Italian Exhibition Group (IEG)',
+  'Wienerberger',
+  'Gruppo SGR',
+  'CARP Trasporti',
+  'Labirinto Coop. Sociale',
+  'Prostand Exhibition Solutions',
+  'Quartopiano Suite Restaurant',
+  'SMG Gas e Luce',
+  'Centrex',
+  'San Giorgio Energie',
+  'SIFA',
+  'Olimar',
+  'Centro Congressi SGR',
+  'Intervento Pronto',
+  'Sherden Energia',
+  'Colorcom',
+];
+---
+
+<section class="section client-logos">
+  <div class="container">
+    <div class="logos-header fade-in">
+      <h2 class="logos-title">Alcuni dei clienti con cui ho lavorato.</h2>
+    </div>
+
+    <div class="logos-grid fade-in fade-in-delay-1">
+      {clients.map((client) => (
+        <div class="logo-item">
+          <span class="logo-text">{client}</span>
+        </div>
+      ))}
+    </div>
+
+    <div class="logos-note fade-in fade-in-delay-2">
+      <p>Tra i clienti: <strong>Gruppo SGR</strong> (fatturato 354M), <strong>Wienerberger AG</strong> (fatturato 3,12 MLD), <strong>CARP Trasporti</strong> (fatturato 32,33M)</p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .client-logos {
+    background: var(--color-navy);
+  }
+
+  .logos-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .logos-title {
+    font-size: clamp(1.75rem, 4vw, 2.75rem);
+    color: var(--color-bianco);
+  }
+
+  .logos-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  @media (min-width: 768px) {
+    .logos-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .logo-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.75rem 1.5rem;
+    background: var(--color-navy);
+    transition: background 0.2s ease;
+  }
+
+  .logo-item:hover {
+    background: var(--color-navy-light);
+  }
+
+  .logo-text {
+    font-family: var(--font-body);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.6);
+    text-align: center;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+
+  .logo-item:hover .logo-text {
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .logos-note {
+    text-align: center;
+    margin-top: 2.5rem;
+  }
+
+  .logos-note p {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 1.6;
+  }
+
+  .logos-note strong {
+    color: rgba(255, 255, 255, 0.75);
+  }
+</style>

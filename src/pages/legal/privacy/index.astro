@@ -1,0 +1,99 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { siteConfig } from '../../../config';
+---
+
+<BaseLayout
+  title="Privacy Policy"
+  description="Informativa sulla privacy di RossoZingone Srl Unipersonale ai sensi del GDPR."
+>
+
+  <section class="section legal-page">
+    <div class="container">
+      <div class="legal-content">
+        <h1>Privacy Policy</h1>
+        <p class="legal-update">Ultimo aggiornamento: Febbraio 2026</p>
+
+        <h2>Titolare del trattamento</h2>
+        <p>{siteConfig.legalName}<br />
+        {siteConfig.address.full}<br />
+        P.IVA: {siteConfig.piva}<br />
+        Email: <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a></p>
+
+        <h2>Tipologie di dati raccolti</h2>
+        <p>Tra i dati personali raccolti da questo sito, in modo autonomo o tramite terze parti, ci sono: nome, cognome, email, numero di telefono, nome azienda, dati di utilizzo, cookie e dati di navigazione.</p>
+
+        <h2>Finalità del trattamento</h2>
+        <p>I dati dell'utente sono raccolti per le seguenti finalità: rispondere alle richieste di contatto inviate tramite il form del sito, gestire la comunicazione commerciale, analisi statistiche anonime sulla navigazione del sito.</p>
+
+        <h2>Base giuridica del trattamento</h2>
+        <p>Il trattamento dei dati è basato sul consenso dell'utente (invio volontario del form di contatto) e sul legittimo interesse del titolare (analisi statistiche aggregate e anonime).</p>
+
+        <h2>Modalità di trattamento</h2>
+        <p>I dati sono trattati con strumenti informatici e/o telematici, con logiche strettamente correlate alle finalità indicate. I dati non saranno comunicati a terzi, salvo obblighi di legge, e non saranno oggetto di diffusione.</p>
+
+        <h2>Conservazione dei dati</h2>
+        <p>I dati personali saranno conservati per il tempo strettamente necessario a conseguire le finalità per cui sono stati raccolti. In ogni caso, i dati raccolti tramite il form di contatto saranno conservati per un periodo massimo di 24 mesi.</p>
+
+        <h2>Servizi di terze parti</h2>
+        <p><strong>Formspree</strong> — Il form di contatto utilizza il servizio Formspree per la gestione degli invii. I dati inseriti nel form vengono trasmessi ai server di Formspree Inc. (USA). Informativa: <a href="https://formspree.io/legal/privacy-policy" target="_blank" rel="noopener noreferrer">formspree.io/legal/privacy-policy</a></p>
+        <p><strong>Google Fonts</strong> — Il sito utilizza font forniti da Google LLC. Il caricamento dei font può comportare la trasmissione dell'indirizzo IP dell'utente ai server di Google.</p>
+        <p><strong>Vercel</strong> — Il sito è ospitato sulla piattaforma Vercel Inc. (USA). Informativa: <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">vercel.com/legal/privacy-policy</a></p>
+
+        <h2>Diritti dell'utente</h2>
+        <p>Ai sensi degli articoli 15-22 del Regolamento UE 2016/679 (GDPR), l'utente ha il diritto di: accedere ai propri dati personali, ottenerne la rettifica o la cancellazione, limitare il trattamento, opporsi al trattamento, richiedere la portabilità dei dati. Per esercitare tali diritti, contattare il titolare all'indirizzo <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>.</p>
+
+        <h2>Modifiche alla presente informativa</h2>
+        <p>Il titolare si riserva il diritto di apportare modifiche alla presente informativa in qualunque momento. Le modifiche saranno pubblicate su questa pagina.</p>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .legal-page {
+    background: var(--color-crema);
+  }
+
+  .legal-content {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .legal-content h1 {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    margin-bottom: 0.5rem;
+  }
+
+  .legal-update {
+    font-size: 0.875rem;
+    color: var(--color-testo-secondario);
+    margin-bottom: 3rem;
+  }
+
+  .legal-content h2 {
+    font-family: var(--font-body);
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--color-navy);
+    margin-top: 2.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .legal-content p {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--color-testo);
+    margin-bottom: 1rem;
+  }
+
+  .legal-content a {
+    color: var(--color-rosso);
+    text-decoration: none;
+  }
+
+  .legal-content a:hover {
+    text-decoration: underline;
+  }
+</style>

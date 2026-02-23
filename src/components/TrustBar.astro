@@ -1,0 +1,116 @@
+---
+const stats = [
+  { number: '27', label: 'Anni di esperienza' },
+  { number: '100+', label: 'Clienti attivi e passati' },
+  { number: '100%', label: 'Recensioni 5/5' },
+  { number: '354M', label: 'Fatturato max cliente' },
+];
+---
+
+<section class="trust-bar">
+  <div class="container">
+    <div class="trust-stats fade-in">
+      {stats.map((stat) => (
+        <div class="trust-stat">
+          <span class="stat-number">{stat.number}</span>
+          <span class="stat-label">{stat.label}</span>
+        </div>
+      ))}
+    </div>
+
+    <div class="trust-affiliations fade-in fade-in-delay-1">
+      <span class="affiliation-label">Network:</span>
+      <span class="affiliation">Fractional Manager Italia</span>
+      <span class="affiliation-dot"></span>
+      <span class="affiliation">FederManager</span>
+      <span class="affiliation-dot"></span>
+      <span class="affiliation">AICIM BDS Ambassador</span>
+      <span class="affiliation-dot"></span>
+      <span class="affiliation">SDA Bocconi</span>
+    </div>
+  </div>
+</section>
+
+<style>
+  .trust-bar {
+    padding: 3rem 0;
+    background: var(--color-bianco);
+    border-top: 1px solid var(--color-bordo);
+    border-bottom: 1px solid var(--color-bordo);
+  }
+
+  .trust-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  @media (min-width: 768px) {
+    .trust-stats {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 3rem;
+      margin-bottom: 2.5rem;
+    }
+  }
+
+  .trust-stat {
+    text-align: center;
+  }
+
+  .stat-number {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    line-height: 1;
+    color: var(--color-rosso);
+    margin-bottom: 0.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .stat-number {
+      font-size: 3rem;
+    }
+  }
+
+  .stat-label {
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    color: var(--color-testo-secondario);
+    letter-spacing: 0.02em;
+  }
+
+  .trust-affiliations {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.625rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--color-bordo);
+  }
+
+  .affiliation-label {
+    font-family: var(--font-body);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--color-testo-secondario);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .affiliation {
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    color: var(--color-navy);
+    font-weight: 500;
+  }
+
+  .affiliation-dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--color-rosso);
+    flex-shrink: 0;
+  }
+</style>

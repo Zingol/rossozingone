@@ -1,0 +1,139 @@
+@import "tailwindcss";
+
+/* ═══════════════════════════════════════════
+   ROSSOZINGONE — Design Tokens
+   ═══════════════════════════════════════════ */
+
+@theme {
+  /* Palette Rosso Zingone */
+  --color-rosso: #a52020;
+  --color-rosso-dark: #8a1a1a;
+  --color-rosso-light: #c43030;
+  --color-navy: #1a2332;
+  --color-navy-light: #243044;
+  --color-crema: #f8f6f2;
+  --color-bianco: #ffffff;
+  --color-testo: #2d3436;
+  --color-testo-secondario: #636e72;
+  --color-bordo: #e0dcd6;
+
+  /* Typography */
+  --font-display: 'DM Serif Display', Georgia, serif;
+  --font-body: 'DM Sans', system-ui, sans-serif;
+}
+
+/* ═══════════════════════════════════════════
+   Base Styles
+   ═══════════════════════════════════════════ */
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 1.65;
+  color: var(--color-testo);
+  background-color: var(--color-crema);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  color: var(--color-navy);
+  line-height: 1.15;
+}
+
+/* ═══════════════════════════════════════════
+   Utility Classes
+   ═══════════════════════════════════════════ */
+
+.container {
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+/* Fade-in animation (Intersection Observer driven) */
+.fade-in {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-in-delay-1 { transition-delay: 0.1s; }
+.fade-in-delay-2 { transition-delay: 0.2s; }
+.fade-in-delay-3 { transition-delay: 0.3s; }
+.fade-in-delay-4 { transition-delay: 0.4s; }
+
+/* Button base */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2rem;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  letter-spacing: 0.02em;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  border: none;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--color-rosso);
+  outline-offset: 3px;
+}
+
+.btn-primary {
+  background-color: var(--color-rosso);
+  color: var(--color-bianco);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-rosso-dark);
+  box-shadow: 0 4px 16px rgba(165, 32, 32, 0.3);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-navy);
+  border: 1.5px solid var(--color-navy);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-navy);
+  color: var(--color-bianco);
+}
+
+/* Section spacing */
+.section {
+  padding-block: 4rem;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding-block: 6rem;
+  }
+}
+
+/* Selection color */
+::selection {
+  background-color: var(--color-rosso);
+  color: var(--color-bianco);
+}

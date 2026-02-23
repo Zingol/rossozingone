@@ -1,17 +1,233 @@
 ---
-
+import BaseLayout from '../layouts/BaseLayout.astro';
+import TrustBar from '../components/TrustBar.astro';
+import { ctaLabel, ctaHref } from '../config';
+import Problem from '../components/Problem.astro';
+import Services from '../components/Services.astro';
+import Process from '../components/Process.astro';
+import Testimonials from '../components/Testimonials.astro';
+import ClientLogos from '../components/ClientLogos.astro';
+import CtaFinal from '../components/CtaFinal.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout
+  title="Home"
+  description="Consulenza direzionale AI-integrated per PMI. Francesco Zingone — Fractional CMO e CEO. 27 anni di esperienza, marketing strategico, AI integration."
+>
+
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-content">
+        <div class="hero-badge fade-in">
+          <span>27 anni</span>
+          <span class="badge-dot"></span>
+          <span>PMI italiane</span>
+          <span class="badge-dot"></span>
+          <span>SDA Bocconi</span>
+          <span class="badge-dot"></span>
+          <span>AI-native</span>
+        </div>
+
+        <h1 class="hero-headline fade-in">
+          Direzione e strategia<br />
+          <span class="hero-accent">per PMI che vogliono crescere.</span>
+        </h1>
+
+        <p class="hero-sub fade-in fade-in-delay-1">
+          Francesco Zingone — Fractional CMO e CEO.<br />
+          Marketing strategico, gestione aziendale e AI integration.<br />
+          Part-time nella tua azienda, full-time sui tuoi risultati.
+        </p>
+
+        <div class="hero-cta fade-in fade-in-delay-2">
+          <a href={ctaHref} class="btn btn-primary">{ctaLabel}</a>
+          <a href="/servizi/" class="btn btn-secondary">Scopri i servizi</a>
+        </div>
+      </div>
+
+      <div class="hero-visual fade-in fade-in-delay-2">
+        <div class="hero-visual-block">
+          <div class="visual-accent"></div>
+          <div class="visual-label">
+            <span class="visual-number">27</span>
+            <span class="visual-text">anni dentro<br />le PMI italiane</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <TrustBar />
+  <Problem />
+  <Services />
+  <Process />
+  <Testimonials />
+  <ClientLogos />
+  <CtaFinal />
+</BaseLayout>
+
+<style>
+  .hero {
+    min-height: calc(100vh - 72px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    padding: 3rem 0 4rem;
+    background: var(--color-crema);
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 80% 20%, rgba(165, 32, 32, 0.03) 0%, transparent 60%),
+      radial-gradient(ellipse at 20% 80%, rgba(26, 35, 50, 0.02) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .hero-inner {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  @media (min-width: 1024px) {
+    .hero-inner {
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 4rem;
+    }
+  }
+
+  .hero-badge {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-body);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: var(--color-testo-secondario);
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    margin-bottom: 1.25rem;
+  }
+
+  .badge-dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--color-rosso);
+    flex-shrink: 0;
+  }
+
+  .hero-headline {
+    font-size: clamp(2.25rem, 5vw, 3.75rem);
+    font-weight: 400;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    color: var(--color-navy);
+  }
+
+  .hero-accent {
+    color: var(--color-rosso);
+  }
+
+  .hero-sub {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: var(--color-testo-secondario);
+    max-width: 540px;
+    margin-bottom: 2.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .hero-sub {
+      font-size: 1.1875rem;
+    }
+  }
+
+  .hero-cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .hero-visual {
+    display: none;
+  }
+
+  @media (min-width: 1024px) {
+    .hero-visual {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+
+  .hero-visual-block {
+    position: relative;
+    width: 360px;
+    height: 420px;
+    background: var(--color-navy);
+    border-radius: 6px;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    padding: 2.5rem;
+  }
+
+  .visual-accent {
+    position: absolute;
+    top: -60px;
+    right: -60px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: var(--color-rosso);
+    opacity: 0.15;
+  }
+
+  .visual-label {
+    display: flex;
+    align-items: flex-end;
+    gap: 1rem;
+    color: var(--color-bianco);
+    position: relative;
+    z-index: 1;
+  }
+
+  .visual-number {
+    font-family: var(--font-display);
+    font-size: 5rem;
+    line-height: 0.85;
+    color: var(--color-rosso-light);
+  }
+
+  .visual-text {
+    font-size: 0.9375rem;
+    line-height: 1.4;
+    color: rgba(255, 255, 255, 0.7);
+    padding-bottom: 0.5rem;
+  }
+
+  @media (max-width: 767px) {
+    .hero {
+      min-height: auto;
+      padding: 2.5rem 0 3rem;
+    }
+
+    .hero-cta {
+      flex-direction: column;
+    }
+
+    .hero-cta .btn {
+      text-align: center;
+      justify-content: center;
+    }
+  }
+</style>

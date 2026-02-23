@@ -1,0 +1,117 @@
+---
+const steps = [
+  {
+    number: '01',
+    title: 'Discovery Day',
+    description: 'Diagnostico lo stato dell\'azienda. Obiettivi, vincoli, opportunità reali — non quello che sembra, quello che è.',
+  },
+  {
+    number: '02',
+    title: 'Strategia',
+    description: 'Definisco il piano. Priorità chiare, tempi realistici, risultati misurabili. Niente documenti da scaffale.',
+  },
+  {
+    number: '03',
+    title: 'Esecuzione',
+    description: 'Lavoro dentro la tua azienda, con il tuo team. 1-3 giorni a settimana, operativo e presente.',
+  },
+  {
+    number: '04',
+    title: 'Crescita',
+    description: 'Misuro i risultati, correggo la rotta, costruisco autonomia. L\'obiettivo è che tu non abbia più bisogno di me.',
+  },
+];
+---
+
+<section class="section process">
+  <div class="container">
+    <div class="process-header fade-in">
+      <h2 class="process-title">Come lavoro.</h2>
+      <p class="process-sub">Un metodo collaudato in 27 anni di PMI italiane.</p>
+    </div>
+
+    <div class="process-grid">
+      {steps.map((step, i) => (
+        <div class={`process-step fade-in fade-in-delay-${i + 1}`}>
+          <span class="step-number">{step.number}</span>
+          <h3 class="step-title">{step.title}</h3>
+          <p class="step-description">{step.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .process {
+    background: var(--color-bianco);
+  }
+
+  .process-header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+  }
+
+  .process-title {
+    font-size: clamp(1.75rem, 4vw, 2.75rem);
+    margin-bottom: 0.75rem;
+  }
+
+  .process-sub {
+    font-size: 1.0625rem;
+    color: var(--color-testo-secondario);
+  }
+
+  .process-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  @media (min-width: 768px) {
+    .process-grid {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2.5rem;
+    }
+  }
+
+  .process-step {
+    position: relative;
+    padding: 2rem 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .process-step:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      top: 2.75rem;
+      right: -1.25rem;
+      width: 24px;
+      height: 1px;
+      background: var(--color-bordo);
+    }
+  }
+
+  .step-number {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    line-height: 1;
+    color: var(--color-rosso);
+    margin-bottom: 1rem;
+  }
+
+  .step-title {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    color: var(--color-navy);
+    margin-bottom: 0.75rem;
+  }
+
+  .step-description {
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    color: var(--color-testo-secondario);
+    margin: 0;
+  }
+</style>
