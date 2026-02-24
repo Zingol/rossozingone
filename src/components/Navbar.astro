@@ -57,6 +57,12 @@ import { navigation, ctaLabel, ctaHref, siteConfig } from '../config';
     box-shadow: 0 1px 12px rgba(0, 0, 0, 0.06);
   }
 
+  .navbar.menu-open {
+    background: var(--color-crema);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
   .navbar-inner {
     display: flex;
     align-items: center;
@@ -168,7 +174,7 @@ import { navigation, ctaLabel, ctaHref, siteConfig } from '../config';
 
   .mobile-menu {
     position: fixed;
-    top: 0;
+    top: 72px;
     left: 0;
     right: 0;
     bottom: 0;
@@ -177,7 +183,6 @@ import { navigation, ctaLabel, ctaHref, siteConfig } from '../config';
     visibility: hidden;
     transition: opacity 0.3s ease, visibility 0.3s ease;
     z-index: 999;
-    padding-top: 72px;
     overflow-y: auto;
   }
 
@@ -224,26 +229,30 @@ import { navigation, ctaLabel, ctaHref, siteConfig } from '../config';
 <script>
   const hamburger = document.getElementById('hamburger');
   const mobileMenu = document.getElementById('mobile-menu');
+  const navbar = document.getElementById('navbar');
 
   hamburger?.addEventListener('click', () => {
     const isOpen = hamburger.classList.toggle('active');
     mobileMenu?.classList.toggle('open');
+    navbar?.classList.toggle('menu-open', isOpen);
     hamburger.setAttribute('aria-expanded', String(isOpen));
     mobileMenu?.setAttribute('aria-hidden', String(!isOpen));
     document.body.style.overflow = isOpen ? 'hidden' : '';
   });
 
+  const closeMenu = () => {
+    hamburger?.classList.remove('active');
+    mobileMenu?.classList.remove('open');
+    navbar?.classList.remove('menu-open');
+    hamburger?.setAttribute('aria-expanded', 'false');
+    mobileMenu?.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  };
+
   mobileMenu?.querySelectorAll('a').forEach((link) => {
-    link.addEventListener('click', () => {
-      hamburger?.classList.remove('active');
-      mobileMenu.classList.remove('open');
-      hamburger?.setAttribute('aria-expanded', 'false');
-      mobileMenu.setAttribute('aria-hidden', 'true');
-      document.body.style.overflow = '';
-    });
+    link.addEventListener('click', closeMenu);
   });
 
-  const navbar = document.getElementById('navbar');
   window.addEventListener('scroll', () => {
     if (window.scrollY > 10) {
       navbar?.classList.add('scrolled');
