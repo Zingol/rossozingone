@@ -168,7 +168,7 @@ import { navigation, ctaLabel, ctaHref, siteConfig } from '../config';
 
   .mobile-menu {
     position: fixed;
-    top: 72px;
+    top: 0;
     left: 0;
     right: 0;
     bottom: 0;
@@ -177,6 +177,8 @@ import { navigation, ctaLabel, ctaHref, siteConfig } from '../config';
     visibility: hidden;
     transition: opacity 0.3s ease, visibility 0.3s ease;
     z-index: 999;
+    padding-top: 72px;
+    overflow-y: auto;
   }
 
   .mobile-menu.open {
