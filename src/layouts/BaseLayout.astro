@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 import { siteConfig } from '../config';
 import '../styles/global.css';
+import CookieBanner from '../components/CookieBanner.astro';
 
 interface Props {
   title: string;
@@ -94,5 +95,6 @@ const canonicalUrl = new URL(Astro.url.pathname, siteConfig.url).href;
     );
     document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
   </script>
+  <CookieBanner />
 </body>
 </html>
