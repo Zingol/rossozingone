@@ -59,6 +59,13 @@ const certificazioni = [
               <span class="quick-value">Pesaro, Italia</span>
             </div>
             <div class="quick-item">
+              <span class="quick-label">LinkedIn</span>
+              <a href="https://www.linkedin.com/in/francescorossozingone/" target="_blank" rel="noopener noreferrer" class="quick-linkedin">
+                <img src="/loghi/linkedin.webp" alt="LinkedIn" class="linkedin-icon" />
+                <span>Francesco Zingone →</span>
+              </a>
+            </div>
+            <div class="quick-item">
               <span class="quick-label">Network</span>
               <span class="quick-value">Fractional Manager Italia<br />FederManager<br />AICIM BDS Ambassador</span>
             </div>
@@ -69,7 +76,7 @@ const certificazioni = [
   </section>
 
   <TrustBar />
-  
+  <div class="quick-item"></div>
   <section class="section chi-approccio">
     <div class="container">
       <div class="approccio-inner fade-in">
@@ -357,5 +364,25 @@ const certificazioni = [
     font-size: 0.9375rem;
     color: var(--color-testo);
     line-height: 1.5;
+  }
+  .quick-linkedin {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--color-navy);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .quick-linkedin:hover {
+    color: var(--color-rosso);
+  }
+
+  .linkedin-icon {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
   }
 </style>
