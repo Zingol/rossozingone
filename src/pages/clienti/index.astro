@@ -10,25 +10,30 @@ const clients = [
   'CARP Trasporti',
   'Labirinto Coop. Sociale',
   'Prostand Exhibition Solutions',
+  'Umpi / Digital Platforms S.p.A.',
+  'NF Trasporti Srl',
+  'BKR arredo Srl',
   'Quartopiano Suite Restaurant',
   'SMG Gas e Luce',
   'Centrex',
   'San Giorgio Energie',
-  'SIFA',
+  'SIFA Banchi Bar',
   'Olimar',
   'Centro Congressi SGR',
   'Intervento Pronto',
   'Sherden Energia',
   'Colorcom',
-  'Gill Edging',
-  'Giomm Srl',
+  'Gili Edging',
+  'Giommi Srl',
   'Demetra Srl',
-  'Hotel Plaza Pesaro',
   'Hotel Galà Pesaro',
   'Roseo Hotels Group',
   'Symposium Ristorante',
   'Cuochi di Marca',
   'Caritas Pesaro',
+  'Bravofly Volagratis',
+  'WuBook',
+  'Associazione Albergatori APA',
 ];
 
 const highlights = [
@@ -36,6 +41,8 @@ const highlights = [
   { name: 'Gruppo SGR', detail: 'Fatturato 354M', work: 'Marketing multi-divisione: Oil & Gas, Centro Congressi, ristorazione, eventi' },
   { name: 'CARP Trasporti', detail: 'Fatturato 32,33M', work: 'Strategia di comunicazione, gestione stakeholder, web e social' },
   { name: 'Prostand / IEG', detail: 'Italian Exhibition Group', work: 'Piani marketing tattici e operativi, campagne integrate, funnel' },
+  { name: 'Umpi / Digital Platforms', detail: 'Go-to-market via Fractional Manager Italia', work: 'Strategia go-to-market per sistemi di comunicazione powerline e radio wireless' },
+  { name: 'Labirinto Coop. Sociale', detail: 'Fatturato 26,62M', work: 'Docenza, consulenza email marketing, piattaforma e-learning — 17 anni di collaborazione' },
 ];
 ---
 
@@ -60,7 +67,6 @@ const highlights = [
     </div>
   </section>
 
-  <!-- Highlights -->
   <section class="section clienti-highlights">
     <div class="container">
       <div class="highlights-header fade-in">
@@ -69,7 +75,7 @@ const highlights = [
 
       <div class="highlights-grid">
         {highlights.map((h, i) => (
-          <div class={`highlight-card fade-in fade-in-delay-${i + 1}`}>
+          <div class={`highlight-card fade-in fade-in-delay-${(i % 4) + 1}`}>
             <h3 class="highlight-name">{h.name}</h3>
             <span class="highlight-detail">{h.detail}</span>
             <p class="highlight-work">{h.work}</p>
@@ -79,9 +85,7 @@ const highlights = [
     </div>
   </section>
 
-  <!-- Testimonials (riuso componente) -->
   <Testimonials />
-
   <CtaFinal />
 
 </BaseLayout>
@@ -153,7 +157,6 @@ const highlights = [
     color: rgba(255, 255, 255, 0.9);
   }
 
-  /* Highlights */
   .clienti-highlights {
     background: var(--color-bianco);
   }
@@ -175,6 +178,12 @@ const highlights = [
   @media (min-width: 768px) {
     .highlights-grid {
       grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .highlights-grid {
+      grid-template-columns: repeat(3, 1fr);
     }
   }
 
