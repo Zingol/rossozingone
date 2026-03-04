@@ -20,13 +20,15 @@ const stats = [
 
     <div class="trust-affiliations fade-in fade-in-delay-1">
       <span class="affiliation-label">Network:</span>
-      <span class="affiliation">Fractional Manager Italia</span>
-      <span class="affiliation-dot"></span>
-      <span class="affiliation">FederManager</span>
-      <span class="affiliation-dot"></span>
-      <span class="affiliation">AICIM BDS Ambassador</span>
-      <span class="affiliation-dot"></span>
-      <span class="affiliation">SDA Bocconi</span>
+      <div class="affiliation-logos">
+        <span class="affiliation-text">Fractional Manager Italia</span>
+        <span class="affiliation-dot"></span>
+        <img src="/loghi/federmanager.png" alt="FederManager" class="affiliation-logo" />
+        <span class="affiliation-dot"></span>
+        <span class="affiliation-text">AICIM BDS Ambassador</span>
+        <span class="affiliation-dot"></span>
+        <span class="affiliation-text">SDA Bocconi</span>
+      </div>
     </div>
   </div>
 </section>
@@ -82,10 +84,9 @@ const stats = [
 
   .trust-affiliations {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 0.625rem;
+    gap: 0.75rem;
     padding-top: 1.5rem;
     border-top: 1px solid var(--color-bordo);
   }
@@ -99,11 +100,31 @@ const stats = [
     letter-spacing: 0.08em;
   }
 
-  .affiliation {
+  .affiliation-logos {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+  }
+
+  .affiliation-text {
     font-family: var(--font-body);
     font-size: 0.875rem;
     color: var(--color-navy);
     font-weight: 500;
+  }
+
+  .affiliation-logo {
+    height: 24px;
+    width: auto;
+    object-fit: contain;
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
+  }
+
+  .affiliation-logo:hover {
+    opacity: 1;
   }
 
   .affiliation-dot {
