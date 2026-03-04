@@ -47,6 +47,7 @@ import CtaFinal from '../components/CtaFinal.astro';
 
       <div class="hero-visual fade-in fade-in-delay-2">
         <div class="hero-visual-block">
+          <div class="visual-accent"></div>
           <img src="/loghi/crescita.png" alt="Crescita controllata" class="visual-crescita" />
           <div class="visual-label">
             <span class="visual-number">27</span>
@@ -181,14 +182,25 @@ import CtaFinal from '../components/CtaFinal.astro';
     padding: 2.5rem;
   }
 
+  .visual-accent {
+    position: absolute;
+    top: -60px;
+    right: -60px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: var(--color-rosso);
+    opacity: 0.15;
+  }
+
   .visual-crescita {
     position: absolute;
-    top: 50%;
+    top: 25%;
     left: 50%;
-    transform: translate(-50%, -55%);
-    width: 55%;
+    transform: translateX(-50%);
+    width: 50%;
     height: auto;
-    opacity: 0.15;
+    opacity: 0.25;
   }
 
   .visual-label {
