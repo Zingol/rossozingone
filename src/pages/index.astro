@@ -47,7 +47,7 @@ import CtaFinal from '../components/CtaFinal.astro';
 
       <div class="hero-visual fade-in fade-in-delay-2">
         <div class="hero-visual-block">
-          <div class="visual-accent"></div>
+          <img src="/loghi/crescita.png" alt="Crescita controllata" class="visual-crescita" />
           <div class="visual-label">
             <span class="visual-number">27</span>
             <span class="visual-text">anni dentro<br />le PMI italiane</span>
@@ -181,14 +181,13 @@ import CtaFinal from '../components/CtaFinal.astro';
     padding: 2.5rem;
   }
 
-  .visual-accent {
+  .visual-crescita {
     position: absolute;
-    top: -60px;
-    right: -60px;
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    background: var(--color-rosso);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -55%);
+    width: 55%;
+    height: auto;
     opacity: 0.15;
   }
 
