@@ -7,10 +7,34 @@ const testimonials = [
     detail: 'Bronzo Olimpico Londra 2012 · Inspirational Speaker · Docente Scuola Holden',
   },
   {
+    quote: 'Ho avuto occasione di conoscere bene Francesco nel corso di una sua lunga consulenza presso l\'azienda in cui lavoro. È un professionista del Marketing a tutto tondo. Ho potuto apprezzare le sue conoscenze molto approfondite in ambiti molti vari e sempre molto aggiornate. Un professionista come ce ne sono pochi.',
+    name: 'Gabriella De Girolamo',
+    role: 'Responsabile Marketing e Comunicazione, IEG',
+    detail: 'Italian Exhibition Group',
+  },
+  {
+    quote: 'Ho avuto il piacere di conoscere e collaborare con Francesco per circa tre anni con la mia azienda BKR Srl. Posso definirlo un mentore per la mia personale formazione professionale in ambito di Marketing e Comunicazione. Grazie al suo supporto siamo stati in grado di affacciarci a nuove prospettive di crescita, soprattutto nei processi di internazionalizzazione.',
+    name: 'Marco Gori',
+    role: 'Project Manager, BKR Srl',
+    detail: '',
+  },
+  {
     quote: 'Ti confermo che il lavoro è stato assolutamente perfetto ed apprezzato, direi che hai confermato e forse superato le aspettative.',
     name: 'Antonio Gentili',
     role: 'Founding Partner, Fractional Manager Italia',
     detail: 'Go-to-market Umpi / Digital Platforms S.p.A.',
+  },
+  {
+    quote: 'Collaboriamo con RossoZingone dal 2017 e in tutti questi anni si è sempre dimostrato un partner cortese, affidabile e pronto a soddisfare con puntualità le nostre esigenze.',
+    name: 'Alberto Di Bartolo',
+    role: 'SMG Gas e Luce',
+    detail: '',
+  },
+  {
+    quote: 'Francesco è un professionista affidabile e organizzato. Ha gestito il nostro marketing con chiarezza, rispettando i tempi e tenendoci sempre allineati. Collaborare con lui è stato semplice e produttivo.',
+    name: 'Tommaso Zavatta',
+    role: 'NF Trasporti Srl',
+    detail: '',
   },
   {
     quote: 'Professionista di gran valore sia dal punto di vista lavorativo che umano. Un professionista appassionato al suo lavoro che fa ciò che chiede di fare, che pratica ciò che predica e che continua ad imparare mentre insegna. Chapeau!',
@@ -313,7 +337,7 @@ const testimonials = [
   }
 
   function startAutoplay() {
-    autoplayInterval = setInterval(goNext, 4000);
+    autoplayInterval = setInterval(goNext, 8000);
   }
 
   function stopAutoplay() {
@@ -335,11 +359,9 @@ const testimonials = [
     restartAutoplay();
   });
 
-  // Pause on hover
   track.addEventListener('mouseenter', stopAutoplay);
   track.addEventListener('mouseleave', startAutoplay);
 
-  // Touch support
   let touchStartX = 0;
   track.addEventListener('touchstart', (e) => {
     touchStartX = e.touches[0].clientX;
@@ -356,7 +378,6 @@ const testimonials = [
 
   window.addEventListener('resize', updateCarousel);
 
-  // Init
   updateCarousel();
   startAutoplay();
 </script>
