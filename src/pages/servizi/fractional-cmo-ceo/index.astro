@@ -1,0 +1,547 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import CtaFinal from '../../../components/CtaFinal.astro';
+
+const cases = [
+  {
+    name: 'Wienerberger',
+    badge: 'Multinazionale — fatturato 3,12 MLD',
+    role: 'Formatore Marketing · Senior Campaign Manager Google Ads',
+    duration: '8 anni (dal 2017)',
+    description: 'Iniziato con docenza su web e social media marketing, poi collaborazione stabile. Gestione campagne Google Ads e analisi investimenti digital marketing. Nel 2019 ho diretto un corso di formazione su Data Driven Marketing di 80 ore.',
+    services: ['Data Driven Marketing', 'Google Ads', 'Formazione 80 ore', 'Analisi investimenti'],
+    testimonial: null,
+  },
+  {
+    name: 'Prostand / IEG',
+    badge: 'Italian Exhibition Group',
+    role: 'Fractional CMO',
+    duration: '6 anni (2017–2023)',
+    description: 'Per Prostand, azienda di allestimenti del Gruppo IEG, ho elaborato piani di marketing tattici e operativi. Campagne integrate, marketing funnel, piani editoriali web e social, comunicazione cartacea e digitale.',
+    services: ['Piani marketing tattici', 'Campagne integrate', 'Marketing funnel', 'Piani editoriali'],
+    testimonial: {
+      quote: 'Ho avuto occasione di conoscere bene Francesco nel corso di una sua lunga consulenza presso l\'azienda in cui lavoro. È un professionista del Marketing a tutto tondo. Ho potuto apprezzare le sue conoscenze molto approfondite in ambiti molti vari e sempre molto aggiornate. Un professionista come ce ne sono pochi.',
+      name: 'Gabriella De Girolamo',
+      role: 'Responsabile Marketing e Comunicazione, IEG',
+    },
+  },
+  {
+    name: 'Gruppo SGR',
+    badge: 'Fatturato 354M',
+    role: 'Consulente Marketing e Comunicazione',
+    duration: '3 anni e mezzo (2015–2019)',
+    description: 'Marketing multi-divisione: Oil & Gas, Centro Congressi SGR, QP Lunch, Intervento Pronto. Progettazione strumenti digitali, campagne Google e Facebook, pianificazione calendario editoriale, restyling brand, formazione. Affiancamento al Direttore Marketing Marcello Zeppa.',
+    services: ['Marketing multi-divisione', 'Campagne Google/Facebook', 'Restyling brand', 'Formazione'],
+    testimonial: {
+      quote: 'Segue i progetti in tutte le sue parti ed è un valido supporto per la creazione di strategie di marketing e comunicazione, soprattutto in campo web, con relativo studio e monitoraggio dei dati prodotti.',
+      name: 'Sara Ninfali',
+      role: 'Sr. Communication Manager, SGR Servizi',
+    },
+    extraTestimonials: [
+      {
+        quote: 'Ho avuto il piacere di collaborare ripetutamente e in svariate circostanze con Francesco, che ho trovato un professionista serio, preparato, motivato e motivante.',
+        name: 'Fabio Parri',
+        role: 'Social Media Manager, Quartopiano Suite Restaurant',
+      },
+      {
+        quote: 'Conosco Francesco da anni ed è garanzia di affidabilità, competenza e disponibilità (oltre che gentilezza). Lo consiglio come professionista a chiunque abbia bisogno di supporto in questo settore!',
+        name: 'Gabriele Scarpato',
+        role: 'Graphic and Web Designer',
+      },
+    ],
+  },
+  {
+    name: 'UMPI / Digital Platforms S.p.A.',
+    badge: 'Go-to-market via Fractional Manager Italia',
+    role: 'Fractional Manager',
+    duration: '2025',
+    description: 'Consulenza marketing go-to-market per Umpi, azienda tech di Rimini specializzata in prodotti e sistemi di comunicazione basati su tecnologia powerline e radio wireless. Progetto assegnato tramite la rete Fractional Manager Italia.',
+    services: ['Strategia go-to-market', 'Posizionamento prodotto', 'Marketing strategico'],
+    testimonial: {
+      quote: 'Ti confermo che il lavoro è stato assolutamente perfetto ed apprezzato, direi che hai confermato e forse superato le aspettative.',
+      name: 'Antonio Gentili',
+      role: 'Founding Partner, Fractional Manager Italia',
+    },
+  },
+  {
+    name: 'BKR Srl',
+    badge: 'Food Retail — Pesaro',
+    role: 'Fractional CMO',
+    duration: '3 anni (2020–2023)',
+    description: 'Gestione strategica e operativa del marketing per azienda produttrice di arredi professionali per il food retail. Posizionamento brand, comunicazione digitale, trade marketing e supporto allo sviluppo commerciale. Affiancamento nel processo di internazionalizzazione.',
+    services: ['Marketing strategico', 'Posizionamento brand', 'Internazionalizzazione', 'Trade marketing'],
+    testimonial: {
+      quote: 'Ho avuto il piacere di conoscere e collaborare con Francesco per circa tre anni con la mia azienda BKR Srl. Posso definirlo un mentore per la mia personale formazione professionale in ambito di Marketing e Comunicazione. Grazie al suo supporto siamo stati in grado di affacciarci a nuove prospettive di crescita, soprattutto nei processi di internazionalizzazione.',
+      name: 'Marco Gori',
+      role: 'Project Manager, BKR Srl',
+    },
+  },
+  {
+    name: 'Gili Edging',
+    badge: 'Manufacturing — Pesaro',
+    role: 'Fractional CMO',
+    duration: '4 anni (dal 2021)',
+    description: 'Sviluppo ed esecuzione strategie di marketing per crescita aziendale. Ricerca e analisi dati di mercato, posizionamento brand, monitoraggio concorrenza, ottimizzazione spesa marketing e misurazione ROI. Affiancamento al management con focus su passaggio generazionale. Relazione diretta con Direzione Generale e proprietà.',
+    services: ['Marketing strategico', 'Passaggio generazionale', 'Analisi di mercato', 'Misurazione ROI'],
+    testimonial: null,
+  },
+  {
+    name: 'NF Trasporti Srl',
+    badge: 'Trasporti — Longiano (FC)',
+    role: 'Fractional CMO',
+    duration: '2 anni (2023–2025)',
+    description: 'Gestione strategica e operativa del marketing aziendale: posizionamento, comunicazione digitale, sviluppo commerciale e coordinamento attività promozionali.',
+    services: ['Marketing strategico', 'Comunicazione digitale', 'Sviluppo commerciale'],
+    testimonial: {
+      quote: 'Francesco è un professionista affidabile e organizzato. Ha gestito il nostro marketing con chiarezza, rispettando i tempi e tenendoci sempre allineati. Collaborare con lui è stato semplice e produttivo.',
+      name: 'Tommaso Zavatta',
+      role: 'NF Trasporti Srl',
+    },
+  },
+  {
+    name: 'Giommi Srl',
+    badge: 'Fossombrone',
+    role: 'Fractional CMO',
+    duration: 'Dal 2024',
+    description: 'Fractional CMO con focus su business development. Strategia di marketing e sviluppo commerciale per crescita aziendale.',
+    services: ['Fractional CMO', 'Business Development', 'Strategia marketing'],
+    testimonial: null,
+  },
+];
+---
+
+<BaseLayout
+  title="Fractional CMO / CEO — Direzione Strategica PMI"
+  description="Direzione marketing e gestione aziendale part-time per PMI. Francesco Zingone — 27 anni di esperienza, SDA Bocconi, casi Wienerberger, IEG, SGR."
+>
+
+  <!-- HERO + SERVIZIO -->
+  <section class="section pillar">
+    <div class="container">
+      <div class="pillar-inner fade-in">
+        <a href="/servizi/" class="back-link">← Tutti i servizi</a>
+        <div class="pillar-badge">01</div>
+        <h1 class="pillar-title">Fractional CMO / CEO</h1>
+        <p class="pillar-subtitle">Direzione Strategica PMI</p>
+
+        <div class="pillar-content">
+          <div class="pillar-description">
+            <p>Il tuo business ha bisogno di un direttore marketing. Non ha bisogno di pagarlo 12 mesi. Entro nella tua azienda 1–3 giorni a settimana con competenze executive — marketing strategico, general management, business development.</p>
+            <p>Diagnostico lo stato dell'azienda. Definisco la strategia. La eseguo con te e il tuo team. Non lascio documenti da scaffale — lavoro dentro l'azienda fino ai risultati.</p>
+          </div>
+
+          <div class="pillar-details">
+            <div class="detail-block">
+              <h3>Cosa include</h3>
+              <ul>
+                <li>Marketing strategico e operativo</li>
+                <li>General Management e pianificazione strategica</li>
+                <li>Business Development e crescita controllata</li>
+                <li>Ristrutturazione e turnaround</li>
+                <li>Discovery Day — fase diagnostica iniziale</li>
+              </ul>
+            </div>
+
+            <div class="detail-block">
+              <h3>Per chi è</h3>
+              <ul>
+                <li>PMI che crescono ma la struttura non tiene il passo</li>
+                <li>Aziende che hanno bisogno di competenze C-level senza il costo a tempo pieno</li>
+                <li>Imprenditori che vogliono un interlocutore strategico, non un fornitore</li>
+                <li>Aziende in fase di ristrutturazione o turnaround</li>
+              </ul>
+            </div>
+
+            <div class="detail-block">
+              <h3>Come lavoro</h3>
+              <div class="process-mini">
+                <span class="process-step">Assessment</span>
+                <span class="process-arrow">→</span>
+                <span class="process-step">Strategize</span>
+                <span class="process-arrow">→</span>
+                <span class="process-step">Execute</span>
+                <span class="process-arrow">→</span>
+                <span class="process-step">Grow</span>
+              </div>
+              <p class="detail-text">Ogni collaborazione parte dal Discovery Day — una fase diagnostica dove capisco dove sei davvero. Analizzo obiettivi, vincoli, struttura e credenze limitanti. Da lì costruiamo la strategia e la portiamo a terra.</p>
+            </div>
+
+            <div class="detail-block">
+              <h3>Formazione a supporto</h3>
+              <ul>
+                <li>SDA Bocconi — Executive Business Management (2025)</li>
+                <li>MITx — Entrepreneurship 101, 102, 103 (2024)</li>
+                <li>24ORE Business School — Master Marketing & Comunicazione</li>
+                <li>Google Ads Partner certificato</li>
+                <li>BDS Ambassador AICIM</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="pillar-network">
+            <h3>Network</h3>
+            <p class="detail-text"><strong>Fractional Manager Italia</strong> · <strong>FederManager</strong> · <strong>AICIM BDS Ambassador</strong></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CASI CLIENTE -->
+  <section class="section cases-section">
+    <div class="container">
+      <div class="cases-header fade-in">
+        <h2 class="cases-title">Casi cliente.</h2>
+        <p class="cases-sub">Alcune delle aziende con cui ho lavorato come Fractional CMO e CEO. Recensioni verificabili su LinkedIn.</p>
+      </div>
+
+      <div class="cases-list">
+        {cases.map((c) => (
+          <div class="case-card fade-in">
+            <div class="case-header">
+              <h3 class="case-name">{c.name}</h3>
+              <span class="case-badge">{c.badge}</span>
+            </div>
+
+            <div class="case-meta">
+              <span class="case-role">{c.role}</span>
+              <span class="case-dot">·</span>
+              <span class="case-duration">{c.duration}</span>
+            </div>
+
+            <p class="case-description">{c.description}</p>
+
+            <div class="case-services">
+              {c.services.map((s) => (
+                <span class="service-tag">{s}</span>
+              ))}
+            </div>
+
+            {c.testimonial && (
+              <blockquote class="case-testimonial">
+                <p>"{c.testimonial.quote}"</p>
+                <footer>
+                  <strong>{c.testimonial.name}</strong> — {c.testimonial.role}
+                </footer>
+              </blockquote>
+            )}
+
+            {c.extraTestimonials && c.extraTestimonials.map((t) => (
+              <blockquote class="case-testimonial case-testimonial-extra">
+                <p>"{t.quote}"</p>
+                <footer>
+                  <strong>{t.name}</strong> — {t.role}
+                </footer>
+              </blockquote>
+            ))}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CtaFinal />
+
+</BaseLayout>
+
+<style>
+  /* ─── PILLAR SECTION ─── */
+  .pillar {
+    background: var(--color-crema);
+  }
+
+  .pillar-inner {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .back-link {
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-testo-secondario);
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    transition: color 0.2s ease;
+  }
+
+  .back-link:hover {
+    color: var(--color-rosso);
+  }
+
+  .pillar-badge {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    color: var(--color-rosso);
+    margin-bottom: 1rem;
+  }
+
+  .pillar-title {
+    font-size: clamp(2rem, 4.5vw, 3rem);
+    margin-bottom: 0.25rem;
+  }
+
+  .pillar-subtitle {
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--color-testo-secondario);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 2.5rem;
+  }
+
+  .pillar-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .pillar-description p {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: var(--color-testo);
+    margin-bottom: 1rem;
+  }
+
+  .pillar-description p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Grid 2 colonne su tablet+ con align-items: start per evitare disallineamenti */
+  .pillar-details {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  @media (min-width: 768px) {
+    .pillar-details {
+      grid-template-columns: 1fr 1fr;
+      align-items: start;
+    }
+  }
+
+  .detail-block h3 {
+    font-family: var(--font-body);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-testo-secondario);
+    margin-bottom: 1rem;
+  }
+
+  .detail-block ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .detail-block li {
+    font-size: 0.9375rem;
+    color: var(--color-testo);
+    padding-left: 1.25rem;
+    position: relative;
+    line-height: 1.5;
+  }
+
+  .detail-block li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.55em;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--color-rosso);
+  }
+
+  .detail-text {
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    color: var(--color-testo);
+  }
+
+  .process-mini {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .process-step {
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-navy);
+    padding: 0.5rem 1rem;
+    background: var(--color-bianco);
+    border-radius: 4px;
+    border: 1px solid var(--color-bordo);
+  }
+
+  .process-arrow {
+    color: var(--color-rosso);
+    font-weight: 700;
+  }
+
+  .pillar-network {
+    padding-top: 2rem;
+    border-top: 1px solid var(--color-bordo);
+  }
+
+  .pillar-network h3 {
+    font-family: var(--font-body);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-testo-secondario);
+    margin-bottom: 0.75rem;
+  }
+
+  .pillar-network strong {
+    color: var(--color-navy);
+  }
+
+  /* ─── CASI CLIENTE ─── */
+  .cases-section {
+    background: var(--color-bianco);
+  }
+
+  .cases-header {
+    max-width: 960px;
+    margin: 0 auto 3rem auto;
+  }
+
+  .cases-title {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    margin-bottom: 0.5rem;
+  }
+
+  .cases-sub {
+    font-size: 0.9375rem;
+    color: var(--color-testo-secondario);
+    max-width: 600px;
+  }
+
+  .cases-list {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .case-card {
+    padding: 2.5rem 0;
+    border-bottom: 1px solid var(--color-bordo);
+  }
+
+  .case-card:last-child {
+    border-bottom: none;
+  }
+
+  .case-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .case-name {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    color: var(--color-navy);
+    margin: 0;
+  }
+
+  .case-badge {
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: var(--color-rosso);
+  }
+
+  .case-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .case-role,
+  .case-duration {
+    font-size: 0.875rem;
+    color: var(--color-testo-secondario);
+  }
+
+  .case-role {
+    font-weight: 500;
+  }
+
+  .case-dot {
+    color: var(--color-testo-secondario);
+  }
+
+  .case-description {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--color-testo);
+    margin-bottom: 1.25rem;
+    max-width: 760px;
+  }
+
+  .case-services {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .service-tag {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--color-navy);
+    padding: 0.3rem 0.75rem;
+    background: var(--color-crema);
+    border-radius: 100px;
+    border: 1px solid var(--color-bordo);
+  }
+
+  .case-testimonial {
+    background: var(--color-crema);
+    border-left: 3px solid var(--color-rosso);
+    padding: 1.5rem 2rem;
+    margin: 1.25rem 0 0 0;
+    border-radius: 0 6px 6px 0;
+    max-width: 760px;
+  }
+
+  .case-testimonial-extra {
+    margin-top: 0.75rem;
+  }
+
+  .case-testimonial p {
+    font-size: 0.9375rem;
+    font-style: italic;
+    line-height: 1.7;
+    color: var(--color-testo);
+    margin: 0 0 0.75rem 0;
+  }
+
+  .case-testimonial footer {
+    font-size: 0.8125rem;
+    color: var(--color-testo-secondario);
+  }
+
+  .case-testimonial footer strong {
+    color: var(--color-navy);
+    font-weight: 600;
+  }
+</style>
