@@ -1,0 +1,469 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import CtaFinal from '../../../components/CtaFinal.astro';
+
+const sectors = [
+  {
+    sector: 'Energia & Utilities',
+    clients: 'Gruppo SGR · SMG Gas e Luce · San Giorgio Energie · Sherden Energia',
+    description: 'Strategie di marketing e comunicazione per aziende del settore energia: campagne Google e Facebook, progettazione strumenti digitali, piani editoriali, restyling brand. Per SGR: affiancamento al Direttore Marketing su più divisioni — Oil & Gas, Centro Congressi, ristorazione di lusso.',
+    services: ['Campagne Google/Facebook', 'Piani editoriali', 'Restyling brand', 'Marketing multi-divisione'],
+    testimonial: {
+      quote: 'Segue i progetti in tutte le sue parti ed è un valido supporto per la creazione di strategie di marketing e comunicazione, soprattutto in campo web, con relativo studio e monitoraggio dei dati prodotti.',
+      name: 'Sara Ninfali',
+      role: 'Sr. Communication Manager, SGR Servizi',
+    },
+  },
+  {
+    sector: 'B2B Services',
+    clients: 'Prostand / IEG · UMPI Digital Platforms · Adosystem · Metauro Edizioni',
+    description: 'Marketing operativo per aziende B2B: campagne integrate, marketing funnel, piani editoriali web e social, comunicazione cartacea e digitale. Per Prostand (Gruppo IEG): 6 anni di affiancamento continuativo su fiere ed eventi internazionali.',
+    services: ['Marketing funnel', 'Campagne integrate', 'Piani editoriali', 'Comunicazione fiere'],
+    testimonial: null,
+  },
+  {
+    sector: 'Manufacturing',
+    clients: 'Giommi Srl · Gili Edging · Olimar · BKR Srl · SIFA Italy',
+    description: 'Posizionamento brand, comunicazione digitale e sviluppo commerciale per aziende manifatturiere. Interventi su identità visiva, presenza online, trade marketing e supporto all\'internazionalizzazione.',
+    services: ['Posizionamento brand', 'Trade marketing', 'Internazionalizzazione', 'Comunicazione digitale'],
+    testimonial: {
+      quote: 'Grazie al suo supporto siamo stati in grado di affacciarci a nuove prospettive di crescita, soprattutto nei processi di internazionalizzazione.',
+      name: 'Marco Gori',
+      role: 'Project Manager, BKR Srl',
+    },
+  },
+  {
+    sector: 'Trasporti & Logistica',
+    clients: 'CARP Trasporti · NF Trasporti · Parco Tir',
+    description: 'Strategia di comunicazione, gestione relazioni stakeholder, promozione servizi su web e social. Per CARP Trasporti: 6 anni di collaborazione continuativa su posizionamento e comunicazione aziendale.',
+    services: ['Strategia di comunicazione', 'Social media', 'Sviluppo commerciale', 'Identità aziendale'],
+    testimonial: {
+      quote: 'Francesco è un professionista affidabile e organizzato. Ha gestito il nostro marketing con chiarezza, rispettando i tempi e tenendoci sempre allineati. Collaborare con lui è stato semplice e produttivo.',
+      name: 'Tommaso Zavatta',
+      role: 'NF Trasporti Srl',
+    },
+  },
+  {
+    sector: 'Hospitality',
+    clients: 'Roseo Hotels · Demetra Hotels · APA Associazione Albergatori Pesaro',
+    description: 'Marketing digitale per strutture ricettive: campagne Google e social, SEO, gestione reputazione online, piani editoriali stagionali. Per APA: consulenza di settore per l\'intera associazione albergatori della provincia.',
+    services: ['Google Ads', 'Social media', 'SEO', 'Reputazione online'],
+    testimonial: null,
+  },
+  {
+    sector: 'Food & Restaurant',
+    clients: 'Quartopiano Suite Restaurant · Alla Lanterna',
+    description: 'Comunicazione e marketing per la ristorazione: identità digitale, campagne social, piani editoriali, promozione eventi. Per Bakery Café: collaborazione pluriennale su comunicazione integrata online e offline.',
+    services: ['Social media', 'Piani editoriali', 'Campagne promozionali', 'Comunicazione eventi'],
+    testimonial: {
+      quote: 'Ho avuto il piacere di collaborare ripetutamente e in svariate circostanze con Francesco, che ho trovato un professionista serio, preparato, motivato e motivante.',
+      name: 'Fabio Parri',
+      role: 'Social Media Manager, Quartopiano Suite Restaurant',
+    },
+  },
+  {
+    sector: 'Sociale & Nonprofit',
+    clients: 'Labirinto Cooperativa Sociale · Caritas Pesaro · Arcidiocesi di Pesaro · L\'Angelo Onlus · Città dei Maestri',
+    description: 'Docenze, consulenza email marketing e gestione piattaforma e-learning per il Terzo Settore. Per Labirinto: 17 anni di collaborazione continuativa su formazione, comunicazione e strumenti digitali.',
+    services: ['Email marketing', 'E-learning', 'Docenze', 'Comunicazione istituzionale'],
+    testimonial: null,
+  },
+  {
+    sector: 'Professionisti & Studi',
+    clients: 'Mauro Berruto · Costa Creta Studio Legale · Studio Tomassini · Tonelli Studio',
+    description: 'Identità digitale, siti web e comunicazione per professionisti e studi. Gestione presenza online nel tempo, adattata alle diverse fasi di carriera.',
+    services: ['Sito web', 'Identità digitale', 'Comunicazione personale', 'Social media'],
+    testimonial: {
+      quote: 'Il suo supporto è stato affidabile, preciso, concreto e SEMPRE disponibile: insomma ci siamo tolti delle belle soddisfazioni insieme! La mia gratitudine insieme alle sue profonde competenze e capacità di interpretare la necessità del cliente mi invitano a consigliarlo senza se e senza ma!',
+      name: 'Mauro Berruto',
+      role: 'Head Coach Nazionale Italiana Pallavolo 2010–2015, Bronzo Olimpico Londra 2012',
+    },
+  },
+];
+---
+
+<BaseLayout
+  title="Digital Marketing & Brand Strategy — RossoZingone"
+  description="Marketing digitale, brand strategy e sviluppo web per PMI. 27 anni di esperienza in 9 settori: energia, manifattura, hospitality, trasporti, food e altri."
+>
+
+  <!-- HERO + SERVIZIO -->
+  <section class="section pillar">
+    <div class="container">
+      <div class="pillar-inner fade-in">
+        <a href="/servizi/" class="back-link">← Tutti i servizi</a>
+        <div class="pillar-badge">03</div>
+        <h1 class="pillar-title">Digital Marketing & Brand Strategy</h1>
+        <p class="pillar-subtitle">Consulenza Digitale e Soluzioni Web</p>
+
+        <div class="pillar-content">
+          <div class="pillar-description">
+            <p>Dal 1998 lavoro sul marketing digitale delle PMI italiane. Non come agenzia che esegue ordini — come consulente che capisce il business e costruisce la strategia giusta per quel mercato, quella struttura, quel momento.</p>
+            <p>Campagne, brand, contenuti, web. Tutto integrato. Niente a compartimenti stagni.</p>
+          </div>
+
+          <div class="pillar-details">
+            <div class="detail-block">
+              <h3>Cosa include</h3>
+              <ul>
+                <li>Social Media — strategy, content, advertising</li>
+                <li>SEO / SEM / Google Ads</li>
+                <li>Email Marketing e marketing automation</li>
+                <li>Website Development — siti performanti e SEO-first</li>
+                <li>Brand & Rebranding Strategy</li>
+                <li>Content Marketing e piani editoriali</li>
+                <li>Lead Generation e CRM</li>
+              </ul>
+            </div>
+
+            <div class="detail-block">
+              <h3>Per chi è</h3>
+              <ul>
+                <li>PMI che vogliono una presenza digitale che genera risultati, non solo visibilità</li>
+                <li>Aziende che devono riposizionare il brand o entrare in nuovi mercati</li>
+                <li>Imprenditori che hanno bisogno di un marketing integrato, non di singoli servizi scollegati</li>
+                <li>Strutture che vogliono misurare il ritorno su ogni euro investito</li>
+              </ul>
+            </div>
+
+            <div class="detail-block">
+              <h3>Settori serviti</h3>
+              <div class="stack-grid">
+                <span class="stack-tag">Energia</span>
+                <span class="stack-tag">Manufacturing</span>
+                <span class="stack-tag">Hospitality</span>
+                <span class="stack-tag">Food & Restaurant</span>
+                <span class="stack-tag">Trasporti</span>
+                <span class="stack-tag">B2B Services</span>
+                <span class="stack-tag">Sociale</span>
+                <span class="stack-tag">Professionisti</span>
+              </div>
+            </div>
+
+            <div class="detail-block">
+              <h3>Certificazioni</h3>
+              <ul>
+                <li>Google Ads Partner certificato</li>
+                <li>Master Marketing & Comunicazione — 24ORE Business School</li>
+                <li>Giornalista Pubblicista — Ordine Nazionale Giornalisti (dal 2009)</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="pillar-network">
+            <h3>Partner per brand e concept di alto profilo</h3>
+            <p class="detail-text">Per progetti che richiedono identità visiva e concept brand di livello internazionale, collaboro con <strong>Antonio Motolese Lazzàro</strong> e <strong>Christina Magnanelli Weitensfelder</strong>, docenti con formazione ISIA e esperienze in contesti europei di riferimento. Strategia e creatività nella stessa filiera, senza intermediari.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CASI PER SETTORE -->
+  <section class="section cases-section">
+    <div class="container">
+      <div class="cases-header fade-in">
+        <h2 class="cases-title">27 anni. 9 settori.</h2>
+        <p class="cases-sub">Una selezione dei clienti e dei settori in cui ho lavorato nel corso degli anni.</p>
+      </div>
+
+      <div class="cases-list">
+        {sectors.map((s) => (
+          <div class="case-card fade-in">
+            <div class="case-header">
+              <h3 class="case-name">{s.sector}</h3>
+            </div>
+
+            <p class="case-clients">{s.clients}</p>
+
+            <p class="case-description">{s.description}</p>
+
+            <div class="case-services">
+              {s.services.map((tag) => (
+                <span class="service-tag">{tag}</span>
+              ))}
+            </div>
+
+            {s.testimonial && (
+              <blockquote class="case-testimonial">
+                <p>"{s.testimonial.quote}"</p>
+                <footer>
+                  <strong>{s.testimonial.name}</strong> — {s.testimonial.role}
+                </footer>
+              </blockquote>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CtaFinal />
+
+</BaseLayout>
+
+<style>
+  /* ─── PILLAR SECTION ─── */
+  .pillar {
+    background: var(--color-crema);
+  }
+
+  .pillar-inner {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .back-link {
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-testo-secondario);
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    transition: color 0.2s ease;
+  }
+
+  .back-link:hover {
+    color: var(--color-rosso);
+  }
+
+  .pillar-badge {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    color: var(--color-rosso);
+    margin-bottom: 1rem;
+  }
+
+  .pillar-title {
+    font-size: clamp(2rem, 4.5vw, 3rem);
+    margin-bottom: 0.25rem;
+  }
+
+  .pillar-subtitle {
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--color-testo-secondario);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 2.5rem;
+  }
+
+  .pillar-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .pillar-description p {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: var(--color-testo);
+    margin-bottom: 1rem;
+  }
+
+  .pillar-description p:last-child {
+    margin-bottom: 0;
+  }
+
+  .pillar-details {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  @media (min-width: 768px) {
+    .pillar-details {
+      grid-template-columns: 1fr 1fr;
+      align-items: start;
+    }
+  }
+
+  .detail-block h3 {
+    font-family: var(--font-body);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-testo-secondario);
+    margin-bottom: 1rem;
+  }
+
+  .detail-block ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .detail-block li {
+    font-size: 0.9375rem;
+    color: var(--color-testo);
+    padding-left: 1.25rem;
+    position: relative;
+    line-height: 1.5;
+  }
+
+  .detail-block li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.55em;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--color-rosso);
+  }
+
+  .detail-text {
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    color: var(--color-testo);
+  }
+
+  .stack-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .stack-tag {
+    font-family: var(--font-body);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--color-navy);
+    padding: 0.35rem 0.85rem;
+    background: var(--color-bianco);
+    border-radius: 4px;
+    border: 1px solid var(--color-bordo);
+    letter-spacing: 0.01em;
+  }
+
+  .pillar-network {
+    padding-top: 2rem;
+    border-top: 1px solid var(--color-bordo);
+  }
+
+  .pillar-network h3 {
+    font-family: var(--font-body);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-testo-secondario);
+    margin-bottom: 0.75rem;
+  }
+
+  .pillar-network strong {
+    color: var(--color-navy);
+  }
+
+  /* ─── CASI PER SETTORE ─── */
+  .cases-section {
+    background: var(--color-bianco);
+  }
+
+  .cases-header {
+    max-width: 960px;
+    margin: 0 auto 3rem auto;
+  }
+
+  .cases-title {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    margin-bottom: 0.5rem;
+  }
+
+  .cases-sub {
+    font-size: 0.9375rem;
+    color: var(--color-testo-secondario);
+    max-width: 600px;
+  }
+
+  .cases-list {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .case-card {
+    padding: 2.5rem 0;
+    border-bottom: 1px solid var(--color-bordo);
+  }
+
+  .case-card:last-child {
+    border-bottom: none;
+  }
+
+  .case-header {
+    margin-bottom: 0.5rem;
+  }
+
+  .case-name {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    color: var(--color-navy);
+    margin: 0;
+  }
+
+  .case-clients {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-rosso);
+    margin-bottom: 1rem;
+  }
+
+  .case-description {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--color-testo);
+    margin-bottom: 1.25rem;
+    max-width: 760px;
+  }
+
+  .case-services {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .service-tag {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--color-navy);
+    padding: 0.3rem 0.75rem;
+    background: var(--color-crema);
+    border-radius: 100px;
+    border: 1px solid var(--color-bordo);
+  }
+
+  .case-testimonial {
+    background: var(--color-crema);
+    border-left: 3px solid var(--color-rosso);
+    padding: 1.5rem 2rem;
+    margin: 0;
+    border-radius: 0 6px 6px 0;
+    max-width: 760px;
+  }
+
+  .case-testimonial p {
+    font-size: 0.9375rem;
+    font-style: italic;
+    line-height: 1.7;
+    color: var(--color-testo);
+    margin: 0 0 0.75rem 0;
+  }
+
+  .case-testimonial footer {
+    font-size: 0.8125rem;
+    color: var(--color-testo-secondario);
+  }
+
+  .case-testimonial footer strong {
+    color: var(--color-navy);
+    font-weight: 600;
+  }
+</style>
