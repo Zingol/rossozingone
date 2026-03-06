@@ -8,18 +8,141 @@ import CookieBanner from '../components/CookieBanner.astro';
 interface Props {
   title: string;
   description?: string;
+  ogImage?: string;
+  noindex?: boolean;
+  breadcrumbs?: Array<{ name: string; href: string }>;
+  schemaService?: {
+    name: string;
+    description: string;
+    url: string;
+  };
+  faqSchema?: Array<{ question: string; answer: string }>;
 }
 
 const {
   title,
   description = siteConfig.description,
+  ogImage = '/og-image.jpg',
+  noindex = false,
+  breadcrumbs,
+  schemaService,
+  faqSchema,
 } = Astro.props;
 
 const pageTitle = title === 'Home'
   ? `${siteConfig.name} — ${siteConfig.tagline}`
-  : `${title} — ${siteConfig.name}`;
+  : `${title} | ${siteConfig.name}`;
 
 const canonicalUrl = new URL(Astro.url.pathname, siteConfig.url).href;
+const ogImageUrl = new URL(ogImage, siteConfig.url).href;
+
+// Schema Organization + LocalBusiness
+const schemaOrg = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["Organization", "LocalBusiness", "ProfessionalService"],
+      "@id": `${siteConfig.url}/#organization`,
+      name: siteConfig.legalName,
+      url: siteConfig.url,
+      logo: `${siteConfig.url}/favicon.svg`,
+      image: ogImageUrl,
+      description: siteConfig.description,
+      foundingDate: String(siteConfig.yearFounded),
+      founder: {
+        "@type": "Person",
+        "@id": `${siteConfig.url}/#person`,
+        name: siteConfig.founder,
+        jobTitle: "Fractional CMO / CEO",
+        url: siteConfig.url,
+        sameAs: [siteConfig.linkedin],
+      },
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: siteConfig.address.street,
+        addressLocality: siteConfig.address.city,
+        addressRegion: siteConfig.address.province,
+        postalCode: siteConfig.address.cap,
+        addressCountry: "IT",
+      },
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: 43.9096,
+        longitude: 12.9136,
+      },
+      contactPoint: {
+        "@type": "ContactPoint",
+        telephone: siteConfig.phone,
+        email: siteConfig.email,
+        contactType: "customer service",
+        availableLanguage: ["Italian", "English"],
+      },
+      areaServed: [
+        { "@type": "Country", name: "Italy" },
+        { "@type": "Country", name: "Germany" },
+        { "@type": "Country", name: "Austria" },
+        { "@type": "Country", name: "Switzerland" },
+        { "@type": "Country", name: "United Kingdom" },
+      ],
+      sameAs: [siteConfig.linkedin],
+      numberOfEmployees: {
+        "@type": "QuantitativeValue",
+        value: 4,
+      },
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: "5",
+        reviewCount: "7",
+        bestRating: "5",
+        worstRating: "1",
+      },
+    },
+    // BreadcrumbList
+    ...(breadcrumbs ? [{
+      "@type": "BreadcrumbList",
+      "@id": `${canonicalUrl}#breadcrumb`,
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: siteConfig.url,
+        },
+        ...breadcrumbs.map((crumb, i) => ({
+          "@type": "ListItem",
+          position: i + 2,
+          name: crumb.name,
+          item: new URL(crumb.href, siteConfig.url).href,
+        })),
+      ],
+    }] : []),
+    // Service Schema (opzionale per pagine servizi)
+    ...(schemaService ? [{
+      "@type": "Service",
+      "@id": `${canonicalUrl}#service`,
+      name: schemaService.name,
+      description: schemaService.description,
+      url: schemaService.url,
+      provider: {
+        "@id": `${siteConfig.url}/#organization`,
+      },
+      areaServed: { "@type": "Country", name: "Italy" },
+    }] : []),
+    // FAQ Schema (opzionale)
+    ...(faqSchema ? [{
+      "@type": "FAQPage",
+      "@id": `${canonicalUrl}#faq`,
+      mainEntity: faqSchema.map((item) => ({
+        "@type": "Question",
+        name: item.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: item.answer,
+        },
+      })),
+    }] : []),
+  ],
+};
 ---
 
 <!doctype html>
@@ -32,6 +155,8 @@ const canonicalUrl = new URL(Astro.url.pathname, siteConfig.url).href;
   <meta name="description" content={description} />
   <link rel="canonical" href={canonicalUrl} />
 
+  {noindex && <meta name="robots" content="noindex, nofollow" />}
+
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -41,38 +166,26 @@ const canonicalUrl = new URL(Astro.url.pathname, siteConfig.url).href;
     rel="stylesheet"
   />
 
+  <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content={pageTitle} />
   <meta property="og:description" content={description} />
   <meta property="og:url" content={canonicalUrl} />
   <meta property="og:site_name" content={siteConfig.name} />
   <meta property="og:locale" content="it_IT" />
+  <meta property="og:image" content={ogImageUrl} />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content={pageTitle} />
 
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    name: siteConfig.legalName,
-    url: siteConfig.url,
-    founder: {
-      "@type": "Person",
-      name: siteConfig.founder,
-    },
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: siteConfig.address.street,
-      addressLocality: siteConfig.address.city,
-      postalCode: siteConfig.address.cap,
-      addressCountry: "IT",
-    },
-    contactPoint: {
-      "@type": "ContactPoint",
-      telephone: siteConfig.phone,
-      email: siteConfig.email,
-      contactType: "customer service",
-      availableLanguage: ["Italian", "English"],
-    },
-    sameAs: [siteConfig.linkedin],
-  })} />
+  <!-- Twitter / X Cards -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={pageTitle} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImageUrl} />
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json" set:html={JSON.stringify(schemaOrg)} />
 </head>
 <body>
   <Navbar />
