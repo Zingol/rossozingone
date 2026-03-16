@@ -1,0 +1,411 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import CtaFinal from '../../../components/CtaFinal.astro';
+
+const cases = [
+  {
+    sector: 'Manufacturing',
+    clients: 'Giommi Srl · Gili Edging · Olimar · BKR Srl · SIFA Italy',
+    type: 'Posizionamento brand e sviluppo commerciale',
+    description: 'Posizionamento brand, comunicazione digitale e sviluppo commerciale per aziende manifatturiere. Interventi su identità visiva, presenza online, trade marketing e supporto all\'internazionalizzazione.',
+    services: ['Posizionamento brand', 'Trade marketing', 'Internazionalizzazione', 'Comunicazione digitale'],
+    testimonial: {
+      quote: 'Grazie al suo supporto siamo stati in grado di affacciarci a nuove prospettive di crescita, soprattutto nei processi di internazionalizzazione.',
+      name: 'Marco Gori',
+      role: 'Project Manager, BKR Srl',
+    },
+  },
+  {
+    sector: 'Food & Restaurant',
+    clients: 'Quartopiano Suite Restaurant · Alla Lanterna',
+    type: 'Comunicazione e marketing per la ristorazione',
+    description: 'Identità digitale, campagne social, piani editoriali e promozione eventi per la ristorazione. Collaborazione pluriennale su comunicazione integrata online e offline.',
+    services: ['Social media', 'Piani editoriali', 'Campagne promozionali', 'Comunicazione eventi'],
+    testimonial: {
+      quote: 'Ho avuto il piacere di collaborare ripetutamente e in svariate circostanze con Francesco, che ho trovato un professionista serio, preparato, motivato e motivante.',
+      name: 'Fabio Parri',
+      role: 'Social Media Manager, Quartopiano Suite Restaurant',
+    },
+  },
+  {
+    sector: 'Professionisti & Studi',
+    clients: 'Mauro Berruto · Costa Creta Studio Legale · Studio Tomassini · Tonelli Studio',
+    type: 'Identità digitale e comunicazione personale',
+    description: 'Identità digitale, siti web e comunicazione per professionisti e studi. Gestione della presenza online nel tempo, adattata alle diverse fasi di carriera.',
+    services: ['Sito web', 'Identità digitale', 'Comunicazione personale', 'Social media'],
+    testimonial: {
+      quote: 'Il suo supporto è stato affidabile, preciso, concreto e SEMPRE disponibile: insomma ci siamo tolti delle belle soddisfazioni insieme! La mia gratitudine insieme alle sue profonde competenze e capacità di interpretare la necessità del cliente mi invitano a consigliarlo senza se e senza ma!',
+      name: 'Mauro Berruto',
+      role: 'Head Coach Nazionale Italiana Pallavolo 2010–2015, Bronzo Olimpico Londra 2012',
+    },
+  },
+];
+---
+
+<BaseLayout
+  title="Lead Generation per PMI — Inbound e Outbound"
+  description="Generazione di contatti qualificati per PMI italiane. Strategie inbound e outbound integrate, costruzione di pipeline commerciali solide per qualsiasi settore e progetto."
+  breadcrumbs={[
+    { name: 'Servizi', href: '/servizi/' },
+    { name: 'Lead Generation', href: '/servizi/lead-generation/' },
+  ]}
+  schemaService={{
+    name: 'Lead Generation',
+    description: 'Lead generation inbound e outbound per PMI. Costruzione di pipeline commerciali qualificate per qualsiasi settore.',
+    url: 'https://rossozingone.it/servizi/lead-generation/',
+  }}
+  faqSchema={[
+    {
+      question: "Qual è la differenza tra lead generation inbound e outbound?",
+      answer: "L'inbound attrae contatti che cercano attivamente la soluzione: SEO, content marketing, campagne a risposta diretta. L'outbound raggiunge proattivamente i prospect target: email marketing, LinkedIn, cold outreach strutturato. Le due strategie si integrano: l'inbound costruisce autorità e volume nel tempo, l'outbound genera risultati più rapidi su target precisi.",
+    },
+    {
+      question: "La lead generation funziona per le PMI B2B?",
+      answer: "Sì, con un approccio diverso dal B2C. Nel B2B i cicli di acquisto sono più lunghi e le decisioni coinvolgono più persone. La lead generation efficace per PMI B2B combina contenuti di valore che costruiscono fiducia, outreach mirato sui decision maker e un sistema di nurturing che mantiene il contatto nel tempo fino alla maturazione del lead.",
+    },
+    {
+      question: "Quanti lead si possono generare ogni mese?",
+      answer: "Dipende dal settore, dal budget e dalla maturità del brand. Non esistono numeri universali. Quello che conta è la qualità: un lead qualificato vale dieci contatti generici. Il lavoro inizia sempre dall'analisi del cliente ideale, del processo di acquisto e dei canali più efficaci per quel mercato specifico.",
+    },
+    {
+      question: "Come si misura l'efficacia di una campagna di lead generation?",
+      answer: "Le metriche chiave sono: costo per lead (CPL), tasso di qualificazione, tasso di conversione da lead a opportunità, e infine il CAC (costo di acquisizione cliente). Il monitoraggio è continuo: ogni campagna genera dati che permettono di ottimizzare il ciclo successivo.",
+    },
+  ]}
+>
+
+  <section class="section pillar">
+    <div class="container">
+      <div class="pillar-inner fade-in">
+        <a href="/servizi/" class="back-link">← Tutti i servizi</a>
+        <div class="pillar-badge">06</div>
+        <h1 class="pillar-title">Lead Generation</h1>
+        <p class="pillar-subtitle">Inbound e Outbound</p>
+
+        <div class="pillar-content">
+          <div class="pillar-description">
+            <p>Un'azienda senza un flusso costante di contatti qualificati dipende dal passaparola e dalla fortuna. La lead generation strutturata costruisce un sistema: attira i prospect giusti, li qualifica, li accompagna fino alla decisione di acquisto.</p>
+            <p>Lavoro sia sull'inbound — costruire autorità e visibilità che attraggono contatti in modo organico — che sull'outbound — raggiungere proattivamente i decision maker nei mercati target. Le due strategie si integrano in un piano coerente con gli obiettivi commerciali dell'azienda.</p>
+          </div>
+
+          <div class="pillar-details">
+            <div class="detail-block">
+              <h3>Inbound</h3>
+              <ul>
+                <li>SEO e visibilità organica per query ad alta intenzione</li>
+                <li>Content marketing e lead magnet</li>
+                <li>Landing page e funnel di conversione</li>
+                <li>Campagne a risposta diretta (Google, Meta)</li>
+                <li>Email marketing e nurturing automatizzato</li>
+              </ul>
+            </div>
+
+            <div class="detail-block">
+              <h3>Outbound</h3>
+              <ul>
+                <li>Profilazione e segmentazione dei prospect target</li>
+                <li>Sequenze di outreach LinkedIn e email</li>
+                <li>Cold outreach strutturato e personalizzato</li>
+                <li>Account-based marketing per target enterprise</li>
+                <li>Integrazione con CRM e pipeline commerciale</li>
+              </ul>
+            </div>
+
+            <div class="detail-block">
+              <h3>Per chi è</h3>
+              <ul>
+                <li>PMI B2B che vogliono un flusso costante di opportunità commerciali</li>
+                <li>Aziende che dipendono solo dal passaparola e vogliono diversificare</li>
+                <li>Imprenditori che lanciano nuovi prodotti o servizi su mercati nuovi</li>
+                <li>Aziende che entrano in nuovi mercati geografici</li>
+              </ul>
+            </div>
+
+            <div class="detail-block">
+              <h3>Metodo</h3>
+              <ul>
+                <li>Analisi del cliente ideale (ICP) e del processo di acquisto</li>
+                <li>Selezione canali in base al mercato specifico</li>
+                <li>Testing sistematico e ottimizzazione continua</li>
+                <li>Reportistica chiara su CPL, qualificazione e CAC</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CASI PER SETTORE -->
+  <section class="section cases-section">
+    <div class="container">
+      <div class="cases-header fade-in">
+        <h2 class="cases-title">Esperienze.</h2>
+        <p class="cases-sub">Settori e clienti in cui ho costruito sistemi di acquisizione e sviluppo commerciale.</p>
+      </div>
+
+      <div class="cases-list">
+        {cases.map((c) => (
+          <div class="case-card fade-in">
+            <div class="case-header">
+              <h3 class="case-name">{c.sector}</h3>
+            </div>
+            <p class="case-clients">{c.clients}</p>
+            <div class="case-meta">
+              <span class="case-type">{c.type}</span>
+            </div>
+            <p class="case-description">{c.description}</p>
+            <div class="case-services">
+              {c.services.map((s) => (
+                <span class="service-tag">{s}</span>
+              ))}
+            </div>
+            {c.testimonial && (
+              <blockquote class="case-testimonial">
+                <p>"{c.testimonial.quote}"</p>
+                <footer>
+                  <strong>{c.testimonial.name}</strong> — {c.testimonial.role}
+                </footer>
+              </blockquote>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CtaFinal />
+
+</BaseLayout>
+
+<style>
+  .pillar {
+    background: var(--color-crema);
+  }
+
+  .pillar-inner {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .back-link {
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-testo-secondario);
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    transition: color 0.2s ease;
+  }
+
+  .back-link:hover {
+    color: var(--color-rosso);
+  }
+
+  .pillar-badge {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    color: var(--color-rosso);
+    margin-bottom: 1rem;
+  }
+
+  .pillar-title {
+    font-size: clamp(2rem, 4.5vw, 3rem);
+    margin-bottom: 0.25rem;
+  }
+
+  .pillar-subtitle {
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--color-testo-secondario);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 2.5rem;
+  }
+
+  .pillar-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .pillar-description p {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: var(--color-testo);
+    margin-bottom: 1rem;
+  }
+
+  .pillar-description p:last-child {
+    margin-bottom: 0;
+  }
+
+  .pillar-details {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  @media (min-width: 768px) {
+    .pillar-details {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .detail-block h3 {
+    font-family: var(--font-body);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-testo-secondario);
+    margin-bottom: 1rem;
+  }
+
+  .detail-block ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .detail-block li {
+    font-size: 0.9375rem;
+    color: var(--color-testo);
+    padding-left: 1.25rem;
+    position: relative;
+    line-height: 1.5;
+  }
+
+  .detail-block li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.55em;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--color-rosso);
+  }
+
+  /* ─── CASI ─── */
+  .cases-section {
+    background: var(--color-bianco);
+  }
+
+  .cases-header {
+    max-width: 960px;
+    margin: 0 auto 3rem auto;
+  }
+
+  .cases-title {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    margin-bottom: 0.5rem;
+  }
+
+  .cases-sub {
+    font-size: 0.9375rem;
+    color: var(--color-testo-secondario);
+    max-width: 600px;
+  }
+
+  .cases-list {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .case-card {
+    padding: 2.5rem 0;
+    border-bottom: 1px solid var(--color-bordo);
+  }
+
+  .case-card:last-child {
+    border-bottom: none;
+  }
+
+  .case-header {
+    margin-bottom: 0.25rem;
+  }
+
+  .case-name {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    color: var(--color-navy);
+    margin: 0;
+  }
+
+  .case-clients {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-rosso);
+    margin-bottom: 0.75rem;
+  }
+
+  .case-meta {
+    margin-bottom: 1rem;
+  }
+
+  .case-type {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-testo-secondario);
+    font-style: italic;
+  }
+
+  .case-description {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--color-testo);
+    margin-bottom: 1.25rem;
+    max-width: 760px;
+  }
+
+  .case-services {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .service-tag {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--color-navy);
+    padding: 0.3rem 0.75rem;
+    background: var(--color-crema);
+    border-radius: 100px;
+    border: 1px solid var(--color-bordo);
+  }
+
+  .case-testimonial {
+    background: var(--color-crema);
+    border-left: 3px solid var(--color-rosso);
+    padding: 1.5rem 2rem;
+    margin: 0;
+    border-radius: 0 6px 6px 0;
+    max-width: 760px;
+  }
+
+  .case-testimonial p {
+    font-size: 0.9375rem;
+    font-style: italic;
+    line-height: 1.7;
+    color: var(--color-testo);
+    margin: 0 0 0.75rem 0;
+  }
+
+  .case-testimonial footer {
+    font-size: 0.8125rem;
+    color: var(--color-testo-secondario);
+  }
+
+  .case-testimonial footer strong {
+    color: var(--color-navy);
+    font-weight: 600;
+  }
+</style>

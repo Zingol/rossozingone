@@ -1,0 +1,250 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import CtaFinal from '../../../components/CtaFinal.astro';
+---
+
+<BaseLayout
+  title="Fractional CAIO — Chief AI Officer per PMI"
+  description="Governance dell'intelligenza artificiale in azienda senza il costo di un executive a tempo pieno. Strategia AI, selezione strumenti, policy e supervisione delle implementazioni."
+  breadcrumbs={[
+    { name: 'Servizi', href: '/servizi/' },
+    { name: 'Fractional CAIO', href: '/servizi/fractional-caio/' },
+  ]}
+  schemaService={{
+    name: 'Fractional CAIO',
+    description: 'Chief AI Officer part-time per PMI. Strategia AI, governance, selezione strumenti e supervisione implementazioni.',
+    url: 'https://rossozingone.it/servizi/fractional-caio/',
+  }}
+  faqSchema={[
+    {
+      question: "Cos'è un Fractional CAIO?",
+      answer: "Il Fractional CAIO (Chief AI Officer) è un executive part-time che guida la strategia di intelligenza artificiale in azienda 1-3 giorni a settimana. Definisce la roadmap AI, seleziona gli strumenti, forma il team e supervisiona le implementazioni — senza il costo di un dirigente a tempo pieno.",
+    },
+    {
+      question: "Quando serve un Fractional CAIO in una PMI?",
+      answer: "Quando l'azienda vuole integrare l'AI nei processi ma non ha le competenze interne per farlo in modo strategico. Quando si moltiplicano gli strumenti AI senza un piano coerente. Quando si devono gestire rischi di privacy, compliance e qualità dell'output AI.",
+    },
+    {
+      question: "Qual è la differenza tra Fractional CAIO e AI Integration?",
+      answer: "L'AI Integration è un intervento operativo: si analizzano i processi, si implementano gli strumenti, si automatizzano i flussi. Il Fractional CAIO è un ruolo continuativo: presidia la strategia AI nel tempo, coordina le scelte tecnologiche e mantiene la governance. Spesso i due servizi si combinano.",
+    },
+    {
+      question: "Il Fractional CAIO lavora anche con team tecnici interni?",
+      answer: "Sì. Il CAIO si interfaccia con IT, operations e management. Non sostituisce il team tecnico — lo indirizza strategicamente e garantisce che le scelte tecnologiche siano allineate agli obiettivi di business.",
+    },
+  ]}
+>
+
+  <section class="section pillar">
+    <div class="container">
+      <div class="pillar-inner fade-in">
+        <a href="/servizi/" class="back-link">← Tutti i servizi</a>
+        <div class="pillar-badge">02</div>
+        <h1 class="pillar-title">Fractional CAIO</h1>
+        <p class="pillar-subtitle">Chief AI Officer part-time</p>
+
+        <div class="pillar-content">
+          <div class="pillar-description">
+            <p>L'AI è ovunque, ma la maggior parte delle PMI la usa in modo caotico: strumenti scelti senza criterio, processi non integrati, rischi di privacy ignorati, team non formato. Il risultato è spesa senza ritorno.</p>
+            <p>Il Fractional CAIO porta governance. Non implementa tool — definisce la strategia, seleziona gli strumenti giusti per il contesto specifico dell'azienda, costruisce le policy interne e supervisiona chi esegue. 1-3 giorni a settimana, senza il costo di un C-level a tempo pieno.</p>
+          </div>
+
+          <div class="pillar-details">
+            <div class="detail-block">
+              <h3>Cosa include</h3>
+              <ul>
+                <li>Audit AI: stato attuale, strumenti in uso, gap e rischi</li>
+                <li>Strategia e roadmap AI aziendale</li>
+                <li>Selezione e valutazione strumenti AI per ogni funzione</li>
+                <li>Governance AI: policy, linee guida, standard interni</li>
+                <li>Supervisione implementazioni e team tecnico</li>
+                <li>Formazione del management sull'uso strategico dell'AI</li>
+                <li>Monitoraggio ROI e ottimizzazione continua</li>
+              </ul>
+            </div>
+
+            <div class="detail-block">
+              <h3>Per chi è</h3>
+              <ul>
+                <li>PMI che usano già l'AI ma senza un piano coerente</li>
+                <li>Aziende che vogliono integrare l'AI senza rischi di compliance</li>
+                <li>Imprenditori che devono prendere decisioni tecnologiche senza competenze interne</li>
+                <li>Aziende con team tecnico che manca di indirizzo strategico</li>
+                <li>PMI che trattano dati sensibili e vogliono un approccio privacy-first</li>
+              </ul>
+            </div>
+
+            <div class="detail-block">
+              <h3>Stack di riferimento</h3>
+              <ul>
+                <li>LLM: Claude, OpenAI, Gemini, Mistral</li>
+                <li>AI locale privacy-first: Ollama</li>
+                <li>Automazione: Make, n8n</li>
+                <li>Agenti e chatbot: Voiceflow, custom agents</li>
+                <li>RAG e knowledge base aziendali</li>
+              </ul>
+            </div>
+
+            <div class="detail-block">
+              <h3>Competenze distintive</h3>
+              <ul>
+                <li>27 anni di esperienza nelle PMI italiane</li>
+                <li>Implementazioni AI reali su processi aziendali</li>
+                <li>Approccio privacy-first con elaborazione locale</li>
+                <li>Ponte tra strategia di business e tecnologia AI</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="pillar-network">
+            <h3>Approccio</h3>
+            <p class="detail-text">Il valore del Fractional CAIO non è sapere quali tool esistono — è sapere <strong>quali tool servono a quella specifica azienda</strong>, in quel contesto, con quei processi e quei dati. 27 anni dentro le PMI italiane permettono di evitare gli errori più comuni: strumenti sovradimensionati, implementazioni senza adozione, AI che crea dipendenza invece di autonomia.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CtaFinal />
+
+</BaseLayout>
+
+<style>
+  .pillar {
+    background: var(--color-crema);
+  }
+
+  .pillar-inner {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .back-link {
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-testo-secondario);
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    transition: color 0.2s ease;
+  }
+
+  .back-link:hover {
+    color: var(--color-rosso);
+  }
+
+  .pillar-badge {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    color: var(--color-rosso);
+    margin-bottom: 1rem;
+  }
+
+  .pillar-title {
+    font-size: clamp(2rem, 4.5vw, 3rem);
+    margin-bottom: 0.25rem;
+  }
+
+  .pillar-subtitle {
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--color-testo-secondario);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 2.5rem;
+  }
+
+  .pillar-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .pillar-description p {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: var(--color-testo);
+    margin-bottom: 1rem;
+  }
+
+  .pillar-description p:last-child {
+    margin-bottom: 0;
+  }
+
+  .pillar-details {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  @media (min-width: 768px) {
+    .pillar-details {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .detail-block h3 {
+    font-family: var(--font-body);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-testo-secondario);
+    margin-bottom: 1rem;
+  }
+
+  .detail-block ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .detail-block li {
+    font-size: 0.9375rem;
+    color: var(--color-testo);
+    padding-left: 1.25rem;
+    position: relative;
+    line-height: 1.5;
+  }
+
+  .detail-block li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.55em;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--color-rosso);
+  }
+
+  .detail-text {
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    color: var(--color-testo);
+  }
+
+  .pillar-network {
+    padding-top: 2rem;
+    border-top: 1px solid var(--color-bordo);
+  }
+
+  .pillar-network h3 {
+    font-family: var(--font-body);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-testo-secondario);
+    margin-bottom: 0.75rem;
+  }
+
+  .pillar-network strong {
+    color: var(--color-navy);
+  }
+</style>

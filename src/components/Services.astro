@@ -6,7 +6,15 @@ const services = [
     subtitle: 'Direzione Strategica PMI',
     description: 'Direzione marketing e gestione aziendale part-time. Competenze executive nella tua azienda 1-3 giorni a settimana, senza il costo di un manager a tempo pieno.',
     items: ['Marketing strategico e operativo', 'General Management e pianificazione', 'Business Development e crescita controllata', 'Discovery Day: diagnostica iniziale'],
-    href: '/servizi/#fractional',
+    href: '/servizi/fractional-cmo-ceo/',
+  },
+  {
+    icon: '◆',
+    title: 'Fractional CAIO',
+    subtitle: 'Chief AI Officer part-time',
+    description: 'Governance dell\'intelligenza artificiale in azienda. Strategia AI, selezione degli strumenti giusti, formazione del team e supervisione dell\'implementazione — senza il costo di un executive a tempo pieno.',
+    items: ['Strategia e roadmap AI aziendale', 'Selezione e valutazione strumenti AI', 'Governance e policy AI interna', 'Supervisione implementazioni e team'],
+    href: '/servizi/fractional-caio/',
   },
   {
     icon: '◆',
@@ -14,7 +22,47 @@ const services = [
     subtitle: 'Intelligenza Artificiale per PMI',
     description: 'Integrazione dell\'AI nei processi aziendali reali. Dove crea valore, non dove fa scena. Approccio privacy-first con elaborazione locale per dati sensibili.',
     items: ['Analisi processi e opportunità AI', 'Automazione workflow e processi', 'AI Agents e chatbot aziendali', 'Privacy-first con Ollama locale'],
-    href: '/servizi/#ai-integration',
+    href: '/servizi/ai-integration/',
+  },
+  {
+    icon: '◆',
+    title: 'Business Development',
+    subtitle: 'Crescita e Nuovi Mercati',
+    description: 'Identificazione e sviluppo di nuove opportunità di business. Dal posizionamento competitivo all\'ingresso in nuovi mercati, con metodo e dati alla mano.',
+    items: ['Analisi competitiva e di mercato', 'Go-to-market strategy', 'Partnership e sviluppo canali', 'Internazionalizzazione PMI'],
+    href: '/servizi/business-development/',
+  },
+  {
+    icon: '◆',
+    title: 'Digital Marketing',
+    subtitle: 'Marketing Digitale Integrato',
+    description: 'Strategie digitali costruite su dati reali. SEO, campagne, content — tutto integrato in un piano coerente con gli obiettivi di business.',
+    items: ['SEO e visibilità organica', 'Campagne Google e social', 'Content strategy e piani editoriali', 'Analytics e ottimizzazione continua'],
+    href: '/servizi/digital-marketing/',
+  },
+  {
+    icon: '◆',
+    title: 'Lead Generation',
+    subtitle: 'Inbound e Outbound',
+    description: 'Generazione di contatti qualificati per qualsiasi settore e progetto. Costruzione di pipeline commerciali solide, sia in entrata che in uscita.',
+    items: ['Strategia inbound e funnel', 'Campagne outbound mirate', 'Qualificazione e nurturing lead', 'CRM e tracciamento opportunità'],
+    href: '/servizi/lead-generation/',
+  },
+  {
+    icon: '◆',
+    title: 'Formazione Aziendale',
+    subtitle: 'Docenza e Training Operativo',
+    description: 'Formazione concreta per team aziendali su marketing digitale, AI e comunicazione. Non corsi generici — programmi costruiti sul contesto specifico dell\'azienda.',
+    items: ['Marketing digitale e social', 'Strumenti e processi AI', 'Comunicazione e content', 'E-learning e piattaforme formative'],
+    href: '/servizi/formazione-aziendale/',
+  },
+  {
+    icon: '◆',
+    title: 'Advisory',
+    subtitle: 'Analisi, Valutazione e Due Diligence',
+    description: 'Analisi di mercato, diagnostica aziendale BDS, business plan e supporto strategico per decisioni critiche. Dati prima, opinioni dopo.',
+    items: ['Diagnostica aziendale BDS — AICIM', 'Business valuation asset digitali', 'Business plan e strategie d\'impresa', 'Supporto all\'internazionalizzazione'],
+    href: '/servizi/advisory/',
   },
   {
     icon: '◆',
@@ -22,7 +70,7 @@ const services = [
     subtitle: 'Affiancamento Operativo',
     description: 'Coaching pratico per le nuove generazioni che entrano nelle PMI familiari. Non motivazione — risultati concreti dentro l\'azienda.',
     items: ['Affiancamento giovani imprenditori', 'Ponte tra esperienza e innovazione', 'Formazione operativa sul campo', 'Gestione della transizione'],
-    href: '/servizi/#passaggio-generazionale',
+    href: '/servizi/passaggio-generazionale/',
   },
 ];
 ---
@@ -30,12 +78,12 @@ const services = [
 <section class="section services" id="servizi">
   <div class="container">
     <div class="services-header fade-in">
-      <h2 class="services-title">Tre competenze integrate<br /><span class="services-accent">per far crescere la tua PMI.</span></h2>
+      <h2 class="services-title">Nove competenze integrate<br /><span class="services-accent">per far crescere la tua PMI.</span></h2>
     </div>
 
     <div class="services-grid">
       {services.map((service, i) => (
-        <div class={`service-card fade-in fade-in-delay-${i + 1}`}>
+        <div class={`service-card fade-in fade-in-delay-${(i % 3) + 1}`}>
           <span class="service-icon">{service.icon}</span>
           <h3 class="service-title">{service.title}</h3>
           <p class="service-subtitle">{service.subtitle}</p>
@@ -77,6 +125,12 @@ const services = [
   }
 
   @media (min-width: 768px) {
+    .services-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
     .services-grid {
       grid-template-columns: repeat(3, 1fr);
     }
