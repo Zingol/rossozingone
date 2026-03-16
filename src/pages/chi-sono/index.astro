@@ -34,7 +34,7 @@ const certificazioni = [
           <div class="chi-bio">
             <p>Mi chiamo Francesco Zingone. Dal 1998 lavoro con imprenditori di piccole e medie imprese italiane — prima come consulente di marketing e comunicazione digitale, oggi come Fractional Executive.</p>
 
-            <p>Fractional significa che opero come direttore marketing o direttore generale della tua azienda, ma part-time: 1-3 giorni a settimana. Porti dentro competenze executive senza il costo di un manager a tempo pieno.</p>
+            <p><a href="/fractional-manager/" class="bio-link">Fractional</a> significa che opero come direttore marketing o direttore generale della tua azienda, ma part-time: 1-3 giorni a settimana. Porti dentro competenze executive senza il costo di un manager a tempo pieno.</p>
 
             <p>Nel 2024-2025 ho integrato la formazione in General Management (SDA Bocconi) e Imprenditorialità (MITx) con l'integrazione nativa dell'intelligenza artificiale nei processi aziendali. Non sono il "tecnico AI" e non sono il "consulente tradizionale" — sono il ponte tra strategia di business e tecnologia applicata.</p>
 
@@ -386,5 +386,14 @@ const certificazioni = [
     width: 20px;
     height: 20px;
     object-fit: contain;
+  }
+  .bio-link {
+    color: var(--color-rosso);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .bio-link:hover {
+    color: var(--color-rosso-dark);
   }
 </style>

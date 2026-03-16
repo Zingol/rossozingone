@@ -1,5 +1,13 @@
 ---
-const services = [
+const services: Array<{
+  icon: string;
+  title: string;
+  subtitle: string;
+  description: string;
+  items: string[];
+  href: string;
+  guideHref?: string;
+}> = [
   {
     icon: '◆',
     title: 'Fractional CMO/CEO',
@@ -7,6 +15,7 @@ const services = [
     description: 'Direzione marketing e gestione aziendale part-time. Competenze executive nella tua azienda 1-3 giorni a settimana, senza il costo di un manager a tempo pieno.',
     items: ['Marketing strategico e operativo', 'General Management e pianificazione', 'Business Development e crescita controllata', 'Discovery Day: diagnostica iniziale'],
     href: '/servizi/fractional-cmo-ceo/',
+    guideHref: '/fractional-manager/',
   },
   {
     icon: '◆',
@@ -94,6 +103,9 @@ const services = [
             ))}
           </ul>
           <a href={service.href} class="service-link">Approfondisci →</a>
+          {service.guideHref && (
+            <a href={service.guideHref} class="service-guide-link">Cos'è un fractional manager →</a>
+          )}
         </div>
       ))}
     </div>
@@ -218,5 +230,18 @@ const services = [
 
   .service-link:hover {
     color: var(--color-rosso-dark);
+  }
+  .service-guide-link {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-testo-secondario);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .service-guide-link:hover {
+    color: var(--color-rosso);
   }
 </style>

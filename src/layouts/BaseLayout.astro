@@ -17,6 +17,13 @@ interface Props {
     url: string;
   };
   faqSchema?: Array<{ question: string; answer: string }>;
+  articleSchema?: {
+    headline: string;
+    description: string;
+    datePublished: string;
+    dateModified?: string;
+    image?: string;
+  };
 }
 
 const {
@@ -27,6 +34,7 @@ const {
   breadcrumbs,
   schemaService,
   faqSchema,
+  articleSchema,
 } = Astro.props;
 
 const pageTitle = title === 'Home'
@@ -36,7 +44,6 @@ const pageTitle = title === 'Home'
 const canonicalUrl = new URL(Astro.url.pathname, siteConfig.url).href;
 const ogImageUrl = new URL(ogImage, siteConfig.url).href;
 
-// Schema Organization + LocalBusiness
 const schemaOrg = {
   "@context": "https://schema.org",
   "@graph": [
@@ -116,7 +123,7 @@ const schemaOrg = {
         })),
       ],
     }] : []),
-    // Service Schema (opzionale per pagine servizi)
+    // Service Schema
     ...(schemaService ? [{
       "@type": "Service",
       "@id": `${canonicalUrl}#service`,
@@ -128,7 +135,7 @@ const schemaOrg = {
       },
       areaServed: { "@type": "Country", name: "Italy" },
     }] : []),
-    // FAQ Schema (opzionale)
+    // FAQ Schema
     ...(faqSchema ? [{
       "@type": "FAQPage",
       "@id": `${canonicalUrl}#faq`,
@@ -140,6 +147,26 @@ const schemaOrg = {
           text: item.answer,
         },
       })),
+    }] : []),
+    // Article Schema
+    ...(articleSchema ? [{
+      "@type": "Article",
+      "@id": `${canonicalUrl}#article`,
+      headline: articleSchema.headline,
+      description: articleSchema.description,
+      datePublished: articleSchema.datePublished,
+      dateModified: articleSchema.dateModified ?? articleSchema.datePublished,
+      image: articleSchema.image ? new URL(articleSchema.image, siteConfig.url).href : ogImageUrl,
+      author: {
+        "@id": `${siteConfig.url}/#person`,
+      },
+      publisher: {
+        "@id": `${siteConfig.url}/#organization`,
+      },
+      mainEntityOfPage: {
+        "@type": "WebPage",
+        "@id": canonicalUrl,
+      },
     }] : []),
   ],
 };
