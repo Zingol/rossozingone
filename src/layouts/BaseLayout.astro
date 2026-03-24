@@ -37,9 +37,7 @@ const {
   articleSchema,
 } = Astro.props;
 
-const pageTitle = title === 'Home'
-  ? `${siteConfig.name} — ${siteConfig.tagline}`
-  : `${title} | ${siteConfig.name}`;
+const pageTitle = `${title} | ${siteConfig.name}`;
 
 const canonicalUrl = new URL(Astro.url.pathname, siteConfig.url).href;
 const ogImageUrl = new URL(ogImage, siteConfig.url).href;
