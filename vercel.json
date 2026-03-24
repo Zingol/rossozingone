@@ -1,0 +1,14 @@
+{
+  "redirects": [
+    {
+      "source": "/servizi/ai-integration/",
+      "destination": "/servizi/intelligenza-artificiale-per-pmi/",
+      "permanent": true
+    },
+    {
+      "source": "/servizi/ai-integration",
+      "destination": "/servizi/intelligenza-artificiale-per-pmi/",
+      "permanent": true
+    }
+  ]
+}

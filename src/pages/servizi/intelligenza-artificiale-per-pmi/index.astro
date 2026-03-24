@@ -1,0 +1,682 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import CtaFinal from '../../../components/CtaFinal.astro';
+
+const cases = [
+  {
+    name: 'AgeSignal',
+    logo: '/loghi/logo-agesignal.svg',
+    logoAlt: 'AgeSignal logo',
+    badge: 'HealthTech — Ecosistema AI per la salute',
+    role: 'AI Strategy & Development',
+    duration: '2024–2025',
+    description: 'Ecosistema tecnologico basato sull\'intelligenza artificiale dedicato al supporto della popolazione anziana e dei malati cronici. Strumenti pratici per monitorare proattivamente la propria salute e migliorare la comunicazione tra paziente e medico, con architettura privacy-first.',
+    services: ['AI Agents per la salute', 'Monitoraggio proattivo', 'Integrazione dati sanitari', 'Privacy-first architecture'],
+    testimonial: null,
+  },
+  {
+    name: 'Trasportiamo',
+    logo: '/loghi/LOGO_trasportiamo.png',
+    logoAlt: 'Trasportiamo logo',
+    badge: 'Logistica — Gestionale AI-powered',
+    role: 'AI Strategy & Software Development',
+    duration: '2024–2025',
+    description: 'Sistema web che automatizza la gestione ordini di trasporto per un operatore logistico. Digitalizzazione dell\'intero processo operativo — dalla creazione dell\'ordine fino alla rendicontazione mensile — semplificando gestione amministrativa e ciclo di fatturazione.',
+    services: ['Automazione workflow', 'Gestionale ordini', 'Rendicontazione automatica', 'Integrazione fatturazione'],
+    testimonial: null,
+  },
+];
+---
+
+<BaseLayout
+  title="Intelligenza Artificiale per PMI a Pesaro e Marche | RossoZingone"
+  description="Integrazione dell'intelligenza artificiale per aziende e PMI a Pesaro, Rimini e nelle Marche. Automazioni, AI Agents, RAG systems, privacy-first con elaborazione locale. 27 anni di esperienza nelle PMI italiane."
+  breadcrumbs={[
+    { name: 'Servizi', href: '/servizi/' },
+    { name: 'Intelligenza Artificiale per PMI', href: '/servizi/intelligenza-artificiale-per-pmi/' },
+  ]}
+  schemaService={{
+    name: 'Intelligenza Artificiale per PMI',
+    description: "Integrazione dell'intelligenza artificiale nei processi aziendali delle PMI a Pesaro e nelle Marche. Analisi dei processi, automazione, AI Agents, RAG systems. Approccio privacy-first con elaborazione locale per dati sensibili.",
+    url: 'https://rossozingone.it/servizi/intelligenza-artificiale-per-pmi/',
+  }}
+  faqSchema={[
+    {
+      question: "Cosa significa integrare l'intelligenza artificiale in una PMI?",
+      answer: "Significa analizzare i processi aziendali per identificare dove l'AI crea valore concreto — automazione di attività ripetitive, chatbot per clienti e fornitori, gestione documentale intelligente, analisi dati. Si parte sempre dal business, non dalla tecnologia.",
+    },
+    {
+      question: "I dati della mia azienda sono al sicuro con l'intelligenza artificiale?",
+      answer: "Dipende da come viene implementata. Per dati sensibili utilizziamo Ollama, un sistema di AI che gira localmente sui server aziendali senza inviare nulla a servizi esterni. Per dati non sensibili si utilizzano Claude, OpenAI o Gemini con contratti di data processing adeguati.",
+    },
+    {
+      question: "Quanto tempo serve per portare l'intelligenza artificiale in azienda?",
+      answer: "Dipende dalla complessità. Un'automazione semplice come la classificazione email o le risposte automatiche WhatsApp può essere operativa in 2-4 settimane. Un sistema RAG su knowledge base aziendale richiede 1-3 mesi. Si parte sempre da un'analisi dei processi per capire dove intervenire prima.",
+    },
+    {
+      question: "Serve personale tecnico interno per gestire l'AI?",
+      answer: "No. L'obiettivo è costruire sistemi che il team aziendale possa usare senza competenze tecniche. Si formano le persone nell'uso degli strumenti e si costruiscono interfacce semplici. La complessità tecnica resta sotto al cofano.",
+    },
+    {
+      question: "Dove trovo un consulente di intelligenza artificiale per PMI a Pesaro e Rimini?",
+      answer: "RossoZingone opera da Pesaro e lavora con PMI di tutta l'area tra Pesaro, Rimini, Fano, Urbino e la Romagna. L'approccio combina 27 anni di esperienza nel business delle PMI italiane con competenze specifiche in AI integration, automazione e privacy-first AI.",
+    },
+    {
+      question: "L'intelligenza artificiale è adatta anche per le piccole aziende?",
+      answer: "Sì. Anzi, spesso le PMI ottengono risultati proporzionalmente maggiori rispetto alle grandi aziende perché hanno meno burocrazia e possono implementare più velocemente. Il punto è partire dai processi che consumano più tempo e risorse, non dalla tecnologia più avanzata.",
+    },
+  ]}
+>
+
+  <!-- HERO + SERVIZIO -->
+  <section class="section pillar">
+    <div class="container">
+      <div class="pillar-inner fade-in">
+        <a href="/servizi/" class="back-link">← Tutti i servizi</a>
+        <h1 class="pillar-title">Intelligenza Artificiale per PMI</h1>
+        <p class="pillar-subtitle">AI Integration a Pesaro, Rimini e nelle Marche</p>
+
+        <div class="pillar-content">
+          <div class="pillar-description">
+            <p>L'intelligenza artificiale non serve a niente se non sai dove applicarla. Io lo so perché conosco il tuo business — non arrivo con uno stack tecnologico da vendere, arrivo con 27 anni di esperienza nelle PMI italiane e individuo dove l'AI crea valore reale.</p>
+            <p>Non è hype. Non è trasformazione digitale generica. È analisi dei tuoi processi aziendali, identificazione dei colli di bottiglia, automazione di quello che ha senso automatizzare. Con un approccio privacy-first quando i tuoi dati sono sensibili.</p>
+          </div>
+
+          <div class="pillar-details">
+            <div class="detail-block">
+              <h3>Cosa include</h3>
+              <ul>
+                <li>Analisi processi aziendali — dove l'AI crea valore reale</li>
+                <li>AI Agents — chatbot, assistenti, automazioni email e WhatsApp</li>
+                <li>RAG systems e knowledge base aziendali</li>
+                <li>Automazione workflow e processi ripetitivi</li>
+                <li>Privacy-first AI con elaborazione locale (Ollama) per dati sensibili</li>
+                <li>Formazione del team sull'uso dell'intelligenza artificiale</li>
+              </ul>
+            </div>
+
+            <div class="detail-block">
+              <h3>Per chi è</h3>
+              <ul>
+                <li>PMI con processi ripetitivi che consumano tempo e risorse</li>
+                <li>Aziende con dati sensibili che non possono andare su cloud esterni</li>
+                <li>Imprenditori che vogliono capire dove l'AI si applica davvero al loro settore</li>
+                <li>Team che hanno bisogno di formarsi sull'intelligenza artificiale senza partire da zero</li>
+              </ul>
+            </div>
+
+            <div class="detail-block">
+              <h3>Stack tecnologico</h3>
+              <div class="stack-grid">
+                <span class="stack-tag">Claude</span>
+                <span class="stack-tag">OpenAI</span>
+                <span class="stack-tag">Gemini</span>
+                <span class="stack-tag">Ollama (locale)</span>
+              </div>
+            </div>
+
+            <div class="detail-block">
+              <h3>Privacy-first</h3>
+              <p class="detail-text">Per aziende con dati sensibili — clinici, legali, finanziari — l'elaborazione avviene in locale con Ollama. Nessun dato esce dall'infrastruttura aziendale. La potenza dei modelli di intelligenza artificiale senza esporre le informazioni critiche a servizi cloud esterni.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI PER LE PMI DEL TERRITORIO -->
+  <section class="section territorio">
+    <div class="container">
+      <div class="territorio-inner fade-in">
+        <h2 class="territorio-title">Intelligenza artificiale per le aziende di Pesaro, Rimini e del territorio</h2>
+
+        <div class="territorio-content">
+          <p>Il tessuto produttivo tra Pesaro e Rimini è fatto di PMI manifatturiere, aziende di servizi, cooperative, imprese del turismo e dell'ospitalità. Realtà con competenze solide e processi consolidati — ma spesso con operazioni manuali che consumano tempo e risorse senza necessità.</p>
+
+          <p>L'intelligenza artificiale per le aziende del territorio non è quella dei convegni o delle demo. È quella che automatizza la gestione ordini di un'azienda di trasporti, che classifica le email di un ufficio commerciale, che costruisce un assistente virtuale per rispondere ai clienti su WhatsApp. È concreta, misurabile, e si ripaga in settimane.</p>
+
+          <p>Opero da Pesaro e lavoro con PMI di tutta l'area — da Fano e Urbino fino a Rimini e alla Romagna. La vicinanza territoriale conta: capisco il contesto, le filiere, le dinamiche locali. E quando serve un intervento in sede, sono qui — non collegato da Milano o da remoto dall'estero.</p>
+
+          <h3>Settori dove l'intelligenza artificiale crea valore nelle PMI marchigiane</h3>
+
+          <div class="settori-grid">
+            <div class="settore-card">
+              <h4>Manufacturing</h4>
+              <p>Controllo qualità, manutenzione predittiva, ottimizzazione della supply chain. L'AI analizza i dati di produzione e identifica anomalie prima che diventino problemi.</p>
+            </div>
+            <div class="settore-card">
+              <h4>Servizi B2B</h4>
+              <p>Automazione della gestione documentale, classificazione email, generazione di report. Processi che oggi richiedono ore diventano automatici.</p>
+            </div>
+            <div class="settore-card">
+              <h4>Logistica e Trasporti</h4>
+              <p>Gestione ordini automatizzata, ottimizzazione dei percorsi, rendicontazione intelligente. Il software lavora mentre il team si concentra sui clienti.</p>
+            </div>
+            <div class="settore-card">
+              <h4>Hospitality e Turismo</h4>
+              <p>Chatbot per le prenotazioni, risposte automatiche multilingua, gestione delle recensioni. La costa adriatica ha bisogno di strumenti che scalano durante la stagione.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COME FUNZIONA IL PERCORSO -->
+  <section class="section percorso">
+    <div class="container">
+      <div class="percorso-inner fade-in">
+        <h2 class="percorso-title">Come funziona il percorso di integrazione AI</h2>
+
+        <div class="percorso-steps">
+          <div class="percorso-step">
+            <span class="step-number">01</span>
+            <h3>Analisi dei processi</h3>
+            <p>Mappo i processi aziendali e identifico dove l'intelligenza artificiale crea valore reale. Non parto dalla tecnologia — parto dal tuo business, dai colli di bottiglia, dalle operazioni che consumano risorse senza necessità.</p>
+          </div>
+          <div class="percorso-step">
+            <span class="step-number">02</span>
+            <h3>Progettazione della soluzione</h3>
+            <p>Definisco la soluzione tecnica, scelgo gli strumenti adatti al contesto e pianifico l'implementazione. Se i dati sono sensibili, si lavora in locale. Se no, si usa il cloud con i contratti giusti.</p>
+          </div>
+          <div class="percorso-step">
+            <span class="step-number">03</span>
+            <h3>Implementazione e test</h3>
+            <p>Costruisco la soluzione, la testo nel contesto reale dell'azienda e la affino fino a quando funziona come deve. Niente rilasci approssimativi — il sistema deve essere affidabile dal primo giorno.</p>
+          </div>
+          <div class="percorso-step">
+            <span class="step-number">04</span>
+            <h3>Formazione e autonomia</h3>
+            <p>Formo il team sull'uso degli strumenti. L'obiettivo è che l'azienda diventi autonoma — non dipendente da me o da un consulente esterno per le operazioni quotidiane.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NETWORK TECNICO -->
+  <section class="section network">
+    <div class="container">
+      <div class="network-inner fade-in">
+        <h3>Network tecnico</h3>
+        <p class="detail-text">Lavoro con <strong>Roberto Ricci</strong>, specialista AI e sviluppo web, per le implementazioni che richiedono ingegneria software avanzata. Questo permette di coprire l'intera filiera: dalla strategia all'implementazione tecnica, senza intermediari.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CASI PROGETTO -->
+  <section class="section cases-section">
+    <div class="container">
+      <div class="cases-header fade-in">
+        <h2 class="cases-title">Progetti.</h2>
+        <p class="cases-sub">Alcuni dei progetti sviluppati nell'ambito dell'intelligenza artificiale per PMI.</p>
+      </div>
+
+      <div class="cases-list">
+        {cases.map((c) => (
+          <div class="case-card fade-in">
+            {c.logo && (
+              <div class="case-logo">
+                <img src={c.logo} alt={c.logoAlt} loading="lazy" />
+              </div>
+            )}
+
+            <div class="case-header">
+              <h3 class="case-name">{c.name}</h3>
+              <span class="case-badge">{c.badge}</span>
+            </div>
+
+            <div class="case-meta">
+              <span class="case-role">{c.role}</span>
+              <span class="case-dot">·</span>
+              <span class="case-duration">{c.duration}</span>
+            </div>
+
+            <p class="case-description">{c.description}</p>
+
+            <div class="case-services">
+              {c.services.map((s) => (
+                <span class="service-tag">{s}</span>
+              ))}
+            </div>
+
+            {c.testimonial && (
+              <blockquote class="case-testimonial">
+                <p>"{c.testimonial.quote}"</p>
+                <footer>
+                  <strong>{c.testimonial.name}</strong> — {c.testimonial.role}
+                </footer>
+              </blockquote>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CtaFinal />
+
+</BaseLayout>
+
+<style>
+  /* ─── PILLAR SECTION ─── */
+  .pillar {
+    background: var(--color-crema);
+  }
+
+  .pillar-inner {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .back-link {
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-testo-secondario);
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    transition: color 0.2s ease;
+  }
+
+  .back-link:hover {
+    color: var(--color-rosso);
+  }
+
+  .pillar-title {
+    font-size: clamp(2rem, 4.5vw, 3rem);
+    margin-bottom: 0.25rem;
+  }
+
+  .pillar-subtitle {
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--color-testo-secondario);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 2.5rem;
+  }
+
+  .pillar-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .pillar-description p {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: var(--color-testo);
+    margin-bottom: 1rem;
+  }
+
+  .pillar-description p:last-child {
+    margin-bottom: 0;
+  }
+
+  .pillar-details {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  @media (min-width: 768px) {
+    .pillar-details {
+      grid-template-columns: 1fr 1fr;
+      align-items: start;
+    }
+  }
+
+  .detail-block h3 {
+    font-family: var(--font-body);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-testo-secondario);
+    margin-bottom: 1rem;
+  }
+
+  .detail-block ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .detail-block li {
+    font-size: 0.9375rem;
+    color: var(--color-testo);
+    padding-left: 1.25rem;
+    position: relative;
+    line-height: 1.5;
+  }
+
+  .detail-block li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.55em;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--color-rosso);
+  }
+
+  .detail-text {
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    color: var(--color-testo);
+  }
+
+  .stack-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .stack-tag {
+    font-family: var(--font-body);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--color-navy);
+    padding: 0.35rem 0.85rem;
+    background: var(--color-bianco);
+    border-radius: 4px;
+    border: 1px solid var(--color-bordo);
+    letter-spacing: 0.01em;
+  }
+
+  /* ─── TERRITORIO ─── */
+  .territorio {
+    background: var(--color-bianco);
+  }
+
+  .territorio-inner {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .territorio-title {
+    font-size: clamp(1.5rem, 3.5vw, 2rem);
+    margin-bottom: 2rem;
+  }
+
+  .territorio-content p {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: var(--color-testo);
+    margin-bottom: 1.25rem;
+  }
+
+  .territorio-content h3 {
+    font-family: var(--font-body);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-testo-secondario);
+    margin-bottom: 1.5rem;
+    margin-top: 2.5rem;
+  }
+
+  .settori-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .settori-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .settore-card {
+    padding: 1.75rem;
+    background: var(--color-crema);
+    border-radius: 6px;
+    border: 1px solid var(--color-bordo);
+  }
+
+  .settore-card h4 {
+    font-family: var(--font-display);
+    font-size: 1.125rem;
+    color: var(--color-navy);
+    margin-bottom: 0.5rem;
+  }
+
+  .settore-card p {
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    color: var(--color-testo-secondario);
+    margin: 0;
+  }
+
+  /* ─── PERCORSO ─── */
+  .percorso {
+    background: var(--color-crema);
+  }
+
+  .percorso-inner {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .percorso-title {
+    font-size: clamp(1.5rem, 3.5vw, 2rem);
+    margin-bottom: 2.5rem;
+  }
+
+  .percorso-steps {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  @media (min-width: 768px) {
+    .percorso-steps {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .percorso-step {
+    padding: 2rem;
+    background: var(--color-bianco);
+    border-radius: 6px;
+    border: 1px solid var(--color-bordo);
+  }
+
+  .step-number {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    color: var(--color-rosso);
+    display: block;
+    margin-bottom: 0.75rem;
+  }
+
+  .percorso-step h3 {
+    font-family: var(--font-display);
+    font-size: 1.125rem;
+    color: var(--color-navy);
+    margin-bottom: 0.75rem;
+  }
+
+  .percorso-step p {
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    color: var(--color-testo-secondario);
+    margin: 0;
+  }
+
+  /* ─── NETWORK ─── */
+  .network {
+    background: var(--color-bianco);
+  }
+
+  .network-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    padding-top: 0;
+  }
+
+  .network-inner h3 {
+    font-family: var(--font-body);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-testo-secondario);
+    margin-bottom: 0.75rem;
+  }
+
+  .network-inner strong {
+    color: var(--color-navy);
+  }
+
+  /* ─── CASI PROGETTO ─── */
+  .cases-section {
+    background: var(--color-crema);
+  }
+
+  .cases-header {
+    max-width: 960px;
+    margin: 0 auto 3rem auto;
+  }
+
+  .cases-title {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    margin-bottom: 0.5rem;
+  }
+
+  .cases-sub {
+    font-size: 0.9375rem;
+    color: var(--color-testo-secondario);
+    max-width: 600px;
+  }
+
+  .cases-list {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .case-card {
+    padding: 2.5rem 0;
+    border-bottom: 1px solid var(--color-bordo);
+  }
+
+  .case-card:last-child {
+    border-bottom: none;
+  }
+
+  .case-logo {
+    margin-bottom: 1.5rem;
+  }
+
+  .case-logo img {
+    height: 36px;
+    width: auto;
+    display: block;
+    object-fit: contain;
+  }
+
+  .case-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .case-name {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    color: var(--color-navy);
+    margin: 0;
+  }
+
+  .case-badge {
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: var(--color-rosso);
+  }
+
+  .case-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .case-role,
+  .case-duration {
+    font-size: 0.875rem;
+    color: var(--color-testo-secondario);
+  }
+
+  .case-role {
+    font-weight: 500;
+  }
+
+  .case-dot {
+    color: var(--color-testo-secondario);
+  }
+
+  .case-description {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--color-testo);
+    margin-bottom: 1.25rem;
+    max-width: 760px;
+  }
+
+  .case-services {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .service-tag {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--color-navy);
+    padding: 0.3rem 0.75rem;
+    background: var(--color-bianco);
+    border-radius: 100px;
+    border: 1px solid var(--color-bordo);
+  }
+
+  .case-testimonial {
+    background: var(--color-bianco);
+    border-left: 3px solid var(--color-rosso);
+    padding: 1.5rem 2rem;
+    margin: 1.25rem 0 0 0;
+    border-radius: 0 6px 6px 0;
+    max-width: 760px;
+  }
+
+  .case-testimonial p {
+    font-size: 0.9375rem;
+    font-style: italic;
+    line-height: 1.7;
+    color: var(--color-testo);
+    margin: 0 0 0.75rem 0;
+  }
+
+  .case-testimonial footer {
+    font-size: 0.8125rem;
+    color: var(--color-testo-secondario);
+  }
+
+  .case-testimonial footer strong {
+    color: var(--color-navy);
+    font-weight: 600;
+  }
+</style>
