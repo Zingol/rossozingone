@@ -111,6 +111,14 @@ const cases = [
       question: "Quando serve un business plan professionale?",
       answer: "Quando si cerca finanziamento bancario o da investitori, quando si vuole valutare la fattibilità di un nuovo progetto, o quando si sta pianificando una transizione aziendale. Un business plan serio non è un documento da scaffale — è uno strumento operativo che guida le decisioni nei primi 12-36 mesi.",
     },
+    {
+      question: "Cos'è la due diligence marketing?",
+      answer: "La due diligence marketing è il processo di analisi approfondita della strategia commerciale di un'azienda target in un'operazione M&A. Valuta posizionamento, canali di acquisizione clienti, KPI, team, stack tecnologico e sostenibilità del fatturato. Per le PMI italiane è particolarmente critica perché il marketing è spesso l'area meno documentata.",
+    },
+    {
+      question: "Quando serve il marketing nelle operazioni M&A?",
+      answer: "In tre momenti: prima del deal per preparare l'azienda alla vendita o valutare il target (6-12 mesi di anticipo ideali), durante la transazione per gestire la comunicazione verso stakeholder, e dopo il closing per integrare i brand e mantenere la continuità commerciale nei primi 100 giorni.",
+    },
   ]}
 >
 
@@ -183,7 +191,36 @@ const cases = [
       </div>
     </div>
   </section>
+<!-- DUE DILIGENCE MARKETING -->
+<section class="section advisory-deep">
+  <div class="container">
+    <div class="advisory-deep-inner fade-in">
+      <h2 class="advisory-deep-title">Due Diligence Marketing</h2>
+      <div class="advisory-deep-content">
+        <p>Nelle operazioni di acquisizione, fusione o ingresso di nuovi soci, la due diligence finanziaria e legale non bastano. La due diligence marketing analizza la sostenibilità della strategia commerciale dell'azienda target — quello che i bilanci non dicono, il marketing lo rivela.</p>
+        <p>Le aree di indagine includono: posizionamento e brand, canali di acquisizione clienti (organici e a pagamento), KPI critici come CAC, LTV e tasso di conversione, concentrazione del fatturato sui top clienti, competenze e struttura del team marketing, stack tecnologico (CRM, automation, analytics), presenza digitale e reputazione online.</p>
+        <p>Per le PMI italiane, dove il marketing è spesso l'area meno documentata dell'organizzazione, questa analisi è particolarmente critica. I rischi commerciali sono nascosti non per malafede, ma per mancanza di struttura. Un'azienda manifatturiera con un prodotto eccellente può avere un marketing completamente assente — il che è sia un rischio che un'opportunità per l'acquirente.</p>
+        <p>Il risultato è un report strutturato con risk assessment, valutazione dell'asset marketing e raccomandazioni operative — sia per la negoziazione del deal che per i primi 100 giorni post-acquisizione. Un marketing ben strutturato e documentato aumenta la valutazione del deal. Un marketing opaco o assente la riduce.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
+<!-- M&A MARKETING -->
+<section class="section advisory-deep advisory-deep-alt">
+  <div class="container">
+    <div class="advisory-deep-inner fade-in">
+      <h2 class="advisory-deep-title">Marketing per operazioni M&A</h2>
+      <div class="advisory-deep-content">
+        <p>Il marketing strategico supporta l'intero ciclo di un'operazione M&A — non solo la fase di analisi, ma anche la comunicazione durante la transazione e l'integrazione post-acquisizione.</p>
+        <p><strong>Pre-deal:</strong> per il venditore, strutturare il marketing come asset misurabile 6-12 mesi prima della cessione significa negoziare da una posizione più forte. Documentare i KPI, rendere visibile la strategia nella data room, presentare il marketing come generatore di valore — non come centro di costo. Per il compratore, analizzare la strategia commerciale del target identifica rischi nascosti e opportunità non sfruttate.</p>
+        <p><strong>Durante il deal:</strong> gestire la comunicazione verso tutti gli stakeholder — dipendenti, clienti chiave, fornitori, mercato. Un messaggio sbagliato al momento sbagliato può far saltare il deal o causare una fuga di clienti e talenti. Il 47% dei dipendenti lascia entro un anno dalla fusione: la comunicazione M&A è una leva di retention fondamentale.</p>
+        <p><strong>Post-deal:</strong> integrare due brand, due strategie commerciali, due culture di comunicazione. I primi 100 giorni post-acquisizione sono critici — il piano di integrazione marketing deve essere pronto dal day-one per accelerare il time-to-value dell'investimento. Cross-selling tra le basi clienti, armonizzazione dei canali, definizione della nuova identità verso il mercato.</p>
+        <p>Per le PMI italiane coinvolte in passaggi generazionali — una delle ragioni principali di M&A nel tessuto produttivo italiano — il marketing M&A è il ponte tra continuità e innovazione: comunicare stabilità ai clienti storici e al contempo portare visione moderna.</p>
+      </div>
+    </div>
+  </div>
+</section>
   <!-- ESPERIENZE -->
   <section class="section cases-section">
     <div class="container">
@@ -487,6 +524,42 @@ const cases = [
   }
 
   .case-testimonial footer strong {
+    color: var(--color-navy);
+    font-weight: 600;
+  }
+  /* ─── ADVISORY DEEP SECTIONS ─── */
+  .advisory-deep {
+    background: var(--color-bianco);
+  }
+
+  .advisory-deep-alt {
+    background: var(--color-crema);
+  }
+
+  .advisory-deep-inner {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .advisory-deep-title {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    margin-bottom: 2rem;
+    color: var(--color-navy);
+  }
+
+  .advisory-deep-content p {
+    font-size: 1.0625rem;
+    line-height: 1.75;
+    color: var(--color-testo);
+    margin-bottom: 1.25rem;
+    max-width: 760px;
+  }
+
+  .advisory-deep-content p:last-child {
+    margin-bottom: 0;
+  }
+
+  .advisory-deep-content strong {
     color: var(--color-navy);
     font-weight: 600;
   }
