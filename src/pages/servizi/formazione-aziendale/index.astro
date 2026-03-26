@@ -32,6 +32,10 @@ import CtaFinal from '../../../components/CtaFinal.astro';
       question: "La formazione è certificata?",
       answer: "I percorsi possono essere strutturati per soddisfare i requisiti dei fondi interprofessionali (Fondimpresa, Fondirigenti) e per l'accesso a bandi formativi regionali. La documentazione necessaria viene predisposta in fase di progettazione del corso.",
     },
+    {
+      question: "Offrite anche piattaforme e-learning gestite?",
+      answer: "Sì. Progettiamo e gestiamo piattaforme e-learning basate su Moodle: setup, configurazione, struttura dei corsi, gestione utenti e supporto continuativo. Un esempio concreto è la piattaforma di Labirinto Cooperativa Sociale, gestita dal 2006 con aggiornamenti costanti di corsi e contenuti.",
+    },
   ]}
 >
 
@@ -88,7 +92,7 @@ import CtaFinal from '../../../components/CtaFinal.astro';
               <h3>Esperienze rilevanti</h3>
               <ul>
                 <li>Wienerberger Italia — Data Driven Marketing (80 ore, 2019)</li>
-                <li>Labirinto Cooperativa Sociale — docenze e e-learning (dal 2006)</li>
+                <li>Labirinto Cooperativa Sociale — docenze in aula, consulenza e piattaforma e-learning (dal 2006)</li>
                 <li>Formazione su web e social media marketing per vari settori</li>
                 <li>Giornalista Pubblicista — Ordine Nazionale Giornalisti (dal 2009)</li>
               </ul>
@@ -98,6 +102,33 @@ import CtaFinal from '../../../components/CtaFinal.astro';
           <div class="pillar-network">
             <h3>Approccio</h3>
             <p class="detail-text">La formazione parte sempre dall'analisi del contesto: quali strumenti usa il team, quali processi devono migliorare, quali obiettivi deve raggiungere l'azienda. Il programma si costruisce su questi elementi, non su un syllabus preconfezionato. I partecipanti escono con competenze applicabili il giorno dopo, non con slide da dimenticare.</p>
+          </div>
+
+          <div class="pillar-elearning">
+            <h3>Piattaforma E-Learning — Setup e Gestione Moodle</h3>
+            <p class="detail-text">Per le aziende che hanno bisogno di formazione continuativa, strutturata e tracciabile, progetto e gestisco piattaforme e-learning basate su Moodle. Non si tratta di installare un software e lasciarlo lì: il valore è nella configurazione pensata per il contesto aziendale, nella creazione dei percorsi formativi e nel supporto operativo nel tempo.</p>
+            <p class="detail-text">Dal 2006 gestisco la piattaforma e-learning di Labirinto Cooperativa Sociale — quasi vent'anni di aggiornamenti, nuovi corsi e adattamenti alle esigenze di un'organizzazione complessa.</p>
+            <div class="elearning-services">
+              <h4>Il servizio comprende</h4>
+              <ul>
+                <li>Setup e configurazione piattaforma Moodle</li>
+                <li>Struttura e progettazione dei percorsi formativi</li>
+                <li>Caricamento e organizzazione dei contenuti</li>
+                <li>Gestione utenti, ruoli e permessi</li>
+                <li>Reportistica avanzamento per responsabili formazione</li>
+                <li>Manutenzione, aggiornamenti e supporto continuativo</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="pillar-testimonial">
+            <h3>Recensione</h3>
+            <blockquote class="case-testimonial">
+              <p>"Conosco Francesco da più di vent'anni e posso dire che è una di quelle persone che quando entra in un progetto, lo fa sul serio. Per la Cooperativa Labirinto ha gestito situazioni complesse con una capacità rara di capire il contesto e trovare soluzioni concrete che hanno reso possibile il nostro sviluppo IT. Ha tenuto diversi corsi in aula e ci gestisce la piattaforma e-learning, che per una realtà come la nostra è diventata uno strumento fondamentale. Lo consiglio a chiunque cerchi un professionista che unisce competenza tecnica e capacità di lavorare con le persone, anche in contesti non semplici come il nostro."</p>
+              <footer>
+                <strong>Luca Pazzaglia</strong> — Responsabile settore disabilità e Salute Mentale, Cooperativa Labirinto
+              </footer>
+            </blockquote>
           </div>
         </div>
       </div>
@@ -241,5 +272,105 @@ import CtaFinal from '../../../components/CtaFinal.astro';
     letter-spacing: 0.08em;
     color: var(--color-testo-secondario);
     margin-bottom: 0.75rem;
+  }
+
+  .pillar-elearning {
+    padding-top: 2rem;
+    border-top: 1px solid var(--color-bordo);
+  }
+
+  .pillar-elearning h3 {
+    font-family: var(--font-body);
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--color-testo);
+    margin-bottom: 1rem;
+  }
+
+  .pillar-elearning .detail-text {
+    margin-bottom: 1rem;
+  }
+
+  .pillar-elearning .detail-text:last-of-type {
+    margin-bottom: 1.5rem;
+  }
+
+  .elearning-services h4 {
+    font-family: var(--font-body);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-testo-secondario);
+    margin-bottom: 1rem;
+  }
+
+  .elearning-services ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .elearning-services li {
+    font-size: 0.9375rem;
+    color: var(--color-testo);
+    padding-left: 1.25rem;
+    position: relative;
+    line-height: 1.5;
+  }
+
+  .elearning-services li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.55em;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--color-rosso);
+  }
+
+  .pillar-testimonial {
+    padding-top: 2rem;
+    border-top: 1px solid var(--color-bordo);
+  }
+
+  .pillar-testimonial h3 {
+    font-family: var(--font-body);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-testo-secondario);
+    margin-bottom: 1rem;
+  }
+
+  .case-testimonial {
+    background: var(--color-bianco);
+    border-left: 3px solid var(--color-rosso);
+    padding: 1.5rem 2rem;
+    margin: 0;
+    border-radius: 0 6px 6px 0;
+  }
+
+  .case-testimonial p {
+    font-size: 0.9375rem;
+    font-style: italic;
+    line-height: 1.7;
+    color: var(--color-testo);
+    margin: 0 0 0.75rem 0;
+  }
+
+  .case-testimonial footer {
+    font-size: 0.8125rem;
+    color: var(--color-testo-secondario);
+  }
+
+  .case-testimonial footer strong {
+    color: var(--color-navy);
+    font-weight: 600;
   }
 </style>
