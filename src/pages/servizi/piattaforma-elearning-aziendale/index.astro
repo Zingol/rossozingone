@@ -521,12 +521,12 @@ import CtaFinal from '../../../components/CtaFinal.astro';
   </section>
 
   <!-- CTA FINALE -->
-  <section class="section cta-mid">
+  <section class="section cta-final-section">
     <div class="container">
       <div class="cta-mid-inner fade-in">
         <h2 class="cta-final-title">La tua azienda ha bisogno di una piattaforma e-learning?</h2>
         <p class="cta-mid-text">Parliamo del tuo contesto, dei tuoi numeri e degli obiettivi formativi. Nessun impegno, nessun costo.</p>
-        <a href="/contatti/" class="cta-button">Contattami</a>
+        <a href="/contatti/" class="cta-button-dark">Contattami</a>
       </div>
     </div>
   </section>
@@ -712,6 +712,38 @@ import CtaFinal from '../../../components/CtaFinal.astro';
 
   .cta-button:hover {
     background: var(--color-crema);
+    transform: translateY(-1px);
+  }
+
+  /* ─── CTA FINALE (crema) ─── */
+  .cta-final-section {
+    background: var(--color-crema);
+    padding: 3rem 0;
+  }
+
+  .cta-final-section .cta-final-title {
+    color: var(--color-navy);
+  }
+
+  .cta-final-section .cta-mid-text {
+    color: var(--color-testo);
+  }
+
+  .cta-button-dark {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--color-bianco);
+    background: var(--color-rosso);
+    padding: 0.75rem 2rem;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background 0.2s ease, transform 0.15s ease;
+  }
+
+  .cta-button-dark:hover {
+    background: var(--color-navy);
     transform: translateY(-1px);
   }
 
