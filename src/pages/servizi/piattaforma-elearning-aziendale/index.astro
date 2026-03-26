@@ -1,0 +1,961 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import CtaFinal from '../../../components/CtaFinal.astro';
+---
+
+<BaseLayout
+  title="Piattaforma E-Learning Aziendale — Moodle Gestito"
+  description="Piattaforma e-learning aziendale basata su Moodle: setup, configurazione, gestione corsi, supporto continuativo. Open source, nessun costo di licenza. Dal 2006 per PMI e cooperative."
+  breadcrumbs={[
+    { name: 'Servizi', href: '/servizi/' },
+    { name: 'Formazione Aziendale', href: '/servizi/formazione-aziendale/' },
+    { name: 'Piattaforma E-Learning Aziendale', href: '/servizi/piattaforma-elearning-aziendale/' },
+  ]}
+  schemaService={{
+    name: 'Piattaforma E-Learning Aziendale',
+    description: 'Setup, configurazione e gestione continuativa di piattaforme e-learning aziendali basate su Moodle. Open source, nessun costo di licenza software. Servizio completo: progettazione corsi, gestione utenti, reportistica, supporto.',
+    url: 'https://rossozingone.it/servizi/piattaforma-elearning-aziendale/',
+  }}
+  faqSchema={[
+    {
+      question: "Cos'è una piattaforma e-learning aziendale?",
+      answer: "Una piattaforma e-learning aziendale (LMS - Learning Management System) è un sistema che permette di erogare formazione online ai dipendenti, tracciare i progressi, gestire certificazioni e documentare le attività formative. Può ospitare corsi in autoapprendimento, sessioni live, quiz, materiali scaricabili e percorsi formativi strutturati.",
+    },
+    {
+      question: "Perché scegliere Moodle rispetto a un SaaS commerciale?",
+      answer: "Moodle è open source: nessun costo di licenza software, nessun vincolo con un vendor, proprietà completa dei dati e della piattaforma. Un SaaS come Docebo o iSpring costa da 25.000 a 50.000 euro all'anno per 1.000 utenti — solo per la licenza software, senza nessuno che configuri corsi o gestisca la piattaforma. Con Moodle gestito, il software è gratuito e paghi solo il servizio.",
+    },
+    {
+      question: "Quanto costa una piattaforma e-learning aziendale con Moodle?",
+      answer: "Il setup completo (installazione, configurazione, struttura corsi, personalizzazione grafica) costa tra 2.500 e 5.000 euro. La gestione continuativa (manutenzione, aggiornamenti, supporto, gestione utenti) parte da 400 euro al mese. Per strutture molto piccole i costi possono essere inferiori.",
+    },
+    {
+      question: "Quanto tempo serve per avviare la piattaforma?",
+      answer: "Il setup base di una piattaforma Moodle funzionante richiede 2-4 settimane. Include installazione, configurazione, personalizzazione grafica, struttura dei primi corsi e formazione degli amministratori interni. Piattaforme più complesse con molti corsi e integrazioni possono richiedere 4-8 settimane.",
+    },
+    {
+      question: "La piattaforma è conforme ai requisiti dei fondi interprofessionali?",
+      answer: "Sì. Moodle genera i log di tracciamento, le attestazioni di completamento e la reportistica richiesta da Fondimpresa, Fondirigenti e dai bandi formativi regionali. La struttura dei corsi viene predisposta per soddisfare i requisiti documentali specifici del fondo utilizzato.",
+    },
+    {
+      question: "Posso migrare da un altro LMS a Moodle?",
+      answer: "Sì. Moodle supporta l'importazione di corsi in formato SCORM, xAPI e altri standard. Contenuti, strutture e dati utenti possono essere migrati da piattaforme proprietarie. Il processo di migrazione viene pianificato caso per caso in base alla piattaforma di partenza.",
+    },
+    {
+      question: "Chi gestisce la piattaforma dopo il setup?",
+      answer: "Il servizio di gestione continuativa include manutenzione tecnica, aggiornamenti Moodle, backup, gestione utenti, caricamento contenuti e supporto. In parallelo, vengono formati gli amministratori interni dell'azienda per le operazioni quotidiane, in modo da renderli autonomi sulle attività ricorrenti.",
+    },
+    {
+      question: "Moodle funziona anche da mobile?",
+      answer: "Sì. Moodle ha un'app mobile ufficiale per Android e iOS che permette ai dipendenti di seguire i corsi da smartphone e tablet, anche offline. L'interfaccia web è inoltre responsive e accessibile da qualsiasi browser.",
+    },
+  ]}
+>
+
+  <!-- H1 — HERO -->
+  <section class="section pillar">
+    <div class="container">
+      <div class="pillar-inner fade-in">
+        <a href="/servizi/formazione-aziendale/" class="back-link">← Formazione Aziendale</a>
+        <h1 class="pillar-title">Piattaforma E-Learning Aziendale</h1>
+        <p class="pillar-subtitle">Setup e Gestione Moodle per Aziende</p>
+
+        <div class="pillar-description">
+          <p>La tua azienda ha bisogno di formazione strutturata, tracciabile e accessibile da qualsiasi dispositivo. Ma le piattaforme SaaS costano decine di migliaia di euro all'anno in licenze — e non includono nessuno che configuri i corsi, gestisca gli utenti o produca la reportistica che ti serve.</p>
+          <p>La soluzione è una piattaforma e-learning basata su Moodle: open source, nessun costo di licenza, proprietà completa dei tuoi dati. Io la installo, la configuro sul tuo contesto aziendale, la personalizzo, ci costruisco i percorsi formativi e la gestisco nel tempo. Dal 2006.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- H2 — COS'È UNA PIATTAFORMA E-LEARNING AZIENDALE -->
+  <section class="section content-section content-alt">
+    <div class="container">
+      <div class="content-inner fade-in">
+        <h2>Cos'è una piattaforma e-learning aziendale</h2>
+        <p>Una piattaforma e-learning aziendale è un sistema che centralizza tutta la formazione della tua organizzazione in un unico ambiente digitale. I dipendenti accedono ai corsi da computer, tablet o smartphone. I responsabili della formazione monitorano progressi, completamenti e risultati. L'azienda documenta ogni attività formativa per compliance, fondi interprofessionali e audit.</p>
+        <p>Non è un archivio di slide. È uno strumento operativo che sostituisce le aule quando non servono, le integra quando servono, e tiene traccia di tutto quello che in aula si perde: chi ha completato cosa, quando, con quale risultato.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- H2 — QUANDO SERVE -->
+  <section class="section content-section">
+    <div class="container">
+      <div class="content-inner fade-in">
+        <h2>Quando serve una piattaforma e-learning</h2>
+        <p>Serve quando la formazione non può più essere gestita con fogli Excel e aule improvvisate. Quando hai più di 30-50 dipendenti da formare su temi ricorrenti — sicurezza, compliance, procedure interne, aggiornamenti di prodotto. Quando devi documentare le ore formative per i fondi interprofessionali. Quando hai sedi distribuite e non puoi riunire tutti nella stessa stanza.</p>
+        <p>Serve alle cooperative sociali con centinaia di operatori, alle aziende manifatturiere con turni che impediscono la formazione in aula simultanea, ai gruppi con più sedi che devono garantire lo stesso standard formativo ovunque. Serve a chi ha capito che la formazione non è un evento ma un processo continuo.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- H2 — IL PROCESSO IN 4 STEP -->
+  <section class="section content-section content-alt">
+    <div class="container">
+      <div class="content-inner fade-in">
+        <h2>Come funziona: il processo in 4 step</h2>
+        <div class="process-steps">
+          <div class="step">
+            <span class="step-number">01</span>
+            <h3>Analisi</h3>
+            <p>Studio del contesto aziendale: quanti utenti, quali corsi servono, quali requisiti documentali (fondi, compliance), quali strumenti usate già. Da qui esce il progetto della piattaforma.</p>
+          </div>
+          <div class="step">
+            <span class="step-number">02</span>
+            <h3>Setup</h3>
+            <p>Installazione Moodle, configurazione server, personalizzazione grafica con il brand aziendale, struttura delle categorie e dei corsi, configurazione ruoli e permessi utente.</p>
+          </div>
+          <div class="step">
+            <span class="step-number">03</span>
+            <h3>Contenuti</h3>
+            <p>Caricamento e organizzazione dei materiali formativi: video, documenti, quiz, SCORM. Progettazione dei percorsi formativi con prerequisiti, propedeuticità e certificazioni di completamento.</p>
+          </div>
+          <div class="step">
+            <span class="step-number">04</span>
+            <h3>Gestione</h3>
+            <p>Manutenzione tecnica, aggiornamenti, backup, gestione utenti, reportistica per i responsabili della formazione, supporto continuativo. Formazione degli admin interni per l'autonomia operativa.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA INTERMEDIO -->
+  <section class="section cta-mid">
+    <div class="container">
+      <div class="cta-mid-inner fade-in">
+        <p class="cta-mid-text">Vuoi capire se una piattaforma e-learning è la soluzione giusta per la tua azienda?</p>
+        <a href="/contatti/" class="cta-button">Parliamone</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- H2 — QUANTO COSTA: MOODLE VS SAAS -->
+  <section class="section content-section">
+    <div class="container">
+      <div class="content-inner fade-in">
+        <h2>Quanto costa una piattaforma e-learning: Moodle vs SaaS</h2>
+        <p>La differenza fondamentale è il modello economico. Le piattaforme SaaS (Docebo, iSpring, TalentLMS) ti vendono una licenza software a canone annuo calcolato per utente. Moodle è open source: il software è gratuito, paghi solo il servizio di chi lo installa, configura e gestisce.</p>
+        <p>Un esempio concreto: un'organizzazione con 1.000 dipendenti su iSpring Learn spenderebbe circa 2,55 dollari per utente al mese — oltre 28.000 euro all'anno solo di licenza software. Su Docebo i costi salgono ancora. E questo senza che nessuno configuri un singolo corso, crei un percorso formativo o gestisca la piattaforma. Con Moodle gestito, il software è gratuito e il budget va interamente nel servizio che produce valore reale.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- H2 — COSTI DEL SERVIZIO -->
+  <section class="section content-section content-alt">
+    <div class="container">
+      <div class="content-inner fade-in">
+        <h2>Costi del servizio: setup e gestione Moodle</h2>
+        <div class="pricing-grid">
+          <div class="pricing-card">
+            <h3>Setup completo</h3>
+            <div class="price-range">2.500 – 5.000 €</div>
+            <p>Installazione, configurazione, personalizzazione grafica, struttura corsi, configurazione ruoli e permessi, formazione amministratori interni. Una tantum.</p>
+          </div>
+          <div class="pricing-card">
+            <h3>Gestione continuativa</h3>
+            <div class="price-range">400 – 800 €/mese</div>
+            <p>Manutenzione tecnica, aggiornamenti Moodle, backup, gestione utenti, caricamento contenuti, reportistica, supporto. Per strutture molto piccole i costi possono essere inferiori.</p>
+          </div>
+        </div>
+        <p class="pricing-note">Nessun costo di licenza software. Nessun costo per utente. Nessun vincolo contrattuale pluriennale. La piattaforma e i dati restano di proprietà dell'azienda.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- H2 — VS TABLE -->
+  <section class="section content-section">
+    <div class="container">
+      <div class="content-inner fade-in">
+        <h2>Confronto: 5 modi per avere una piattaforma e-learning</h2>
+        <div class="table-wrapper">
+          <table class="vs-table">
+            <thead>
+              <tr>
+                <th>Voce</th>
+                <th class="highlight">Piattaforma gestita (Moodle)</th>
+                <th>Freelance tecnico</th>
+                <th>Agenzia e-learning</th>
+                <th>In-house</th>
+                <th>SaaS (Docebo, iSpring)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Licenza software</td>
+                <td class="highlight">Gratuita (open source)</td>
+                <td>Gratuita</td>
+                <td>Gratuita o proprietaria</td>
+                <td>Gratuita</td>
+                <td>25.000–50.000 €/anno (1.000 utenti)</td>
+              </tr>
+              <tr>
+                <td>Setup</td>
+                <td class="highlight">2.500–5.000 €</td>
+                <td>1.000–3.000 €</td>
+                <td>5.000–15.000 €</td>
+                <td>Costo IT interno</td>
+                <td>Incluso</td>
+              </tr>
+              <tr>
+                <td>Canone mensile</td>
+                <td class="highlight">400–800 €</td>
+                <td>A chiamata</td>
+                <td>500–2.000 €</td>
+                <td>2.500–4.000 € (stipendio IT)</td>
+                <td>Incluso nella licenza</td>
+              </tr>
+              <tr>
+                <td>Progettazione percorsi formativi</td>
+                <td class="highlight">Inclusa</td>
+                <td>Non inclusa</td>
+                <td>Inclusa</td>
+                <td>Da costruire</td>
+                <td>Non inclusa</td>
+              </tr>
+              <tr>
+                <td>Creazione e caricamento contenuti</td>
+                <td class="highlight">Incluso</td>
+                <td>A parte</td>
+                <td>Incluso</td>
+                <td>Interno</td>
+                <td>Non incluso</td>
+              </tr>
+              <tr>
+                <td>Gestione utenti e permessi</td>
+                <td class="highlight">Inclusa</td>
+                <td>A parte</td>
+                <td>Inclusa</td>
+                <td>Interna</td>
+                <td>Self-service</td>
+              </tr>
+              <tr>
+                <td>Reportistica per responsabili</td>
+                <td class="highlight">Inclusa</td>
+                <td>Basilare</td>
+                <td>Inclusa</td>
+                <td>Da costruire</td>
+                <td>Automatizzata</td>
+              </tr>
+              <tr>
+                <td>Formazione admin interni</td>
+                <td class="highlight">Inclusa</td>
+                <td>Non inclusa</td>
+                <td>A pagamento</td>
+                <td>—</td>
+                <td>Tutorial online</td>
+              </tr>
+              <tr>
+                <td>Supporto continuativo</td>
+                <td class="highlight">Incluso</td>
+                <td>A chiamata</td>
+                <td>A canone</td>
+                <td>Costo IT interno</td>
+                <td>Ticket / email</td>
+              </tr>
+              <tr>
+                <td>Personalizzazione grafica</td>
+                <td class="highlight">Inclusa</td>
+                <td>A parte</td>
+                <td>Inclusa</td>
+                <td>Costo IT</td>
+                <td>Limitata</td>
+              </tr>
+              <tr>
+                <td>Proprietà dati e piattaforma</td>
+                <td class="highlight">100% tua</td>
+                <td>100% tua</td>
+                <td>Dipende</td>
+                <td>100% tua</td>
+                <td>Del vendor</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- H2 — FAQ ACCORDION -->
+  <section class="section content-section content-alt">
+    <div class="container">
+      <div class="content-inner fade-in">
+        <h2>Domande frequenti</h2>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">Cos'è una piattaforma e-learning aziendale?</button>
+            <div class="faq-a">
+              <p>Una piattaforma e-learning aziendale (LMS) è un sistema che permette di erogare formazione online ai dipendenti, tracciare i progressi, gestire certificazioni e documentare le attività formative. Può ospitare corsi in autoapprendimento, sessioni live, quiz, materiali scaricabili e percorsi formativi strutturati.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">Perché scegliere Moodle rispetto a un SaaS commerciale?</button>
+            <div class="faq-a">
+              <p>Moodle è open source: nessun costo di licenza software, nessun vincolo con un vendor, proprietà completa dei dati e della piattaforma. Un SaaS come Docebo o iSpring costa da 25.000 a 50.000 euro all'anno per 1.000 utenti — solo per la licenza software, senza nessuno che configuri corsi o gestisca la piattaforma. Con Moodle gestito, il software è gratuito e paghi solo il servizio.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">Quanto costa una piattaforma e-learning con Moodle?</button>
+            <div class="faq-a">
+              <p>Il setup completo costa tra 2.500 e 5.000 euro. La gestione continuativa parte da 400 euro al mese. Per strutture molto piccole i costi possono essere inferiori. Nessun costo di licenza software, nessun costo per utente.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">Quanto tempo serve per avviare la piattaforma?</button>
+            <div class="faq-a">
+              <p>Il setup base richiede 2-4 settimane. Include installazione, configurazione, personalizzazione grafica, struttura dei primi corsi e formazione degli amministratori interni. Piattaforme più complesse possono richiedere 4-8 settimane.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">La piattaforma è conforme ai requisiti dei fondi interprofessionali?</button>
+            <div class="faq-a">
+              <p>Sì. Moodle genera i log di tracciamento, le attestazioni di completamento e la reportistica richiesta da Fondimpresa, Fondirigenti e dai bandi formativi regionali. La struttura dei corsi viene predisposta per soddisfare i requisiti documentali specifici del fondo utilizzato.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">Posso migrare da un altro LMS a Moodle?</button>
+            <div class="faq-a">
+              <p>Sì. Moodle supporta l'importazione di corsi in formato SCORM, xAPI e altri standard. Contenuti, strutture e dati utenti possono essere migrati da piattaforme proprietarie. Il processo viene pianificato caso per caso.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">Chi gestisce la piattaforma dopo il setup?</button>
+            <div class="faq-a">
+              <p>Il servizio di gestione continuativa include manutenzione tecnica, aggiornamenti, backup, gestione utenti, caricamento contenuti e supporto. In parallelo vengono formati gli amministratori interni per le operazioni quotidiane.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">Moodle funziona anche da mobile?</button>
+            <div class="faq-a">
+              <p>Sì. Moodle ha un'app mobile ufficiale per Android e iOS che permette di seguire i corsi da smartphone e tablet, anche offline. L'interfaccia web è responsive e accessibile da qualsiasi browser.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- H2 — SETTORI: COOPERATIVE -->
+  <section class="section content-section">
+    <div class="container">
+      <div class="content-inner fade-in">
+        <h2>Piattaforma e-learning per cooperative e organizzazioni sociali</h2>
+        <p>Le cooperative sociali hanno esigenze specifiche: centinaia di operatori distribuiti su più sedi e servizi, turni che rendono impossibile la formazione in aula simultanea, obblighi formativi stringenti su sicurezza e aggiornamento professionale, necessità di documentare tutto per enti finanziatori e accreditamenti.</p>
+        <p>Dal 2006 gestisco la piattaforma e-learning di Labirinto Cooperativa Sociale — un'organizzazione con oltre 1.000 dipendenti. Se Labirinto usasse un SaaS commerciale come iSpring o Docebo, spenderebbe tra 25.000 e 50.000 euro all'anno solo di licenza software. Senza nessuno che configuri i corsi, gestisca gli utenti o produca la reportistica per i responsabili della formazione. Con Moodle gestito, il software è gratuito e l'intero budget va nel servizio che produce valore reale.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- H2 — SETTORI: MANUFACTURING -->
+  <section class="section content-section content-alt">
+    <div class="container">
+      <div class="content-inner fade-in">
+        <h2>Piattaforma e-learning per aziende manifatturiere</h2>
+        <p>Nel manufacturing la formazione è obbligatoria e ricorrente: sicurezza sul lavoro, procedure operative, aggiornamenti normativi, certificazioni di qualità. I turni di produzione impediscono di fermare le linee per portare tutti in aula. Una piattaforma e-learning permette a ogni operatore di completare la formazione nel proprio turno, da qualsiasi postazione.</p>
+        <p>Moodle traccia automaticamente completamenti e scadenze, genera le attestazioni richieste e invia promemoria per i rinnovi. I responsabili della formazione hanno una dashboard con lo stato aggiornato di ogni dipendente, senza inseguire fogli firma cartacei.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- H2 — SETTORI: PMI E SERVIZI -->
+  <section class="section content-section">
+    <div class="container">
+      <div class="content-inner fade-in">
+        <h2>Piattaforma e-learning per PMI e aziende di servizi</h2>
+        <p>Anche le PMI con 30-100 dipendenti traggono vantaggio da una piattaforma e-learning strutturata. L'onboarding dei nuovi assunti diventa un percorso replicabile invece di un affiancamento improvvisato. La formazione su nuovi strumenti o procedure raggiunge tutti senza riunioni infinite. Le competenze acquisite restano documentate.</p>
+        <p>Per le aziende di servizi — consulenza, trasporti, hospitality — la piattaforma diventa il punto unico dove convogliano formazione obbligatoria, aggiornamenti di prodotto e sviluppo delle competenze trasversali. Con costi accessibili anche per strutture più piccole.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- H2 — PERCHÉ MOODLE -->
+  <section class="section content-section content-alt">
+    <div class="container">
+      <div class="content-inner fade-in">
+        <h2>Perché Moodle è la scelta giusta per le aziende</h2>
+        <p>Moodle è la piattaforma e-learning più diffusa al mondo: oltre 400 milioni di utenti in più di 240 paesi. È open source dal 2002. Non è un esperimento — è lo standard di fatto per la formazione online, usato da università, governi e aziende di ogni dimensione.</p>
+        <p>Open source significa tre cose concrete per la tua azienda: nessun costo di licenza (il software è gratuito, per sempre), nessun lock-in (non sei vincolato a un vendor che può alzare i prezzi o chiudere il servizio), proprietà totale dei dati (i tuoi corsi, i tuoi utenti, i tuoi dati restano sul tuo server, sotto il tuo controllo).</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- H2 — COSA INCLUDE IL SERVIZIO -->
+  <section class="section content-section">
+    <div class="container">
+      <div class="content-inner fade-in">
+        <h2>Cosa include il servizio di piattaforma e-learning gestita</h2>
+        <div class="pillar-details">
+          <div class="detail-block">
+            <h3>Setup e configurazione</h3>
+            <ul>
+              <li>Installazione e configurazione Moodle su server</li>
+              <li>Personalizzazione grafica con brand aziendale</li>
+              <li>Struttura categorie, corsi e percorsi formativi</li>
+              <li>Configurazione ruoli, permessi e policy di accesso</li>
+              <li>Integrazione con sistemi aziendali esistenti</li>
+            </ul>
+          </div>
+          <div class="detail-block">
+            <h3>Contenuti e corsi</h3>
+            <ul>
+              <li>Progettazione percorsi formativi</li>
+              <li>Caricamento e organizzazione materiali (video, PDF, SCORM)</li>
+              <li>Creazione quiz e test di valutazione</li>
+              <li>Certificazioni automatiche di completamento</li>
+              <li>Propedeuticità e prerequisiti tra corsi</li>
+            </ul>
+          </div>
+          <div class="detail-block">
+            <h3>Gestione e supporto</h3>
+            <ul>
+              <li>Gestione utenti, iscrizioni e gruppi</li>
+              <li>Reportistica avanzamento per responsabili formazione</li>
+              <li>Manutenzione tecnica e aggiornamenti Moodle</li>
+              <li>Backup periodici e sicurezza</li>
+              <li>Supporto tecnico continuativo</li>
+            </ul>
+          </div>
+          <div class="detail-block">
+            <h3>Autonomia aziendale</h3>
+            <ul>
+              <li>Formazione amministratori interni</li>
+              <li>Documentazione operativa personalizzata</li>
+              <li>Trasferimento progressivo delle competenze</li>
+              <li>Supporto on-demand per esigenze specifiche</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- H2 — TESTIMONIANZA -->
+  <section class="section content-section content-alt">
+    <div class="container">
+      <div class="content-inner fade-in">
+        <h2>Quasi vent'anni di gestione e-learning: il caso Labirinto</h2>
+        <p>Dal 2006 gestisco la piattaforma e-learning e tengo corsi in aula per Labirinto Cooperativa Sociale — un'organizzazione con oltre 1.000 dipendenti nel settore della disabilità e salute mentale, con sede a Pesaro. Quasi vent'anni di aggiornamenti, nuovi corsi, adattamenti alle esigenze di un'organizzazione complessa.</p>
+        <blockquote class="case-testimonial">
+          <p>"Conosco Francesco da più di vent'anni e posso dire che è una di quelle persone che quando entra in un progetto, lo fa sul serio. Per la Cooperativa Labirinto ha gestito situazioni complesse con una capacità rara di capire il contesto e trovare soluzioni concrete che hanno reso possibile il nostro sviluppo IT. Ha tenuto diversi corsi in aula e ci gestisce la piattaforma e-learning, che per una realtà come la nostra è diventata uno strumento fondamentale. Lo consiglio a chiunque cerchi un professionista che unisce competenza tecnica e capacità di lavorare con le persone, anche in contesti non semplici come il nostro."</p>
+          <footer>
+            <strong>Luca Pazzaglia</strong> — Responsabile settore disabilità e Salute Mentale, Cooperativa Labirinto
+          </footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- H2 — EDITORIALE 1 -->
+  <section class="section content-section">
+    <div class="container">
+      <div class="content-inner fade-in">
+        <h2>Piattaforma e-learning open source: cosa significa davvero</h2>
+        <p>Open source non significa "gratis e arrangiati". Significa che il codice sorgente è pubblico, verificabile, modificabile. Nessuna azienda privata può decidere di alzare i prezzi, cambiare le condizioni o chiudere il servizio lasciandoti senza piattaforma. I tuoi dati restano tuoi. I tuoi corsi restano tuoi. Se domani vuoi cambiare fornitore di gestione, porti via tutto.</p>
+        <p>Il costo di Moodle non è nella licenza (che è zero) ma nella competenza di chi lo configura, lo personalizza e lo mantiene funzionante. È la differenza tra scaricare un software e avere una piattaforma che funziona per la tua azienda. Io mi occupo della seconda parte.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- H2 — EDITORIALE 2 -->
+  <section class="section content-section content-alt">
+    <div class="container">
+      <div class="content-inner fade-in">
+        <h2>Formazione aziendale tracciabile: perché serve alle PMI</h2>
+        <p>I fondi interprofessionali (Fondimpresa, Fondirigenti) finanziano la formazione aziendale, ma richiedono documentazione precisa: ore erogate, partecipanti, risultati, attestazioni. Gestire tutto su carta o con fogli Excel diventa insostenibile oltre una certa dimensione. Una piattaforma e-learning genera automaticamente tutta la reportistica necessaria.</p>
+        <p>Anche senza fondi, la tracciabilità ha un valore operativo: sapere chi è formato su cosa, quali certificazioni scadono, dove sono i gap di competenza. Sono informazioni che in aula si perdono e che su una piattaforma diventano dati utilizzabili per prendere decisioni.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- H2 — DOMANDE CORRELATE ACCORDION -->
+  <section class="section content-section">
+    <div class="container">
+      <div class="content-inner fade-in">
+        <h2>Domande correlate</h2>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">Qual è la differenza tra Moodle LMS e Moodle Workplace?</button>
+            <div class="faq-a">
+              <p>Moodle LMS è la versione open source completa, gratuita e senza limiti. Moodle Workplace è una versione commerciale con funzionalità aggiuntive per grandi enterprise (multi-tenancy, automazioni HR). Per la maggior parte delle PMI e cooperative, Moodle LMS è più che sufficiente e non ha costi di licenza.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">Moodle può gestire la formazione obbligatoria sulla sicurezza?</button>
+            <div class="faq-a">
+              <p>Sì. Moodle può erogare corsi sulla sicurezza sul lavoro, tracciare il completamento, generare attestati e inviare promemoria automatici per i rinnovi. La struttura del corso viene configurata per rispettare i requisiti normativi specifici del settore.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">Serve un server dedicato per Moodle?</button>
+            <div class="faq-a">
+              <p>Per la maggior parte delle PMI e cooperative (fino a qualche migliaio di utenti), un hosting cloud condiviso di buona qualità è sufficiente. Per organizzazioni più grandi o con requisiti di performance elevati, si può valutare un server dedicato o un'infrastruttura cloud scalabile.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">I corsi SCORM funzionano su Moodle?</button>
+            <div class="faq-a">
+              <p>Sì. Moodle supporta nativamente i formati SCORM 1.2 e SCORM 2004, oltre a xAPI (Tin Can). Questo significa che i corsi acquistati da fornitori esterni o creati con strumenti di authoring come iSpring Suite, Articulate o Captivate funzionano senza problemi sulla piattaforma.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">Come si accede alla piattaforma? Serve installare qualcosa?</button>
+            <div class="faq-a">
+              <p>No. I dipendenti accedono tramite browser (Chrome, Safari, Firefox) con le proprie credenziali. Non serve installare nulla. Per l'uso da mobile è disponibile l'app Moodle ufficiale, gratuita per Android e iOS.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- H2 — SERVIZI CORRELATI -->
+  <section class="section content-section content-alt">
+    <div class="container">
+      <div class="content-inner fade-in">
+        <h2>Servizi correlati</h2>
+        <p>La piattaforma e-learning è uno degli strumenti del servizio di <a href="/servizi/formazione-aziendale/">Formazione Aziendale</a>: docenze in aula, corsi live, percorsi strutturati su marketing digitale, AI e comunicazione. La piattaforma ospita i contenuti, l'aula li completa.</p>
+        <p>Per le aziende che integrano strumenti AI nei processi formativi, il servizio si collega a <a href="/servizi/intelligenza-artificiale-per-pmi/">AI Integration per PMI</a>: automazione dei flussi formativi, chatbot di supporto ai discenti, analisi avanzata dei dati di apprendimento.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINALE -->
+  <section class="section cta-mid">
+    <div class="container">
+      <div class="cta-mid-inner fade-in">
+        <h2 class="cta-final-title">La tua azienda ha bisogno di una piattaforma e-learning?</h2>
+        <p class="cta-mid-text">Parliamo del tuo contesto, dei tuoi numeri e degli obiettivi formativi. Nessun impegno, nessun costo.</p>
+        <a href="/contatti/" class="cta-button">Contattami</a>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  /* ─── BASE ─── */
+  .pillar {
+    background: var(--color-crema);
+  }
+
+  .pillar-inner {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .back-link {
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-testo-secondario);
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    transition: color 0.2s ease;
+  }
+
+  .back-link:hover {
+    color: var(--color-rosso);
+  }
+
+  .pillar-title {
+    font-size: clamp(2rem, 4.5vw, 3rem);
+    margin-bottom: 0.25rem;
+  }
+
+  .pillar-subtitle {
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--color-testo-secondario);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 2.5rem;
+  }
+
+  .pillar-description p {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: var(--color-testo);
+    margin-bottom: 1rem;
+  }
+
+  .pillar-description p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* ─── CONTENT SECTIONS ─── */
+  .content-section {
+    background: var(--color-bianco);
+  }
+
+  .content-alt {
+    background: var(--color-crema);
+  }
+
+  .content-inner {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .content-inner h2 {
+    font-size: clamp(1.5rem, 3.5vw, 2rem);
+    margin-bottom: 1.25rem;
+    color: var(--color-navy);
+  }
+
+  .content-inner p {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--color-testo);
+    margin-bottom: 1rem;
+  }
+
+  .content-inner p:last-child {
+    margin-bottom: 0;
+  }
+
+  .content-inner a {
+    color: var(--color-rosso);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .content-inner a:hover {
+    color: var(--color-navy);
+  }
+
+  /* ─── PROCESS STEPS ─── */
+  .process-steps {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-top: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .process-steps {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .step {
+    padding: 1.5rem;
+    background: var(--color-bianco);
+    border-radius: 6px;
+    border: 1px solid var(--color-bordo);
+  }
+
+  .content-alt .step {
+    background: var(--color-bianco);
+  }
+
+  .step-number {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    color: var(--color-rosso);
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .step h3 {
+    font-size: 1.0625rem;
+    font-weight: 600;
+    color: var(--color-navy);
+    margin-bottom: 0.5rem;
+  }
+
+  .step p {
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: var(--color-testo);
+    margin: 0;
+  }
+
+  /* ─── CTA MID ─── */
+  .cta-mid {
+    background: var(--color-navy);
+    padding: 3rem 0;
+  }
+
+  .cta-mid-inner {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .cta-final-title {
+    font-size: clamp(1.5rem, 3.5vw, 2rem);
+    color: var(--color-bianco);
+    margin-bottom: 0.75rem;
+  }
+
+  .cta-mid-text {
+    font-size: 1.0625rem;
+    color: var(--color-bianco);
+    opacity: 0.9;
+    margin-bottom: 1.5rem;
+  }
+
+  .cta-button {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--color-navy);
+    background: var(--color-bianco);
+    padding: 0.75rem 2rem;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background 0.2s ease, transform 0.15s ease;
+  }
+
+  .cta-button:hover {
+    background: var(--color-crema);
+    transform: translateY(-1px);
+  }
+
+  /* ─── PRICING ─── */
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+  }
+
+  @media (min-width: 768px) {
+    .pricing-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .pricing-card {
+    padding: 2rem;
+    background: var(--color-bianco);
+    border-radius: 6px;
+    border: 1px solid var(--color-bordo);
+  }
+
+  .pricing-card h3 {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--color-navy);
+    margin-bottom: 0.75rem;
+  }
+
+  .price-range {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    color: var(--color-rosso);
+    margin-bottom: 0.75rem;
+  }
+
+  .pricing-card p {
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: var(--color-testo);
+    margin: 0;
+  }
+
+  .pricing-note {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-navy);
+    margin-top: 1rem;
+  }
+
+  /* ─── VS TABLE ─── */
+  .table-wrapper {
+    overflow-x: auto;
+    margin-top: 1.5rem;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .vs-table {
+    width: 100%;
+    min-width: 800px;
+    border-collapse: collapse;
+    font-size: 0.8125rem;
+  }
+
+  .vs-table th,
+  .vs-table td {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--color-bordo);
+    vertical-align: top;
+  }
+
+  .vs-table thead th {
+    font-family: var(--font-body);
+    font-weight: 600;
+    color: var(--color-navy);
+    background: var(--color-crema);
+    position: sticky;
+    top: 0;
+  }
+
+  .vs-table thead th.highlight {
+    color: var(--color-rosso);
+  }
+
+  .vs-table td.highlight {
+    font-weight: 600;
+    color: var(--color-navy);
+    background: rgba(200, 40, 40, 0.04);
+  }
+
+  .vs-table tbody tr:hover {
+    background: rgba(0, 0, 0, 0.015);
+  }
+
+  /* ─── FAQ ACCORDION ─── */
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .faq-item {
+    border-bottom: 1px solid var(--color-bordo);
+  }
+
+  .faq-q {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 0;
+    background: none;
+    border: none;
+    font-family: var(--font-body);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--color-navy);
+    cursor: pointer;
+    text-align: left;
+    line-height: 1.4;
+  }
+
+  .faq-q::after {
+    content: '+';
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: var(--color-rosso);
+    margin-left: 1rem;
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+  }
+
+  .faq-q[aria-expanded="true"]::after {
+    content: '−';
+  }
+
+  .faq-a {
+    display: none;
+    padding-bottom: 1.25rem;
+  }
+
+  .faq-a p {
+    font-size: 0.875rem;
+    line-height: 1.7;
+    color: var(--color-testo);
+    margin: 0;
+  }
+
+  /* ─── DETAIL BLOCKS (servizio include) ─── */
+  .pillar-details {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-top: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .pillar-details {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .detail-block h3 {
+    font-family: var(--font-body);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-testo-secondario);
+    margin-bottom: 1rem;
+  }
+
+  .detail-block ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .detail-block li {
+    font-size: 0.875rem;
+    color: var(--color-testo);
+    padding-left: 1.25rem;
+    position: relative;
+    line-height: 1.5;
+  }
+
+  .detail-block li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.55em;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--color-rosso);
+  }
+
+  /* ─── TESTIMONIAL ─── */
+  .case-testimonial {
+    background: var(--color-bianco);
+    border-left: 3px solid var(--color-rosso);
+    padding: 1.5rem 2rem;
+    margin: 1.5rem 0 0 0;
+    border-radius: 0 6px 6px 0;
+  }
+
+  .content-section:not(.content-alt) .case-testimonial {
+    background: var(--color-crema);
+  }
+
+  .case-testimonial p {
+    font-size: 0.9375rem;
+    font-style: italic;
+    line-height: 1.7;
+    color: var(--color-testo);
+    margin: 0 0 0.75rem 0;
+  }
+
+  .case-testimonial footer {
+    font-size: 0.8125rem;
+    color: var(--color-testo-secondario);
+  }
+
+  .case-testimonial footer strong {
+    color: var(--color-navy);
+    font-weight: 600;
+  }
+</style>
+
+<script>
+  document.querySelectorAll('.faq-q').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!expanded));
+      const answer = btn.nextElementSibling;
+      if (answer) {
+        answer.style.display = expanded ? 'none' : 'block';
+      }
+    });
+  });
+</script>
