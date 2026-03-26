@@ -4,7 +4,7 @@ const services: Array<{
   title: string;
   subtitle: string;
   description: string;
-  items: string[];
+  items: (string | { text: string; href: string })[];
   href: string;
   guideHref?: string;
 }> = [
@@ -62,7 +62,7 @@ const services: Array<{
     title: 'Formazione Aziendale',
     subtitle: 'Docenza e Training Operativo',
     description: 'Formazione concreta per team aziendali su marketing digitale, AI e comunicazione. Non corsi generici — programmi costruiti sul contesto specifico dell\'azienda.',
-    items: ['Marketing digitale e social', 'Strumenti e processi AI', 'Comunicazione e content', 'E-learning e piattaforme formative'],
+    items: ['Marketing digitale e social', 'Strumenti e processi AI', 'Comunicazione e content', { text: 'E-learning e piattaforme formative', href: '/servizi/piattaforma-elearning-aziendale/' }],
     href: '/servizi/formazione-aziendale/',
   },
   {
@@ -99,7 +99,13 @@ const services: Array<{
           <p class="service-description">{service.description}</p>
           <ul class="service-items">
             {service.items.map((item) => (
-              <li>{item}</li>
+              <li>
+                {typeof item === 'string' ? (
+                  item
+                ) : (
+                  <a href={item.href} class="stealth-link">{item.text}</a>
+                )}
+              </li>
             ))}
           </ul>
           <a href={service.href} class="service-link">Approfondisci →</a>
@@ -217,6 +223,15 @@ const services: Array<{
     height: 6px;
     border-radius: 50%;
     background: var(--color-rosso);
+  }
+
+  .stealth-link {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .stealth-link:hover {
+    color: var(--color-rosso);
   }
 
   .service-link {
