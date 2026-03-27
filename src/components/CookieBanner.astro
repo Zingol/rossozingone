@@ -5,7 +5,7 @@
   <div class="cookie-inner">
     <div class="cookie-text">
       <h3 class="cookie-title">Cookie</h3>
-      <p>Questo sito utilizza cookie tecnici e, con il tuo consenso, cookie di analisi per migliorare la tua esperienza. Puoi accettare, rifiutare o personalizzare le preferenze. Per maggiori informazioni consulta la <a href="/legal/cookie-policy/">cookie policy</a>.</p>
+      <p>Questo sito utilizza cookie tecnici e, con il tuo consenso, cookie di analisi (Google Analytics) per migliorare la tua esperienza. Puoi accettare o rifiutare. Per maggiori informazioni consulta la <a href="/legal/cookie-policy/">cookie policy</a>.</p>
     </div>
     <div class="cookie-actions">
       <button class="cookie-btn cookie-btn-reject" id="cookie-reject">Rifiuta</button>
@@ -112,24 +112,36 @@
   }
 </style>
 
-<script>
-  const banner = document.getElementById('cookie-banner');
-  const acceptBtn = document.getElementById('cookie-accept');
-  const rejectBtn = document.getElementById('cookie-reject');
+<script is:inline>
+  (function() {
+    var banner = document.getElementById('cookie-banner');
+    var acceptBtn = document.getElementById('cookie-accept');
+    var rejectBtn = document.getElementById('cookie-reject');
+    var storedConsent = localStorage.getItem('cookie-consent');
 
-  const consent = localStorage.getItem('cookie-consent');
+    if (!storedConsent) {
+      setTimeout(function() {
+        if (banner) banner.classList.add('visible');
+      }, 1000);
+    }
 
-  if (!consent) {
-    setTimeout(() => {
-      banner?.classList.add('visible');
-    }, 1000);
-  }
+    if (acceptBtn) {
+      acceptBtn.addEventListener('click', function() {
+        localStorage.setItem('cookie-consent', 'accepted');
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){window.dataLayer.push(arguments);}
+        gtag('consent', 'update', {
+          'analytics_storage': 'granted'
+        });
+        if (banner) banner.classList.remove('visible');
+      });
+    }
 
-  const hideBanner = (choice: string) => {
-    localStorage.setItem('cookie-consent', choice);
-    banner?.classList.remove('visible');
-  };
-
-  acceptBtn?.addEventListener('click', () => hideBanner('accepted'));
-  rejectBtn?.addEventListener('click', () => hideBanner('rejected'));
+    if (rejectBtn) {
+      rejectBtn.addEventListener('click', function() {
+        localStorage.setItem('cookie-consent', 'rejected');
+        if (banner) banner.classList.remove('visible');
+      });
+    }
+  })();
 </script>

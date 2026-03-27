@@ -13,7 +13,7 @@ import { siteConfig } from '../../../config';
     <div class="container">
       <div class="legal-content">
         <h1>Cookie Policy</h1>
-        <p class="legal-update">Ultimo aggiornamento: Febbraio 2026</p>
+        <p class="legal-update">Ultimo aggiornamento: Marzo 2026</p>
 
         <h2>Cosa sono i cookie</h2>
         <p>I cookie sono piccoli file di testo che i siti visitati inviano al browser dell'utente, dove vengono memorizzati, per poi essere ritrasmessi agli stessi siti alla visita successiva.</p>
@@ -26,16 +26,52 @@ import { siteConfig } from '../../../config';
 
         <h2>Cookie utilizzati da questo sito</h2>
 
-        <h3>Cookie tecnici</h3>
+        <h3>Cookie tecnici (non richiedono consenso)</h3>
         <p>Questo sito è un sito statico e non utilizza cookie tecnici propri per il funzionamento. Non vengono utilizzati cookie di sessione o di autenticazione.</p>
+        <p><strong>cookie-consent</strong> — Cookie tecnico (localStorage) utilizzato per memorizzare la scelta dell'utente relativa al banner cookie. Non contiene dati personali. Durata: permanente fino a cancellazione manuale.</p>
+
+        <h3>Cookie di analisi (richiedono consenso)</h3>
+        <p>I seguenti cookie vengono installati solo dopo il consenso esplicito dell'utente tramite il banner cookie presente sul sito. Se l'utente rifiuta, nessun cookie di analisi viene installato.</p>
+
+        <table class="cookie-table">
+          <thead>
+            <tr>
+              <th>Cookie</th>
+              <th>Fornitore</th>
+              <th>Finalità</th>
+              <th>Durata</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>_ga</td>
+              <td>Google Analytics</td>
+              <td>Distingue gli utenti unici assegnando un identificativo anonimo</td>
+              <td>2 anni</td>
+            </tr>
+            <tr>
+              <td>_ga_*</td>
+              <td>Google Analytics</td>
+              <td>Mantiene lo stato della sessione di navigazione</td>
+              <td>2 anni</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Google Tag Manager</h3>
+        <p>Il sito utilizza Google Tag Manager per gestire l'attivazione dei cookie di analisi. Google Tag Manager non installa cookie propri e non raccoglie dati personali direttamente. Gestisce l'attivazione di Google Analytics in base al consenso espresso dall'utente.</p>
 
         <h3>Cookie di terze parti</h3>
         <p><strong>Google Fonts</strong> — Il sito carica font da Google Fonts. Google potrebbe raccogliere dati di navigazione (indirizzo IP) tramite questo servizio. Informativa: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">policies.google.com/privacy</a></p>
         <p><strong>Formspree</strong> — Il form di contatto utilizza Formspree. Al momento dell'invio del form, Formspree potrebbe impostare cookie tecnici necessari al funzionamento. Informativa: <a href="https://formspree.io/legal/privacy-policy" target="_blank" rel="noopener noreferrer">formspree.io/legal/privacy-policy</a></p>
-        <p><strong>Vercel Analytics</strong> — Il sito è ospitato su Vercel, che potrebbe raccogliere dati anonimi di navigazione per finalità statistiche. Informativa: <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">vercel.com/legal/privacy-policy</a></p>
+        <p><strong>Vercel</strong> — Il sito è ospitato su Vercel, che potrebbe raccogliere dati anonimi di navigazione per finalità statistiche. Informativa: <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">vercel.com/legal/privacy-policy</a></p>
+
+        <h2>Google Consent Mode v2</h2>
+        <p>Questo sito implementa Google Consent Mode v2 per rispettare le preferenze dell'utente. Quando l'utente rifiuta i cookie di analisi, Google Analytics non raccoglie né trasmette alcun dato identificativo. Se l'utente cambia idea, può cancellare la preferenza eliminando i dati del sito dalle impostazioni del browser e ricaricare la pagina per visualizzare nuovamente il banner.</p>
 
         <h2>Come gestire i cookie</h2>
         <p>L'utente può gestire le preferenze relative ai cookie direttamente all'interno del proprio browser, impedendone l'installazione da parte di terzi. Tramite le preferenze del browser è inoltre possibile eliminare i cookie installati in passato.</p>
+        <p>Per disattivare specificamente Google Analytics è disponibile il componente aggiuntivo del browser: <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer">Google Analytics Opt-out Browser Add-on</a></p>
         <p>Istruzioni per i principali browser:</p>
         <ul>
           <li><a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener noreferrer">Google Chrome</a></li>
@@ -131,5 +167,33 @@ import { siteConfig } from '../../../config';
     height: 6px;
     border-radius: 50%;
     background: var(--color-rosso);
+  }
+
+  .cookie-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    font-size: 0.875rem;
+  }
+
+  .cookie-table th {
+    background: var(--color-navy);
+    color: #fff;
+    padding: 0.75rem 1rem;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.8rem;
+    letter-spacing: 0.03em;
+  }
+
+  .cookie-table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--color-bordo);
+    color: var(--color-testo);
+    vertical-align: top;
+  }
+
+  .cookie-table tr:last-child td {
+    border-bottom: none;
   }
 </style>
