@@ -1,12 +1,19 @@
 ---
 import { ctaLabel, ctaHref } from '../config';
+
+interface Props {
+  headline?: string;
+  sub?: string;
+}
+
+const { headline = 'Parliamo del tuo prossimo passo.', sub = 'Parliamo del tuo contesto, dei tuoi numeri e dei tuoi obiettivi. Nessun impegno, nessun costo.' } = Astro.props;
 ---
 
 <section class="section cta-final">
   <div class="container">
     <div class="cta-inner fade-in">
-      <h2 class="cta-headline">Parliamo del tuo prossimo passo.</h2>
-      <p class="cta-sub">30 minuti. Nessun impegno. Nessun costo.</p>
+      <h2 class="cta-headline">{headline}</h2>
+      <p class="cta-sub">{sub}</p>
       <a href={ctaHref} class="btn btn-primary btn-large">{ctaLabel}</a>
     </div>
   </div>
