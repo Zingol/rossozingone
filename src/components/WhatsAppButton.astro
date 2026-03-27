@@ -1,0 +1,50 @@
+---
+---
+
+<a
+  href="https://wa.me/393336472122"
+  target="_blank"
+  rel="noopener noreferrer"
+  class="whatsapp-btn"
+  aria-label="Contattaci su WhatsApp"
+  title="Scrivici su WhatsApp"
+>
+  <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M16.004 2.667A13.28 13.28 0 0 0 2.72 15.947a13.2 13.2 0 0 0 1.795 6.64L2.667 29.333l6.96-1.824A13.28 13.28 0 0 0 16.004 29.333 13.28 13.28 0 0 0 29.333 16.053 13.28 13.28 0 0 0 16.004 2.667Zm6.496 18.4c-.272.768-1.584 1.472-2.176 1.536-.592.064-1.152.272-3.872-.808-3.28-1.296-5.376-4.64-5.536-4.848-.16-.208-1.328-1.76-1.328-3.36 0-1.6.84-2.384 1.136-2.712.296-.328.648-.408.864-.408.216 0 .432.002.624.012.2.008.472-.076.736.56.272.648.928 2.264.992 2.424.064.16.112.352.024.56-.088.208-.136.336-.272.52-.136.184-.288.408-.408.544-.136.16-.28.328-.12.64.16.312.712 1.176 1.528 1.904 1.048.936 1.936 1.224 2.208 1.36.272.136.432.112.592-.072.16-.184.688-.8.872-1.072.184-.272.368-.224.624-.136.256.088 1.624.768 1.904.912.28.144.464.208.528.328.072.12.072.688-.2 1.456Z" fill="#fff"/>
+  </svg>
+</a>
+
+<style>
+  .whatsapp-btn {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    z-index: 1500;
+    width: 56px;
+    height: 56px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    text-decoration: none;
+  }
+
+  .whatsapp-btn:hover {
+    transform: scale(1.08);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .whatsapp-btn svg {
+    width: 30px;
+    height: 30px;
+  }
+
+  /* Sposta il bottone più in alto quando il cookie banner è visibile */
+  .cookie-banner.visible ~ .whatsapp-btn,
+  :global(.cookie-banner.visible) ~ .whatsapp-btn {
+    bottom: 6rem;
+  }
+</style>
