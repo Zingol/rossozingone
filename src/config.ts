@@ -28,5 +28,10 @@ export const navigation = [
   { label: 'Contatti', href: '/contatti/' },
 ] as const;
 
-export const ctaLabel = 'Prenota un Discovery Day';
-export const ctaHref = 'https://tidycal.com/rossozingone';
+// CTA generale — usata da CtaFinal, homepage hero, ecc.
+export const ctaLabel = 'Contattami';
+export const ctaHref = '/contatti/';
+
+// CTA Discovery Day — usata solo nella navbar
+export const discoveryLabel = 'Prenota un Discovery Day';
+export const discoveryHref = 'https://tidycal.com/rossozingone';

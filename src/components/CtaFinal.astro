@@ -1,5 +1,5 @@
 ---
-import { ctaHref } from '../config';
+import { ctaLabel, ctaHref } from '../config';
 ---
 
 <section class="section cta-final">
@@ -7,7 +7,7 @@ import { ctaHref } from '../config';
     <div class="cta-inner fade-in">
       <h2 class="cta-headline">Parliamo del tuo prossimo passo.</h2>
       <p class="cta-sub">30 minuti. Nessun impegno. Nessun costo.</p>
-      <a href={ctaHref} class="btn btn-primary btn-large">Prenota un Discovery Day</a>
+      <a href={ctaHref} class="btn btn-primary btn-large">{ctaLabel}</a>
     </div>
   </div>
 </section>

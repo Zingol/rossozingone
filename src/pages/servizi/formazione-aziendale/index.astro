@@ -123,13 +123,33 @@ import CtaFinal from '../../../components/CtaFinal.astro';
           </div>
 
           <div class="pillar-testimonial">
-            <h3>Recensione</h3>
-            <blockquote class="case-testimonial">
-              <p>"Conosco Francesco da più di vent'anni e posso dire che è una di quelle persone che quando entra in un progetto, lo fa sul serio. Per la Cooperativa Labirinto ha gestito situazioni complesse con una capacità rara di capire il contesto e trovare soluzioni concrete che hanno reso possibile il nostro sviluppo IT. Ha tenuto diversi corsi in aula e ci gestisce la piattaforma e-learning, che per una realtà come la nostra è diventata uno strumento fondamentale. Lo consiglio a chiunque cerchi un professionista che unisce competenza tecnica e capacità di lavorare con le persone, anche in contesti non semplici come il nostro."</p>
-              <footer>
-                <strong>Luca Pazzaglia</strong> — Responsabile settore disabilità e Salute Mentale, Cooperativa Labirinto
-              </footer>
-            </blockquote>
+            <h3>Caso cliente</h3>
+
+            <div class="case-card">
+              <div class="case-header">
+                <h4 class="case-name">Labirinto Cooperativa Sociale</h4>
+                <span class="case-badge">Fatturato 26,62M · Oltre 1.000 dipendenti</span>
+              </div>
+              <div class="case-meta">
+                <span class="case-role">Docente, Consulente e Gestione piattaforma e-learning</span>
+                <span class="case-dot">·</span>
+                <span class="case-duration">Dal 2006 (quasi 20 anni)</span>
+              </div>
+              <p class="case-description">Docenze in aula su marketing digitale e comunicazione, consulenza email marketing, gestione e formazione piattaforma e-learning Moodle per l'intera organizzazione. Settore disabilità e salute mentale, sede Pesaro.</p>
+              <div class="case-services">
+                <span class="service-tag">Formazione in aula</span>
+                <span class="service-tag">Piattaforma e-learning</span>
+                <span class="service-tag">Email marketing</span>
+                <span class="service-tag">Consulenza IT</span>
+              </div>
+
+              <blockquote class="case-testimonial">
+                <p>"Conosco Francesco da più di vent'anni e posso dire che è una di quelle persone che quando entra in un progetto, lo fa sul serio. Per la Cooperativa Labirinto ha gestito situazioni complesse con una capacità rara di capire il contesto e trovare soluzioni concrete che hanno reso possibile il nostro sviluppo IT. Ha tenuto diversi corsi in aula e ci gestisce la piattaforma e-learning, che per una realtà come la nostra è diventata uno strumento fondamentale. Lo consiglio a chiunque cerchi un professionista che unisce competenza tecnica e capacità di lavorare con le persone, anche in contesti non semplici come il nostro."</p>
+                <footer>
+                  <strong>Luca Pazzaglia</strong> — Responsabile settore disabilità e Salute Mentale, Cooperativa Labirinto
+                </footer>
+              </blockquote>
+            </div>
           </div>
         </div>
       </div>
@@ -368,6 +388,78 @@ import CtaFinal from '../../../components/CtaFinal.astro';
     letter-spacing: 0.08em;
     color: var(--color-testo-secondario);
     margin-bottom: 1rem;
+  }
+
+  .case-card {
+    padding: 0;
+  }
+
+  .case-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .case-name {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    color: var(--color-navy);
+    margin: 0;
+  }
+
+  .case-badge {
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: var(--color-rosso);
+  }
+
+  .case-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .case-role,
+  .case-duration {
+    font-size: 0.875rem;
+    color: var(--color-testo-secondario);
+  }
+
+  .case-role {
+    font-weight: 500;
+  }
+
+  .case-dot {
+    color: var(--color-testo-secondario);
+  }
+
+  .case-description {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--color-testo);
+    margin-bottom: 1.25rem;
+  }
+
+  .case-services {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .service-tag {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--color-navy);
+    padding: 0.3rem 0.75rem;
+    background: var(--color-bianco);
+    border-radius: 100px;
+    border: 1px solid var(--color-bordo);
   }
 
   .case-testimonial {

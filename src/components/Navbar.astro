@@ -1,5 +1,5 @@
 ---
-import { navigation, ctaLabel, ctaHref, siteConfig } from '../config';
+import { navigation, discoveryLabel, discoveryHref, siteConfig } from '../config';
 
 const servicesDropdown = [
   { label: 'Fractional CMO / CEO', href: '/servizi/fractional-cmo-ceo/' },
@@ -38,7 +38,7 @@ const servicesDropdown = [
           <a href={item.href} class="nav-link">{item.label}</a>
         )
       ))}
-      <a href={ctaHref} class="btn btn-primary btn-nav">{ctaLabel}</a>
+      <a href={discoveryHref} class="btn btn-primary btn-nav">{discoveryLabel}</a>
     </nav>
 
     <button
@@ -70,7 +70,7 @@ const servicesDropdown = [
           <a href={item.href} class="mobile-link">{item.label}</a>
         )
       ))}
-      <a href={ctaHref} class="btn btn-primary mobile-cta">{ctaLabel}</a>
+      <a href={discoveryHref} class="btn btn-primary mobile-cta">{discoveryLabel}</a>
     </nav>
   </div>
 </header>
