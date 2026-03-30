@@ -1,0 +1,282 @@
+---
+---
+
+<button class="ai-chat-toggle" id="ai-chat-toggle" aria-label="Apri chat AI">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24">
+    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+  </svg>
+</button>
+
+<div class="ai-chat-window" id="ai-chat-window">
+  <div class="ai-chat-header">
+    <span>Chiedi a RossoZingone</span>
+    <button class="ai-chat-close" id="ai-chat-close" aria-label="Chiudi chat">✕</button>
+  </div>
+  <div class="ai-chat-messages" id="ai-chat-messages">
+    <div class="ai-chat-welcome">
+      <p class="welcome-title">Come posso aiutarti?</p>
+      <p class="welcome-sub">Scrivi una domanda sui servizi RossoZingone</p>
+    </div>
+  </div>
+  <div class="ai-chat-input-area">
+    <textarea id="ai-chat-input" placeholder="Chiedi a RossoZingone..." rows="1"></textarea>
+    <button id="ai-chat-send" class="ai-chat-send" aria-label="Invia">Invia</button>
+  </div>
+</div>
+
+<style>
+  .ai-chat-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1500;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #8a1a1a;
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: transform 0.2s, background 0.2s;
+  }
+  .ai-chat-toggle:hover {
+    background: #6e1515;
+    transform: scale(1.05);
+  }
+  .ai-chat-toggle.hidden { display: none; }
+
+  .ai-chat-window {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    z-index: 1500;
+    width: 380px;
+    max-height: 520px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+    font-family: var(--font-body, system-ui, sans-serif);
+  }
+  .ai-chat-window.open {
+    display: flex;
+  }
+
+  .ai-chat-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.875rem 1rem;
+    background: #8a1a1a;
+    color: white;
+    font-weight: 600;
+    font-size: 0.9375rem;
+  }
+  .ai-chat-close {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 1.125rem;
+    padding: 0.25rem;
+    line-height: 1;
+  }
+
+  .ai-chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1rem;
+    max-height: 360px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .ai-chat-welcome {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: #6c757d;
+  }
+  .welcome-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #212529;
+    margin-bottom: 0.5rem;
+  }
+  .welcome-sub {
+    font-size: 0.875rem;
+  }
+
+  .msg-user {
+    align-self: flex-end;
+    background: #8a1a1a;
+    color: white;
+    padding: 0.625rem 0.875rem;
+    border-radius: 12px 12px 2px 12px;
+    max-width: 85%;
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+  .msg-ai {
+    align-self: flex-start;
+    background: #f4f4f4;
+    color: #212529;
+    padding: 0.625rem 0.875rem;
+    border-radius: 12px 12px 12px 2px;
+    max-width: 85%;
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+  .msg-ai a {
+    color: #8a1a1a;
+    text-decoration: underline;
+  }
+  .msg-loading {
+    align-self: flex-start;
+    color: #999;
+    font-size: 0.875rem;
+    font-style: italic;
+  }
+
+  .ai-chat-input-area {
+    display: flex;
+    align-items: flex-end;
+    gap: 0.5rem;
+    padding: 0.75rem;
+    border-top: 1px solid #e9ecef;
+    background: #fafafa;
+  }
+  #ai-chat-input {
+    flex: 1;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+    font-family: inherit;
+    resize: none;
+    max-height: 80px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  #ai-chat-input:focus {
+    border-color: #8a1a1a;
+  }
+  .ai-chat-send {
+    background: #8a1a1a;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+    white-space: nowrap;
+  }
+  .ai-chat-send:hover {
+    background: #6e1515;
+  }
+  .ai-chat-send:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  @media (max-width: 480px) {
+    .ai-chat-window {
+      width: calc(100vw - 1rem);
+      right: 0.5rem;
+      bottom: 80px;
+      max-height: 70vh;
+    }
+  }
+</style>
+
+<script>
+  const API_URL = 'https://28d1afd2-c562-4894-b079-c96841147899.search.ai.cloudflare.com';
+
+  const toggle = document.getElementById('ai-chat-toggle');
+  const win = document.getElementById('ai-chat-window');
+  const closeBtn = document.getElementById('ai-chat-close');
+  const input = document.getElementById('ai-chat-input');
+  const sendBtn = document.getElementById('ai-chat-send');
+  const messages = document.getElementById('ai-chat-messages');
+
+  toggle?.addEventListener('click', () => {
+    win?.classList.add('open');
+    toggle?.classList.add('hidden');
+    input?.focus();
+  });
+
+  closeBtn?.addEventListener('click', () => {
+    win?.classList.remove('open');
+    toggle?.classList.remove('hidden');
+  });
+
+  async function sendMessage() {
+    const q = input?.value?.trim();
+    if (!q) return;
+
+    const welcome = messages?.querySelector('.ai-chat-welcome');
+    if (welcome) welcome.remove();
+
+    const userMsg = document.createElement('div');
+    userMsg.className = 'msg-user';
+    userMsg.textContent = q;
+    messages?.appendChild(userMsg);
+
+    input.value = '';
+    input.style.height = 'auto';
+    sendBtn.disabled = true;
+
+    const loading = document.createElement('div');
+    loading.className = 'msg-loading';
+    loading.textContent = 'Sto cercando...';
+    messages?.appendChild(loading);
+    messages.scrollTop = messages.scrollHeight;
+
+    try {
+      const res = await fetch(`${API_URL}/chat/completions`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ messages: [{ role: "user", content: q }] })
+      });
+      const data = await res.json();
+      loading.remove();
+
+      const aiMsg = document.createElement('div');
+      aiMsg.className = 'msg-ai';
+      aiMsg.innerHTML = (data.choices?.[0]?.message?.content || 'Mi dispiace, non ho trovato informazioni su questo argomento. Contatta Francesco Zingone direttamente.')
+        .replace(/\n/g, '<br>')
+        .replace(/(https?:\/\/[^\s<]+)/g, '<a href="$1" target="_blank" rel="noopener">$1</a>');
+      messages?.appendChild(aiMsg);
+    } catch (e) {
+      loading.remove();
+      const errMsg = document.createElement('div');
+      errMsg.className = 'msg-ai';
+      errMsg.textContent = 'Si è verificato un errore. Riprova tra qualche istante.';
+      messages?.appendChild(errMsg);
+    }
+
+    sendBtn.disabled = false;
+    messages.scrollTop = messages.scrollHeight;
+    input?.focus();
+  }
+
+  sendBtn?.addEventListener('click', sendMessage);
+  input?.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      sendMessage();
+    }
+  });
+  input?.addEventListener('input', () => {
+    input.style.height = 'auto';
+    input.style.height = Math.min(input.scrollHeight, 80) + 'px';
+  });
+</script>
