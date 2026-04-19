@@ -10,5 +10,16 @@
       "destination": "/servizi/intelligenza-artificiale-per-pmi/",
       "permanent": true
     }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Link",
+          "value": "<https://rossozingone.it/sitemap-index.xml>; rel=\"sitemap\""
+        }
+      ]
+    }
   ]
 }
