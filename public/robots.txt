@@ -3,5 +3,6 @@ Allow: /
 Content-Signal: search=yes, ai-input=yes, ai-train=yes
 
 Disallow: /legal/
+Disallow: /*.md$
 
 Sitemap: https://rossozingone.it/sitemap-index.xml

@@ -3,6 +3,7 @@ import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
 import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
+import mdMirror from './integrations/astro-md-mirror.mjs';
 
 export default defineConfig({
   site: 'https://rossozingone.it',
@@ -24,6 +25,10 @@ export default defineConfig({
         item.lastmod = new Date().toISOString();
         return item;
       },
+    }),
+    mdMirror({
+      excludePaths: ['/legal/'],
+      siteUrl: 'https://rossozingone.it',
     }),
   ],
   vite: {
