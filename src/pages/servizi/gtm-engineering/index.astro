@@ -1,0 +1,838 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import CtaFinal from '../../../components/CtaFinal.astro';
+---
+
+<BaseLayout
+  title="GTM Engineering per PMI italiane | Fractional CMO — RossoZingone"
+  description="GTM Engineering per PMI italiane. Progetto l'architettura commerciale AI-integrated che scala la pipeline senza espandere il team. Fractional CMO/CEO a Pesaro e nelle Marche."
+  breadcrumbs={[
+    { name: 'Servizi', href: '/servizi/' },
+    { name: 'GTM Engineering', href: '/servizi/gtm-engineering/' },
+  ]}
+  schemaService={{
+    name: 'GTM Engineering per PMI italiane',
+    description: "Consulenza Fractional per progettare l'architettura commerciale AI-integrated nelle PMI italiane. Audit pipeline, MVP dei workflow prioritari, governance continua.",
+    url: 'https://rossozingone.it/servizi/gtm-engineering/',
+  }}
+  faqSchema={[
+    {
+      question: "Cos'è il GTM Engineering in parole semplici?",
+      answer: "È la disciplina che progetta il sistema commerciale di un'azienda come si progetta un'infrastruttura software. Unisce marketing, vendite e operations in un'architettura automatizzata che genera pipeline qualificata in modo misurabile e replicabile.",
+    },
+    {
+      question: "Qual è la differenza tra GTM Engineering e marketing automation?",
+      answer: "La marketing automation è un sottoinsieme del GTM Engineering. Le piattaforme di marketing automation gestiscono email, workflow e lead nurturing, ma lavorano tipicamente in silos rispetto a sales e operations. Il GTM Engineering integra tutto in un sistema end-to-end che copre l'intero funnel, dall'identificazione del prospect all'espansione del cliente esistente.",
+    },
+    {
+      question: "Una PMI italiana può davvero adottare il GTM Engineering?",
+      answer: "Sì, con un approccio adattato al contesto. Le PMI italiane possono implementare versioni proporzionate tramite consulenza Fractional, tool no-code, e roll-out progressivi che rispettano i vincoli di budget e competenze interne.",
+    },
+    {
+      question: "Quanto costa implementare un sistema GTM Engineering in una PMI?",
+      answer: "Il costo dipende dalla dimensione e dalla complessità dei processi commerciali esistenti. La discussione del preventivo fa parte del Discovery Day — prima bisogna capire cosa serve davvero, poi si può parlare di investimento.",
+    },
+    {
+      question: "Serve avere un team tecnico interno?",
+      answer: "No. I tool no-code hanno reso possibile costruire sistemi commerciali sofisticati senza team di sviluppo dedicati. Un consulente GTM esperto progetta l'architettura, la implementa con tool accessibili, e forma un responsabile interno alla manutenzione continuativa.",
+    },
+    {
+      question: "Quanto tempo ci vuole per vedere risultati?",
+      answer: "I primi segnali misurabili arrivano tipicamente dopo 8-12 settimane dal go-live del primo workflow. Il ROI completo si misura su orizzonti più lunghi — 6-18 mesi a seconda del ciclo di vendita dell'azienda.",
+    },
+  ]}
+>
+
+  <!-- HERO + SERVIZIO -->
+  <section class="section pillar">
+    <div class="container">
+      <div class="pillar-inner fade-in">
+        <a href="/servizi/" class="back-link">&larr; Tutti i servizi</a>
+        <h1 class="pillar-title">GTM Engineering per PMI italiane</h1>
+        <p class="pillar-subtitle">Fractional Go-to-Market Engineering &mdash; Pesaro, Rimini, Marche</p>
+
+        <div class="pillar-content">
+          <div class="pillar-description">
+            <p>Go-to-Market Engineering è la disciplina che applica principi di ingegneria del software &mdash; modularità, scalabilità, misurabilità end-to-end &mdash; alla generazione di fatturato. Unifica tre aree storicamente separate: marketing, vendite, sales operations.</p>
+            <p>Un GTM Engineer non esegue campagne e non fa telefonate. Progetta il sistema che trasforma segnali di mercato in conversazioni di vendita qualificate. Ogni fase del funnel diventa un modulo che si può misurare, automatizzare, ottimizzare con dati reali.</p>
+            <p>Per le PMI italiane tradizionali, il GTM Engineering è la via pratica all'adozione AI nei processi commerciali: amplifica quello che già funziona invece di sostituirlo.</p>
+          </div>
+
+          <div class="pillar-details">
+            <div class="detail-block">
+              <h3>Cosa include</h3>
+              <ul>
+                <li>Audit della pipeline commerciale esistente</li>
+                <li>Progettazione workflow automatizzati end-to-end</li>
+                <li>Acquisizione e gestione segnali di mercato</li>
+                <li>Automazione qualifica e outreach personalizzato</li>
+                <li>Orchestrazione del funnel &mdash; dal primo contatto alla chiusura</li>
+                <li>Dashboard di monitoraggio e ottimizzazione continua</li>
+                <li>Formazione del team interno alla manutenzione del sistema</li>
+              </ul>
+            </div>
+
+            <div class="detail-block">
+              <h3>Per chi è</h3>
+              <ul>
+                <li>PMI che faticano a trovare commerciali B2B qualificati</li>
+                <li>Aziende che vogliono scalare la pipeline senza espandere il team</li>
+                <li>Imprenditori delusi da precedenti progetti di automazione</li>
+                <li>Team commerciali che perdono tempo su lead freddi invece che su relazioni qualificate</li>
+              </ul>
+            </div>
+
+            <div class="detail-block">
+              <h3>Stack e strumenti</h3>
+              <div class="stack-grid">
+                <span class="stack-tag">Clay</span>
+                <span class="stack-tag">n8n</span>
+                <span class="stack-tag">Make</span>
+                <span class="stack-tag">HubSpot</span>
+                <span class="stack-tag">Claude</span>
+                <span class="stack-tag">ChatGPT</span>
+              </div>
+            </div>
+
+            <div class="detail-block">
+              <h3>Approccio</h3>
+              <p class="detail-text">Amplificazione controllata: il sistema GTM potenzia il commerciale esperto, non lo rimpiazza. L'imprenditore mantiene il controllo dei criteri commerciali &mdash; chi contattare, cosa dire, come presentarsi. Cambia solo la scala a cui può applicarli.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LE 4 COMPONENTI -->
+  <section class="section componenti">
+    <div class="container">
+      <div class="componenti-inner fade-in">
+        <h2 class="componenti-title">Le quattro componenti di un sistema GTM</h2>
+
+        <div class="componenti-grid">
+          <div class="componente-card">
+            <h4>Acquisizione segnali</h4>
+            <p>Il sistema monitora fonti esterne &mdash; LinkedIn, registri imprese, siti corporate, job board, dati di intent &mdash; per individuare eventi che indicano opportunità commerciali. Un competitor che cambia pricing, un cliente che supera una soglia di fatturato: ciascuno è un segnale che innesca un'azione automatizzata.</p>
+          </div>
+          <div class="componente-card">
+            <h4>Qualifica e outreach</h4>
+            <p>I segnali raccolti vengono arricchiti con dati aggiuntivi &mdash; dimensione azienda, settore, tecnologie, contatti chiave. Un workflow automatizzato trasforma il segnale in un messaggio personalizzato, al destinatario giusto, sul canale giusto, al momento giusto.</p>
+          </div>
+          <div class="componente-card">
+            <h4>Orchestrazione del funnel</h4>
+            <p>Il sistema coordina l'handover tra le fasi &mdash; dal primo contatto alla demo, dalla proposta alla chiusura. Nessun lead qualificato viene perso per errore umano o mancato follow-up. Clay, HubSpot, n8n diventano componenti di un'unica architettura.</p>
+          </div>
+          <div class="componente-card">
+            <h4>Misurazione e ottimizzazione</h4>
+            <p>Ogni azione produce dati. Il GTM Engineer analizza conversion rate, pipeline velocity, CAC, LTV per trovare dove si rompe il sistema e ripararlo. La pipeline diventa auto-ottimizzante.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PERCHÉ NEL 2026 -->
+  <section class="section perche">
+    <div class="container">
+      <div class="perche-inner fade-in">
+        <h2 class="perche-title">Perché il GTM Engineering conta per le PMI italiane nel 2026</h2>
+
+        <div class="perche-content">
+          <p>Tre fattori rendono il GTM Engineering rilevante per le PMI italiane adesso, non tra due anni.</p>
+          <p>Il primo è il <strong>costo del commerciale</strong>. Trovare commerciali B2B qualificati in Italia, formarli, trattenerli, è diventato uno dei costi più alti per una PMI. Il GTM Engineering amplifica la produttività commerciale esistente attraverso automazione intelligente &mdash; riduce la necessità di espandere il team in modo proporzionale alla crescita del fatturato.</p>
+          <p>Il secondo è la <strong>maturità degli strumenti</strong>. Oggi un singolo <a href="/fractional-manager/" class="content-link">consulente GTM esperto</a> progetta e implementa in poche settimane sistemi che fino a due anni fa richiedevano progetti IT semestrali con budget a sei cifre.</p>
+          <p>Il terzo è la <strong>concorrenza</strong>. Competitor europei e americani stanno usando GTM Engineering per entrare nel mercato italiano con strutture commerciali più leggere e più efficaci delle nostre. È una dinamica che si sta già muovendo.</p>
+        </div>
+
+        <h3 class="perche-sub">Il problema dell'AI nelle PMI: resistenze vere</h3>
+        <div class="perche-content">
+          <p>L'adozione dell'AI nelle PMI italiane si scontra con resistenze che non vanno derise &mdash; sono razionali. Paura di stravolgere processi che funzionano. Diffidenza verso strumenti percepiti come troppo tecnici. Delusione da precedenti progetti digitali che hanno prodotto poco.</p>
+          <p>Il GTM Engineering aggira queste resistenze perché si innesta sul processo commerciale esistente invece di sostituirlo. Il frame che funziona con l'imprenditore italiano non è "adozione AI" come rivoluzione tecnologica. È scalabilità commerciale AI-integrated come evoluzione dell'infrastruttura di vendita.</p>
+          <p>Per chi vuole capire come l'AI può entrare in azienda senza stravolgerla, la cornice più ampia è nella pagina <a href="/servizi/intelligenza-artificiale-per-pmi/" class="content-link">AI Integration per PMI</a>. Il GTM Engineering è l'applicazione di quella cornice al processo commerciale.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COME SI IMPLEMENTA - 4 STEP -->
+  <section class="section percorso">
+    <div class="container">
+      <div class="percorso-inner fade-in">
+        <h2 class="percorso-title">Come si implementa in una PMI italiana</h2>
+
+        <div class="percorso-steps">
+          <div class="percorso-step">
+            <span class="step-number">01</span>
+            <h3>Audit della pipeline</h3>
+            <p>Mappo il funnel esistente &mdash; acquisizione, qualifica, chiusura, retention. Identifico i colli di bottiglia e misuro le metriche che spesso nessuno misurava prima. 2-4 settimane.</p>
+          </div>
+          <div class="percorso-step">
+            <span class="step-number">02</span>
+            <h3>MVP dei workflow prioritari</h3>
+            <p>Si parte con due o tre workflow ad alto impatto: arricchimento lead inbound, nurturing post-demo, riattivazione prospect freddi. Ogni workflow viene testato prima di passare al successivo. 4-8 settimane.</p>
+          </div>
+          <div class="percorso-step">
+            <span class="step-number">03</span>
+            <h3>Espansione dell'infrastruttura</h3>
+            <p>Si estende la pipeline AI all'intero funnel. Nuovi segnali, nuovi canali, integrazione con ERP, gestionale e CRM, dashboard di monitoraggio continuo. 8-16 settimane.</p>
+          </div>
+          <div class="percorso-step">
+            <span class="step-number">04</span>
+            <h3>Governance e ottimizzazione</h3>
+            <p>Il sistema GTM non è un progetto a termine. Review settimanali, esperimenti su nuovi segnali, formazione continua del team interno perché il sistema resti manutenibile &mdash; anche senza il consulente esterno.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GTM vs REVOPS vs MARKETING -->
+  <section class="section confronto">
+    <div class="container">
+      <div class="confronto-inner fade-in">
+        <h2 class="confronto-title">GTM Engineer, RevOps, Marketing Manager: cosa cambia</h2>
+
+        <div class="confronto-grid">
+          <div class="confronto-card">
+            <h4>RevOps</h4>
+            <p>Integrità dei dati, configurazione tool, reporting. Funzione di manutenzione: tiene la macchina pulita e misurabile. Raramente inventa nuovi meccanismi di acquisizione.</p>
+          </div>
+          <div class="confronto-card">
+            <h4>Marketing Manager</h4>
+            <p>Campagne, branding, comunicazione. La metrica è la generazione di lead. Opera su canali consolidati con logiche consolidate. <a href="/servizi/digital-marketing/" class="content-link">Digital Marketing &rarr;</a></p>
+          </div>
+          <div class="confronto-card confronto-card--highlight">
+            <h4>GTM Engineer</h4>
+            <p>Costruisce workflow end-to-end nuovi. Sperimenta con segnali che nessun competitor sta ancora sfruttando. Risponde direttamente di pipeline generata &mdash; non solo di traffico o lead in cima al funnel.</p>
+          </div>
+        </div>
+
+        <div class="confronto-content">
+          <p>Il concetto che circola nella community internazionale è quello di "GTM Alpha": le tattiche efficaci hanno un ciclo di vita di settimane, non di anni. Chi fa ingegneria del go-to-market deve scoprire, implementare e misurare nuove mosse in continuazione, prima che il vantaggio si consumi.</p>
+          <p>Il ruolo non si trova facilmente sul mercato. Richiede una combinazione rara &mdash; tecnica, commerciale, sistemica &mdash; che nessuna università forma. I GTM Engineer validi oggi vengono da percorsi ibridi: ex-founder, ex-RevOps con background tecnico, marketer che hanno imparato a programmare.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FRACTIONAL GTM - SEZIONE NAVY -->
+  <section class="section fractional-gtm">
+    <div class="container">
+      <div class="fractional-inner fade-in">
+        <h2 class="fractional-title">Fractional GTM: la via italiana al Go-to-Market Engineering</h2>
+
+        <div class="fractional-content">
+          <p>Nessuna PMI italiana tradizionale può assumere un GTM Engineer full-time nel 2026. I profili qualificati sono scarsi, costosi, e lavorano quasi sempre per startup tech americane.</p>
+          <p>La risposta pratica è la <a href="/fractional-manager/" class="fractional-link">consulenza Fractional</a>. Un professionista esperto opera per l'azienda part-time, progetta l'architettura GTM, implementa i workflow prioritari, forma il team interno, lascia un sistema autonomo.</p>
+        </div>
+
+        <div class="dimensioni-grid">
+          <div class="dimensione-card">
+            <h4>Dimensione strategica</h4>
+            <p>Allineamento del GTM con gli obiettivi di business, scelta dei segmenti target, definizione dell'ICP, design dell'architettura commerciale. Il piano di <a href="/servizi/business-development/" class="fractional-link">business development</a> declinato operativamente.</p>
+          </div>
+          <div class="dimensione-card">
+            <h4>Dimensione ingegneristica</h4>
+            <p>Progettazione dei workflow automatizzati, selezione e integrazione dei tool, implementazione dell'AI nei punti ad alto ROI, misurazione end-to-end.</p>
+          </div>
+          <div class="dimensione-card">
+            <h4>Dimensione culturale</h4>
+            <p>Accompagnamento dell'imprenditore e del team nel cambiamento, gestione delle resistenze interne, formazione operativa, costruzione di competenze durevoli.</p>
+          </div>
+        </div>
+
+        <div class="fractional-content">
+          <p>La maggior parte dei consulenti copre una sola dimensione &mdash; e una sola dimensione non basta. Un ingegnere senza strategia costruisce sistemi che nessuno usa. Uno stratega senza capacità implementativa lascia slide che nessuno applica.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPROCCIO ROSSOZINGONE -->
+  <section class="section approccio">
+    <div class="container">
+      <div class="approccio-inner fade-in">
+        <h2 class="approccio-title">L'approccio RossoZingone</h2>
+
+        <div class="approccio-content">
+          <p>RossoZingone Srl opera come studio Fractional specializzato nell'accompagnamento delle PMI italiane tradizionali verso l'integrazione dell'AI nei processi commerciali. Amplificazione controllata: scalare la capacità operativa senza sostituire il know-how esistente, senza stravolgere la cultura aziendale, senza rompere ciò che già funziona.</p>
+          <p>Le PMI italiane hanno asset competitivi enormi &mdash; relazioni, esperienza, reputazione, artigianalità del servizio &mdash; che vanno potenziati con l'AI, non rimpiazzati. Un sistema GTM ben progettato libera tempo al commerciale esperto perché possa fare quello che sa fare meglio: costruire relazioni con clienti qualificati, non rincorrere lead freddi a mano.</p>
+          <p>Non un'agenzia che vende setup. Un Fractional Executive con 27 anni di esperienza in marketing e trasformazione digitale, formato in General Management presso SDA Bocconi, operativo direttamente sul territorio italiano. Un direttore che entra nell'azienda, progetta insieme all'imprenditore, e risponde dei risultati.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section faq-section">
+    <div class="container">
+      <div class="faq-inner fade-in">
+        <h2 class="faq-title">Domande frequenti sul GTM Engineering</h2>
+
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary class="faq-q">Cos'è il GTM Engineering in parole semplici?</summary>
+            <div class="faq-a">
+              <p>È la disciplina che progetta il sistema commerciale di un'azienda come si progetta un'infrastruttura software. Unisce marketing, vendite e operations in un'architettura automatizzata che genera pipeline qualificata in modo misurabile e replicabile.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-q">Qual è la differenza tra GTM Engineering e marketing automation?</summary>
+            <div class="faq-a">
+              <p>La marketing automation è un sottoinsieme del GTM Engineering. Le piattaforme di marketing automation gestiscono email, workflow e lead nurturing, ma lavorano tipicamente in silos rispetto a sales e operations. Il GTM Engineering integra tutto in un sistema end-to-end che copre l'intero funnel.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-q">Una PMI italiana può davvero adottare il GTM Engineering?</summary>
+            <div class="faq-a">
+              <p>Sì, con un approccio adattato al contesto. Le PMI italiane possono implementare versioni proporzionate tramite consulenza Fractional, tool no-code, e roll-out progressivi che rispettano i vincoli di budget e competenze interne. La dimensione del progetto si adatta alla dimensione dell'azienda, non il contrario.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-q">Quanto costa implementare un sistema GTM Engineering in una PMI?</summary>
+            <div class="faq-a">
+              <p>Il costo dipende dalla dimensione e dalla complessità dei processi commerciali esistenti, dal numero di workflow da costruire e dai tool da integrare. La discussione del preventivo fa parte del Discovery Day &mdash; prima bisogna capire cosa serve davvero, poi si può parlare di investimento.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-q">Serve avere un team tecnico interno?</summary>
+            <div class="faq-a">
+              <p>No. I tool no-code hanno reso possibile costruire sistemi commerciali sofisticati senza team di sviluppo dedicati. Un consulente GTM esperto progetta l'architettura, la implementa con tool accessibili, e forma un responsabile interno &mdash; di solito dal commerciale o dalle operations &mdash; alla manutenzione continuativa.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-q">Quanto tempo ci vuole per vedere risultati?</summary>
+            <div class="faq-a">
+              <p>I primi segnali misurabili arrivano tipicamente dopo 8-12 settimane dal go-live del primo workflow. Il ROI completo si misura su orizzonti più lunghi &mdash; 6-18 mesi a seconda del ciclo di vendita dell'azienda. Il GTM Engineering non è una tattica di breve. È costruzione di infrastruttura.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CtaFinal headline="Parliamo del tuo go-to-market." sub="Due ore di conversazione strutturata per capire dove si rompe la tua pipeline e se l'AI può aiutarti. Nessun impegno, nessun costo." />
+
+</BaseLayout>
+
+<style>
+  /* ─── PILLAR SECTION ─── */
+  .pillar {
+    background: var(--color-crema);
+  }
+
+  .pillar-inner {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .back-link {
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-testo-secondario);
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    transition: color 0.2s ease;
+  }
+
+  .back-link:hover {
+    color: var(--color-rosso);
+  }
+
+  .pillar-title {
+    font-size: clamp(2rem, 4.5vw, 3rem);
+    margin-bottom: 0.25rem;
+  }
+
+  .pillar-subtitle {
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--color-testo-secondario);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 2.5rem;
+  }
+
+  .pillar-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .pillar-description p {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: var(--color-testo);
+    margin-bottom: 1rem;
+  }
+
+  .pillar-description p:last-child {
+    margin-bottom: 0;
+  }
+
+  .pillar-details {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  @media (min-width: 768px) {
+    .pillar-details {
+      grid-template-columns: 1fr 1fr;
+      align-items: start;
+    }
+  }
+
+  .detail-block h3 {
+    font-family: var(--font-body);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-testo-secondario);
+    margin-bottom: 1rem;
+  }
+
+  .detail-block ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .detail-block li {
+    font-size: 0.9375rem;
+    color: var(--color-testo);
+    padding-left: 1.25rem;
+    position: relative;
+    line-height: 1.5;
+  }
+
+  .detail-block li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.55em;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--color-rosso);
+  }
+
+  .detail-text {
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    color: var(--color-testo);
+  }
+
+  .stack-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .stack-tag {
+    font-family: var(--font-body);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--color-navy);
+    padding: 0.35rem 0.85rem;
+    background: var(--color-bianco);
+    border-radius: 4px;
+    border: 1px solid var(--color-bordo);
+    letter-spacing: 0.01em;
+  }
+
+  /* ─── COMPONENTI ─── */
+  .componenti {
+    background: var(--color-bianco);
+  }
+
+  .componenti-inner {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .componenti-title {
+    font-size: clamp(1.5rem, 3.5vw, 2rem);
+    margin-bottom: 2rem;
+  }
+
+  .componenti-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .componenti-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .componente-card {
+    padding: 1.75rem;
+    background: var(--color-crema);
+    border-radius: 6px;
+    border: 1px solid var(--color-bordo);
+  }
+
+  .componente-card h4 {
+    font-family: var(--font-display);
+    font-size: 1.125rem;
+    color: var(--color-navy);
+    margin-bottom: 0.5rem;
+  }
+
+  .componente-card p {
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    color: var(--color-testo-secondario);
+    margin: 0;
+  }
+
+  /* ─── PERCHÉ ─── */
+  .perche {
+    background: var(--color-crema);
+  }
+
+  .perche-inner {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .perche-title {
+    font-size: clamp(1.5rem, 3.5vw, 2rem);
+    margin-bottom: 2rem;
+  }
+
+  .perche-sub {
+    font-family: var(--font-body);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-testo-secondario);
+    margin-top: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .perche-content p {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: var(--color-testo);
+    margin-bottom: 1.25rem;
+  }
+
+  .perche-content strong {
+    color: var(--color-navy);
+  }
+
+  .content-link {
+    color: var(--color-rosso);
+    font-weight: 500;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: color 0.2s ease;
+  }
+
+  .content-link:hover {
+    color: var(--color-navy);
+  }
+
+  /* ─── PERCORSO ─── */
+  .percorso {
+    background: var(--color-bianco);
+  }
+
+  .percorso-inner {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .percorso-title {
+    font-size: clamp(1.5rem, 3.5vw, 2rem);
+    margin-bottom: 2.5rem;
+  }
+
+  .percorso-steps {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  @media (min-width: 768px) {
+    .percorso-steps {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .percorso-step {
+    padding: 2rem;
+    background: var(--color-crema);
+    border-radius: 6px;
+    border: 1px solid var(--color-bordo);
+  }
+
+  .step-number {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    color: var(--color-rosso);
+    display: block;
+    margin-bottom: 0.75rem;
+  }
+
+  .percorso-step h3 {
+    font-family: var(--font-display);
+    font-size: 1.125rem;
+    color: var(--color-navy);
+    margin-bottom: 0.75rem;
+  }
+
+  .percorso-step p {
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    color: var(--color-testo-secondario);
+    margin: 0;
+  }
+
+  /* ─── CONFRONTO ─── */
+  .confronto {
+    background: var(--color-crema);
+  }
+
+  .confronto-inner {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .confronto-title {
+    font-size: clamp(1.5rem, 3.5vw, 2rem);
+    margin-bottom: 2rem;
+  }
+
+  .confronto-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  @media (min-width: 768px) {
+    .confronto-grid {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+
+  .confronto-card {
+    padding: 1.75rem;
+    background: var(--color-bianco);
+    border-radius: 6px;
+    border: 1px solid var(--color-bordo);
+  }
+
+  .confronto-card--highlight {
+    border-color: var(--color-rosso);
+    border-width: 2px;
+  }
+
+  .confronto-card h4 {
+    font-family: var(--font-display);
+    font-size: 1.125rem;
+    color: var(--color-navy);
+    margin-bottom: 0.5rem;
+  }
+
+  .confronto-card p {
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    color: var(--color-testo-secondario);
+    margin: 0;
+  }
+
+  .confronto-content {
+    max-width: 760px;
+  }
+
+  .confronto-content p {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: var(--color-testo);
+    margin-bottom: 1.25rem;
+  }
+
+  /* ─── FRACTIONAL GTM (navy section) ─── */
+  .fractional-gtm {
+    background: var(--color-navy);
+    color: var(--color-bianco);
+  }
+
+  .fractional-inner {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .fractional-title {
+    font-size: clamp(1.5rem, 3.5vw, 2rem);
+    color: var(--color-bianco);
+    margin-bottom: 2rem;
+    border-left: 4px solid var(--color-rosso);
+    padding-left: 1rem;
+  }
+
+  .fractional-content p {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 1.25rem;
+  }
+
+  .fractional-link {
+    color: var(--color-bianco);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: opacity 0.2s ease;
+  }
+
+  .fractional-link:hover {
+    opacity: 0.7;
+  }
+
+  .dimensioni-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin: 2rem 0;
+  }
+
+  @media (min-width: 768px) {
+    .dimensioni-grid {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+
+  .dimensione-card {
+    padding: 1.75rem;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .dimensione-card h4 {
+    font-family: var(--font-display);
+    font-size: 1.125rem;
+    color: var(--color-bianco);
+    margin-bottom: 0.5rem;
+  }
+
+  .dimensione-card p {
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+  }
+
+  /* ─── APPROCCIO ─── */
+  .approccio {
+    background: var(--color-bianco);
+  }
+
+  .approccio-inner {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .approccio-title {
+    font-size: clamp(1.5rem, 3.5vw, 2rem);
+    margin-bottom: 2rem;
+  }
+
+  .approccio-content p {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: var(--color-testo);
+    margin-bottom: 1.25rem;
+  }
+
+  /* ─── FAQ ─── */
+  .faq-section {
+    background: var(--color-crema);
+  }
+
+  .faq-inner {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .faq-title {
+    font-size: clamp(1.5rem, 3.5vw, 2rem);
+    margin-bottom: 2rem;
+  }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .faq-item {
+    border-bottom: 1px solid var(--color-bordo);
+  }
+
+  .faq-item:first-child {
+    border-top: 1px solid var(--color-bordo);
+  }
+
+  .faq-q {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-testo);
+    cursor: pointer;
+    padding: 1.25rem 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .faq-q::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-q::after {
+    content: '+';
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--color-rosso);
+    flex-shrink: 0;
+    margin-left: 1rem;
+    transition: transform 0.2s ease;
+  }
+
+  .faq-item[open] .faq-q::after {
+    content: '−';
+  }
+
+  .faq-a {
+    padding: 0 0 1.25rem 0;
+  }
+
+  .faq-a p {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--color-testo);
+    margin: 0;
+  }
+</style>
