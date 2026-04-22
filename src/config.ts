@@ -18,7 +18,7 @@ export const siteConfig = {
   piva: '02866620418',
   founder: 'Francesco Zingone',
   yearFounded: 1998,
-  yearsExperience: 27,
+  yearsExperience: 28,
 } as const;
 
 export const navigation = [
@@ -32,6 +32,6 @@ export const navigation = [
 export const ctaLabel = 'Contattami';
 export const ctaHref = '/contatti/';
 
-// CTA Discovery Day — usata solo nella navbar
-export const discoveryLabel = 'Prenota un Discovery Day';
+// CTA Discovery Session — usata solo nella navbar
+export const discoveryLabel = 'Prenota una Discovery Session';
 export const discoveryHref = 'https://tidycal.com/rossozingone';
