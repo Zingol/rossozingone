@@ -46,22 +46,22 @@ const ogImageUrl = new URL(ogImage, siteConfig.url).href;
 const schemaOrg = {
   "@context": "https://schema.org",
   "@graph": [
+    // ─── ORGANIZATION ───
     {
       "@type": ["Organization", "LocalBusiness", "ProfessionalService"],
       "@id": `${siteConfig.url}/#organization`,
       name: siteConfig.legalName,
+      alternateName: "RossoZingone",
       url: siteConfig.url,
       logo: `${siteConfig.url}/favicon.svg`,
       image: ogImageUrl,
       description: siteConfig.description,
       foundingDate: String(siteConfig.yearFounded),
+      vatID: `IT${siteConfig.piva}`,
+      taxID: `IT${siteConfig.piva}`,
+      priceRange: "\u20AC\u20AC\u20AC",
       founder: {
-        "@type": "Person",
         "@id": `${siteConfig.url}/#person`,
-        name: siteConfig.founder,
-        jobTitle: "Fractional CMO / CEO",
-        url: siteConfig.url,
-        sameAs: [siteConfig.linkedin],
       },
       address: {
         "@type": "PostalAddress",
@@ -73,8 +73,8 @@ const schemaOrg = {
       },
       geo: {
         "@type": "GeoCoordinates",
-        latitude: 43.9096,
-        longitude: 12.9136,
+        latitude: 43.9069708,
+        longitude: 12.9082051,
       },
       contactPoint: {
         "@type": "ContactPoint",
@@ -102,8 +102,164 @@ const schemaOrg = {
         bestRating: "5",
         worstRating: "1",
       },
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Servizi",
+        itemListElement: [
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Fractional CMO / CEO",
+              description: "Direzione marketing e gestione aziendale part-time per PMI italiane",
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Fractional CAIO",
+              description: "Chief AI Officer part-time: governance AI aziendale",
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "AI Integration",
+              description: "Integrazione dell\u2019intelligenza artificiale nei processi aziendali reali",
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "GTM Engineering",
+              description: "Architettura commerciale AI-integrated per PMI italiane",
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Business Development",
+              description: "Identificazione e sviluppo di nuove opportunità di business",
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Digital Marketing",
+              description: "Strategie digitali integrate: SEO, campagne, content, analytics",
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Lead Generation",
+              description: "Generazione di contatti qualificati inbound e outbound",
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Formazione Aziendale",
+              description: "Formazione operativa per team aziendali su marketing digitale e AI",
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Advisory",
+              description: "Diagnostica aziendale BDS, business plan, analisi di mercato",
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Passaggio Generazionale",
+              description: "Affiancamento operativo per nuove generazioni nelle PMI familiari",
+            },
+          },
+        ],
+      },
     },
-    // BreadcrumbList
+    // ─── PERSON ───
+    {
+      "@type": "Person",
+      "@id": `${siteConfig.url}/#person`,
+      name: siteConfig.founder,
+      url: `${siteConfig.url}/chi-sono/`,
+      image: `${siteConfig.url}/francesco-zingone.jpg`,
+      jobTitle: "Fractional CMO & CEO, AI-Integrated",
+      description: "Fractional Executive per PMI italiane. 28 anni di esperienza in marketing strategico e general management. General Management SDA Bocconi.",
+      worksFor: {
+        "@id": `${siteConfig.url}/#organization`,
+      },
+      alumniOf: {
+        "@type": "EducationalOrganization",
+        name: "SDA Bocconi School of Management",
+      },
+      memberOf: [
+        {
+          "@type": "Organization",
+          name: "Fractional Manager Italia",
+          url: "https://fractionalmanageritalia.it",
+        },
+        {
+          "@type": "Organization",
+          name: "FederManager",
+          url: "https://www.federmanager.it",
+        },
+        {
+          "@type": "Organization",
+          name: "AICIM",
+          url: "https://www.aicim.it",
+        },
+      ],
+      knowsAbout: [
+        "Marketing strategico per PMI",
+        "Fractional Management",
+        "AI integration per piccole e medie imprese",
+        "General Management",
+        "Business Development",
+        "Digital Marketing e SEO",
+        "Lead Generation B2B",
+        "GTM Engineering",
+        "Passaggio generazionale nelle imprese familiari",
+        "Diagnostica aziendale BDS",
+      ],
+      sameAs: [
+        siteConfig.linkedin,
+        "https://www.instagram.com/francesco_zingone/",
+      ],
+    },
+    // ─── WEBSITE ───
+    {
+      "@type": "WebSite",
+      "@id": `${siteConfig.url}/#website`,
+      name: siteConfig.name,
+      url: siteConfig.url,
+      publisher: {
+        "@id": `${siteConfig.url}/#organization`,
+      },
+      description: siteConfig.description,
+    },
+    // ─── FRACTIONAL MANAGER (entità fondata) ───
+    {
+      "@type": "Organization",
+      name: "Fractional Manager",
+      url: "https://fractionalmanager.me",
+      founder: {
+        "@id": `${siteConfig.url}/#person`,
+      },
+    },
+    // ─── BREADCRUMB (condizionale) ───
     ...(breadcrumbs ? [{
       "@type": "BreadcrumbList",
       "@id": `${canonicalUrl}#breadcrumb`,
@@ -122,7 +278,7 @@ const schemaOrg = {
         })),
       ],
     }] : []),
-    // Service Schema
+    // ─── SERVICE (condizionale) ───
     ...(schemaService ? [{
       "@type": "Service",
       "@id": `${canonicalUrl}#service`,
@@ -134,7 +290,7 @@ const schemaOrg = {
       },
       areaServed: { "@type": "Country", name: "Italy" },
     }] : []),
-    // FAQ Schema
+    // ─── FAQ (condizionale) ───
     ...(faqSchema ? [{
       "@type": "FAQPage",
       "@id": `${canonicalUrl}#faq`,
@@ -147,7 +303,7 @@ const schemaOrg = {
         },
       })),
     }] : []),
-    // Article Schema
+    // ─── ARTICLE (condizionale) ───
     ...(articleSchema ? [{
       "@type": "Article",
       "@id": `${canonicalUrl}#article`,
