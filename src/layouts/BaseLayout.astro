@@ -16,6 +16,7 @@ interface Props {
     name: string;
     description: string;
     url: string;
+    serviceType?: string;
   };
   faqSchema?: Array<{ question: string; answer: string }>;
   articleSchema?: {
@@ -289,6 +290,7 @@ const schemaOrg = {
         "@id": `${siteConfig.url}/#organization`,
       },
       areaServed: { "@type": "Country", name: "Italy" },
+      ...(schemaService.serviceType ? { serviceType: schemaService.serviceType } : {}),
     }] : []),
     // ─── FAQ (condizionale) ───
     ...(faqSchema ? [{
