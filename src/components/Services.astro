@@ -1,119 +1,71 @@
 ---
-const services: Array<{
-  icon: string;
-  title: string;
-  subtitle: string;
-  description: string;
-  items: (string | { text: string; href: string })[];
-  href: string;
-  guideHref?: string;
-}> = [
+const pillars = [
   {
     icon: '◆',
-    title: 'Fractional CMO/CEO',
-    subtitle: 'Direzione Strategica PMI',
-    description: 'Direzione marketing e gestione aziendale part-time. Competenze executive nella tua azienda 1-3 giorni a settimana, senza il costo di un manager a tempo pieno.',
-    items: ['Marketing strategico e operativo', 'General Management e pianificazione', 'Business Development e crescita controllata', 'Discovery Session: assessment AICIM con metodo BDS'],
+    title: 'Fractional CMO / CEO',
+    subtitle: `Direzione strategica dall'interno`,
+    body: `Non vendo giorni. Entro nel sistema decisionale della tua PMI — marketing, business development, direzione aziendale. Tutto connesso, dall'interno.`,
+    body2: `Un'agenzia opera fuori. Un consulente consiglia e se ne va. Io resto finché l'azienda non cammina.`,
+    cta: 'Come funziona un mandato Fractional',
     href: '/servizi/fractional-cmo-ceo/',
-    guideHref: '/fractional-manager/',
-  },
-  {
-    icon: '◆',
-    title: 'Fractional CAIO',
-    subtitle: 'Chief AI Officer part-time',
-    description: 'Governance dell\'intelligenza artificiale in azienda. Strategia AI, selezione degli strumenti giusti, formazione del team e supervisione dell\'implementazione — senza il costo di un executive a tempo pieno.',
-    items: ['Strategia e roadmap AI aziendale', 'Selezione e valutazione strumenti AI', 'Governance e policy AI interna', 'Supervisione implementazioni e team'],
-    href: '/servizi/fractional-caio/',
   },
   {
     icon: '◆',
     title: 'AI Integration',
-    subtitle: 'Intelligenza Artificiale per PMI',
-    description: 'Integrazione dell\'AI nei processi aziendali reali. Dove crea valore, non dove fa scena. Approccio privacy-first con elaborazione locale per dati sensibili.',
-    items: ['Analisi processi e opportunità AI', 'Automazione workflow e processi', 'AI Agents e chatbot aziendali', 'Privacy-first con Ollama locale'],
+    subtitle: `L'AI nel metodo, non nel reparto`,
+    body: `L'AI non è un progetto. È il modo in cui lavoro dentro la tua azienda — ogni decisione, ogni analisi, ogni processo.`,
+    body2: `Il team non deve imparare un tool. Deve diventare il tipo di organizzazione che integra l'AI naturalmente.`,
+    cta: `L'approccio AI-integrated`,
     href: '/servizi/intelligenza-artificiale-per-pmi/',
   },
   {
     icon: '◆',
-    title: 'Business Development',
-    subtitle: 'Crescita e Nuovi Mercati',
-    description: 'Identificazione e sviluppo di nuove opportunità di business. Dal posizionamento competitivo all\'ingresso in nuovi mercati, con metodo e dati alla mano.',
-    items: ['Analisi competitiva e di mercato', 'Go-to-market strategy', 'Partnership e sviluppo canali', 'Internazionalizzazione PMI'],
-    href: '/servizi/business-development/',
+    title: 'Advisory & Discovery',
+    subtitle: 'Prima di agire, guardo',
+    body: `Discovery Session, diagnostica BDS, analisi di business — i dati prima delle opinioni.`,
+    body2: `Perché nella mia esperienza, il problema di una PMI è raramente dove il titolare pensa che sia. Non perché sbaglia — perché è troppo dentro per vederlo.`,
+    cta: 'Prenota una Discovery Session',
+    href: 'https://tidycal.com/rossozingone',
   },
-  {
-    icon: '◆',
-    title: 'Digital Marketing',
-    subtitle: 'Marketing Digitale Integrato',
-    description: 'Strategie digitali costruite su dati reali. SEO, campagne, content — tutto integrato in un piano coerente con gli obiettivi di business.',
-    items: ['SEO e visibilità organica', 'Campagne Google e social', 'Content strategy e piani editoriali', 'Analytics e ottimizzazione continua'],
-    href: '/servizi/digital-marketing/',
-  },
-  {
-    icon: '◆',
-    title: 'Lead Generation',
-    subtitle: 'Inbound e Outbound',
-    description: 'Generazione di contatti qualificati per qualsiasi settore e progetto. Costruzione di pipeline commerciali solide, sia in entrata che in uscita.',
-    items: ['Strategia inbound e funnel', 'Campagne outbound mirate', 'Qualificazione e nurturing lead', 'CRM e tracciamento opportunità'],
-    href: '/servizi/lead-generation/',
-  },
-  {
-    icon: '◆',
-    title: 'Formazione Aziendale',
-    subtitle: 'Docenza e Training Operativo',
-    description: 'Formazione concreta per team aziendali su marketing digitale, AI e comunicazione. Non corsi generici — programmi costruiti sul contesto specifico dell\'azienda.',
-    items: ['Marketing digitale e social', 'Strumenti e processi AI', 'Comunicazione e content', { text: 'E-learning e piattaforme formative', href: '/servizi/piattaforma-elearning-aziendale/' }],
-    href: '/servizi/formazione-aziendale/',
-  },
-  {
-    icon: '◆',
-    title: 'Advisory',
-    subtitle: 'Analisi, Valutazione e Due Diligence',
-    description: 'Analisi di mercato, diagnostica aziendale BDS, business plan e supporto strategico per decisioni critiche. Dati prima, opinioni dopo.',
-    items: ['Diagnostica aziendale BDS — AICIM', 'Business valuation asset digitali', 'Business plan e strategie d\'impresa', 'Supporto all\'internazionalizzazione'],
-    href: '/servizi/advisory/',
-  },
-  {
-    icon: '◆',
-    title: 'Passaggio Generazionale',
-    subtitle: 'Affiancamento Operativo',
-    description: 'Coaching pratico per le nuove generazioni che entrano nelle PMI familiari. Non motivazione — risultati concreti dentro l\'azienda.',
-    items: ['Affiancamento giovani imprenditori', 'Ponte tra esperienza e innovazione', 'Formazione operativa sul campo', 'Gestione della transizione'],
-    href: '/servizi/passaggio-generazionale/',
-  },
+];
+
+const competenze = [
+  { label: 'Digital Marketing', href: '/servizi/digital-marketing/' },
+  { label: 'Lead Generation', href: '/servizi/lead-generation/' },
+  { label: 'GTM Engineering', href: '/servizi/gtm-engineering/' },
+  { label: 'Business Development', href: '/servizi/business-development/' },
+  { label: 'Formazione Aziendale', href: '/servizi/formazione-aziendale/' },
+  { label: 'Passaggio Generazionale', href: '/servizi/passaggio-generazionale/' },
+  { label: 'Fractional CAIO', href: '/servizi/fractional-caio/' },
 ];
 ---
 
 <section class="section services" id="servizi">
   <div class="container">
     <div class="services-header fade-in">
-      <h2 class="services-title">Nove competenze integrate<br /><span class="services-accent">per far crescere la tua PMI.</span></h2>
+      <h2 class="services-title">Tre pilastri.<br /><span class="services-accent">Un unico mandato.</span></h2>
     </div>
 
-    <div class="services-grid">
-      {services.map((service, i) => (
-        <div class={`service-card fade-in fade-in-delay-${(i % 3) + 1}`}>
-          <span class="service-icon">{service.icon}</span>
-          <h3 class="service-title">{service.title}</h3>
-          <p class="service-subtitle">{service.subtitle}</p>
-          <p class="service-description">{service.description}</p>
-          <ul class="service-items">
-            {service.items.map((item) => (
-              <li>
-                {typeof item === 'string' ? (
-                  item
-                ) : (
-                  <a href={item.href} class="stealth-link">{item.text}</a>
-                )}
-              </li>
-            ))}
-          </ul>
-          <a href={service.href} class="service-link">Approfondisci →</a>
-          {service.guideHref && (
-            <a href={service.guideHref} class="service-guide-link">Cos'è un fractional manager →</a>
-          )}
+    <div class="pillars-grid">
+      {pillars.map((pillar, i) => (
+        <div class={`pillar-card fade-in fade-in-delay-${i + 1}`}>
+          <span class="pillar-icon">{pillar.icon}</span>
+          <h3 class="pillar-title">{pillar.title}</h3>
+          <p class="pillar-subtitle">{pillar.subtitle}</p>
+          <p class="pillar-body">{pillar.body}</p>
+          <p class="pillar-body pillar-body-emphasis">{pillar.body2}</p>
+          <a href={pillar.href} class="pillar-link">{pillar.cta} →</a>
         </div>
       ))}
+    </div>
+
+    <div class="competenze fade-in">
+      <h3 class="competenze-title">Dentro un mandato, queste sono le competenze</h3>
+      <div class="competenze-grid">
+        {competenze.map((c) => (
+          <a href={c.href} class="competenza-link">{c.label}</a>
+        ))}
+      </div>
     </div>
   </div>
 </section>
@@ -136,45 +88,42 @@ const services: Array<{
     color: var(--color-rosso);
   }
 
-  .services-grid {
+  /* ─── PILLAR CARDS ─── */
+  .pillars-grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: 2rem;
   }
 
-  @media (min-width: 768px) {
-    .services-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
   @media (min-width: 1024px) {
-    .services-grid {
+    .pillars-grid {
       grid-template-columns: repeat(3, 1fr);
     }
   }
 
-  .service-card {
+  .pillar-card {
     background: var(--color-bianco);
     border-radius: 6px;
     padding: 2.5rem 2rem;
     border: 1px solid var(--color-bordo);
     transition: box-shadow 0.3s ease, transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
   }
 
-  .service-card:hover {
+  .pillar-card:hover {
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
     transform: translateY(-2px);
   }
 
-  .service-icon {
+  .pillar-icon {
     display: block;
     font-size: 1.25rem;
     color: var(--color-rosso);
     margin-bottom: 1.25rem;
   }
 
-  .service-title {
+  .pillar-title {
     font-family: var(--font-display);
     font-size: 1.5rem;
     color: var(--color-navy);
@@ -182,81 +131,81 @@ const services: Array<{
     line-height: 1.2;
   }
 
-  .service-subtitle {
+  .pillar-subtitle {
     font-size: 0.875rem;
     font-weight: 500;
     color: var(--color-testo-secondario);
     text-transform: uppercase;
     letter-spacing: 0.04em;
-    margin-bottom: 1.25rem;
-  }
-
-  .service-description {
-    font-size: 0.9375rem;
-    line-height: 1.65;
-    color: var(--color-testo);
     margin-bottom: 1.5rem;
   }
 
-  .service-items {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 1.5rem 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+  .pillar-body {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--color-testo);
+    margin-bottom: 0.75rem;
   }
 
-  .service-items li {
-    font-size: 0.875rem;
+  .pillar-body-emphasis {
     color: var(--color-testo-secondario);
-    padding-left: 1.25rem;
-    position: relative;
+    font-style: italic;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
   }
 
-  .service-items li::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0.5em;
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: var(--color-rosso);
-  }
-
-  .stealth-link {
-    color: inherit;
-    text-decoration: none;
-  }
-
-  .stealth-link:hover {
-    color: var(--color-rosso);
-  }
-
-  .service-link {
+  .pillar-link {
     font-family: var(--font-body);
     font-size: 0.9375rem;
     font-weight: 600;
     color: var(--color-rosso);
     text-decoration: none;
     transition: color 0.2s ease;
+    margin-top: auto;
   }
 
-  .service-link:hover {
+  .pillar-link:hover {
     color: var(--color-rosso-dark);
   }
-  .service-guide-link {
-    display: block;
-    margin-top: 0.5rem;
-    font-size: 0.875rem;
-    font-weight: 500;
-    color: var(--color-testo-secondario);
-    text-decoration: none;
-    transition: color 0.2s ease;
+
+  /* ─── COMPETENZE SUBORDINATE ─── */
+  .competenze {
+    margin-top: 4rem;
+    text-align: center;
   }
 
-  .service-guide-link:hover {
+  .competenze-title {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--color-testo-secondario);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 1.5rem;
+  }
+
+  .competenze-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+  }
+
+  .competenza-link {
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-testo);
+    text-decoration: none;
+    padding: 0.5rem 1.25rem;
+    border: 1px solid var(--color-bordo);
+    border-radius: 100px;
+    transition: all 0.2s ease;
+  }
+
+  .competenza-link:hover {
+    border-color: var(--color-rosso);
     color: var(--color-rosso);
+    background: rgba(165, 32, 32, 0.03);
   }
 </style>

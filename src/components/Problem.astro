@@ -1,85 +1,72 @@
-<section class="section problem">
+<section class="section consequences">
   <div class="container">
-    <div class="problem-inner fade-in">
-      <h2 class="problem-headline">
-        Conosci già il problema.<br />
-        <span class="problem-accent">Ti manca chi lo risolve.</span>
+    <div class="consequences-inner fade-in">
+      <h2 class="consequences-headline">
+        Cosa succede se non fai nulla
       </h2>
 
-      <div class="problem-grid">
-        <div class="problem-card fade-in fade-in-delay-1">
-          <span class="problem-icon">→</span>
-          <p>La tua azienda cresce ma la struttura non tiene il passo. Servono decisioni strategiche, non solo operative.</p>
-        </div>
+      <div class="consequences-body">
+        <p class="consequences-lead fade-in fade-in-delay-1">
+          Niente di drammatico. Il mercato non crolla domattina.
+        </p>
 
-        <div class="problem-card fade-in fade-in-delay-2">
-          <span class="problem-icon">→</span>
-          <p>Hai bisogno di un direttore marketing ma non puoi permetterti uno stipendio da C-level 12 mesi l'anno.</p>
-        </div>
+        <p class="fade-in fade-in-delay-1">
+          Le decisioni strategiche continuano a passare tutte da te — e il tempo per pensare si riduce ogni mese. I concorrenti che integrano direzione e AI guadagnano terreno, non con una mossa — con cento piccole mosse che tu non vedi perché sei dentro l'operatività.
+        </p>
 
-        <div class="problem-card fade-in fade-in-delay-3">
-          <span class="problem-icon">→</span>
-          <p>L'AI è ovunque ma nessuno ti dice dove serve davvero nella tua azienda — e dove è solo rumore.</p>
-        </div>
+        <p class="fade-in fade-in-delay-2">
+          Il team esegue. Nessuno guida. Le tattiche si accumulano senza strategia.
+        </p>
+
+        <p class="consequences-closing fade-in fade-in-delay-2">
+          "Ha sempre funzionato così" è il bias più costoso nelle PMI italiane. Non perché sia sbagliato — perché il contesto in cui funzionava non esiste più.
+        </p>
       </div>
     </div>
   </div>
 </section>
 
 <style>
-  .problem {
+  .consequences {
     background: var(--color-navy);
     color: var(--color-bianco);
   }
 
-  .problem-inner {
-    max-width: 960px;
+  .consequences-inner {
+    max-width: 720px;
     margin: 0 auto;
   }
 
-  .problem-headline {
+  .consequences-headline {
     font-size: clamp(1.75rem, 4vw, 2.75rem);
     color: var(--color-bianco);
-    margin-bottom: 3rem;
+    margin-bottom: 2.5rem;
     text-align: center;
   }
 
-  .problem-accent {
-    color: var(--color-rosso-light);
-  }
-
-  .problem-grid {
-    display: grid;
-    grid-template-columns: 1fr;
+  .consequences-body {
+    display: flex;
+    flex-direction: column;
     gap: 1.5rem;
   }
 
-  @media (min-width: 768px) {
-    .problem-grid {
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-    }
-  }
-
-  .problem-card {
-    padding: 2rem;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 6px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-  }
-
-  .problem-icon {
-    display: block;
-    font-size: 1.25rem;
-    color: var(--color-rosso-light);
-    margin-bottom: 1rem;
-    font-weight: 700;
-  }
-
-  .problem-card p {
-    font-size: 1rem;
-    line-height: 1.7;
+  .consequences-body p {
+    font-size: 1.0625rem;
+    line-height: 1.8;
     color: rgba(255, 255, 255, 0.8);
     margin: 0;
+  }
+
+  .consequences-lead {
+    font-size: 1.1875rem !important;
+    color: rgba(255, 255, 255, 0.6) !important;
+    font-style: italic;
+  }
+
+  .consequences-closing {
+    color: var(--color-rosso-light) !important;
+    font-weight: 500;
+    border-left: 3px solid var(--color-rosso-light);
+    padding-left: 1.5rem;
   }
 </style>

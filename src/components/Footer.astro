@@ -11,8 +11,9 @@ const year = new Date().getFullYear();
           <span class="logo-rosso">ROSSO</span><span class="logo-zingone">ZINGONE</span>
         </a>
         <p class="footer-tagline">
-          Consulenza direzionale AI-integrated per PMI.<br />
-          Crescita controllata. Redditività sostenibile.
+          Consulenza direzionale AI-integrated per PMI italiane.<br />
+          Direzione strategica dall'interno — marketing, management, AI.<br />
+          Part-time nel tempo, full-time nella responsabilità.
         </p>
       </div>
 
@@ -26,17 +27,27 @@ const year = new Date().getFullYear();
       </div>
 
       <div class="footer-col">
+        <h4 class="footer-heading">Servizi</h4>
+        <nav aria-label="Footer servizi">
+          <a href="/servizi/digital-marketing/" class="footer-link">Digital Marketing</a>
+          <a href="/servizi/lead-generation/" class="footer-link">Lead Generation</a>
+          <a href="/servizi/gtm-engineering/" class="footer-link">GTM Engineering</a>
+          <a href="/servizi/business-development/" class="footer-link">Business Development</a>
+          <a href="/servizi/formazione-aziendale/" class="footer-link">Formazione Aziendale</a>
+          <a href="/servizi/passaggio-generazionale/" class="footer-link">Passaggio Generazionale</a>
+          <a href="/servizi/fractional-caio/" class="footer-link">Fractional CAIO</a>
+          <a href="/servizi/piattaforma-elearning-aziendale/" class="footer-link">Piattaforma E-Learning</a>
+        </nav>
+      </div>
+
+      <div class="footer-col">
         <h4 class="footer-heading">Contatti</h4>
         <a href={`mailto:${siteConfig.email}`} class="footer-link">{siteConfig.email}</a>
         <a href={`tel:${siteConfig.phone}`} class="footer-link">{siteConfig.phoneDisplay}</a>
         <a href={siteConfig.linkedin} target="_blank" rel="noopener noreferrer" class="footer-link">
           LinkedIn →
         </a>
-      </div>
-
-      <div class="footer-col">
-        <h4 class="footer-heading">Sede</h4>
-        <p class="footer-text">
+        <p class="footer-text footer-address">
           {siteConfig.address.street}<br />
           {siteConfig.address.cap} {siteConfig.address.city} ({siteConfig.address.province})
         </p>
@@ -73,8 +84,15 @@ const year = new Date().getFullYear();
 
   @media (min-width: 768px) {
     .footer-grid {
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 2rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .footer-grid {
       grid-template-columns: 1.5fr 1fr 1fr 1fr;
-      gap: 3rem;
+      gap: 2.5rem;
     }
   }
 
@@ -133,6 +151,12 @@ const year = new Date().getFullYear();
   .footer-text {
     font-size: 0.9375rem;
     line-height: 1.6;
+  }
+
+  .footer-address {
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
   }
 
   .footer-divider {

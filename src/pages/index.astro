@@ -11,15 +11,15 @@ import CtaFinal from '../components/CtaFinal.astro';
 ---
 
 <BaseLayout
-  title="Fractional CMO e CEO per PMI"
-  description="Fractional CMO e CEO per PMI italiane. 27 anni di esperienza in marketing strategico, general management e AI integration. Basato a Pesaro, operativo in tutta Italia."
+  title="Fractional CMO e CEO AI-integrated per PMI | RossoZingone"
+  description="Direzione strategica dall'interno per PMI italiane. 28 anni di esperienza, AI integrata nel metodo. Part-time nel tempo, full-time nella responsabilità."
 >
 
   <section class="hero">
     <div class="container hero-inner">
       <div class="hero-content">
         <div class="hero-badge fade-in">
-          <span>27 anni</span>
+          <span>28 anni</span>
           <span class="badge-dot"></span>
           <span>PMI italiane</span>
           <span class="badge-dot"></span>
@@ -29,19 +29,24 @@ import CtaFinal from '../components/CtaFinal.astro';
         </div>
 
         <h1 class="hero-headline fade-in">
-          Direzione e strategia<br />
-          <span class="hero-accent">per PMI che vogliono crescere.</span>
+          Entro dal marketing.<br />
+          Arrivo ai colli di bottiglia del business.
         </h1>
 
-        <p class="hero-sub fade-in fade-in-delay-1">
-          Francesco Zingone — Fractional CMO e CEO.<br />
-          Marketing strategico, gestione aziendale e AI integration.<br />
-          Part-time nella tua azienda, full-time sui tuoi risultati.
+        <p class="hero-statement fade-in fade-in-delay-1">
+          L'obiettivo è che tu non abbia più bisogno di me.
+        </p>
+
+        <p class="hero-sub fade-in fade-in-delay-2">
+          Part-time nel tempo, full-time nella responsabilità.<br />
+          28 anni di PMI italiane, AI integrata nel metodo,<br />
+          e un obiettivo: costruire la tua autonomia.<br />
+          Quando esco, l'azienda sa camminare da sola.
         </p>
 
         <div class="hero-cta fade-in fade-in-delay-2">
           <a href={ctaHref} class="btn btn-primary">{ctaLabel}</a>
-          <a href="/servizi/" class="btn btn-secondary">Scopri i servizi</a>
+          <a href="#servizi" class="btn btn-secondary">Come lavoro</a>
         </div>
       </div>
 
@@ -50,7 +55,7 @@ import CtaFinal from '../components/CtaFinal.astro';
           <div class="visual-accent"></div>
           <img src="/loghi/crescita.png" alt="Crescita controllata" class="visual-crescita" />
           <div class="visual-label">
-            <span class="visual-number">27</span>
+            <span class="visual-number">28</span>
             <span class="visual-text">anni dentro<br />le PMI italiane</span>
           </div>
         </div>
@@ -59,8 +64,8 @@ import CtaFinal from '../components/CtaFinal.astro';
   </section>
 
   <TrustBar />
-  <Problem />
   <Services />
+  <Problem />
   <Process />
   <Testimonials />
   <ClientLogos />
@@ -137,6 +142,16 @@ import CtaFinal from '../components/CtaFinal.astro';
 
   .hero-accent {
     color: var(--color-rosso);
+  }
+
+  .hero-statement {
+    font-family: var(--font-display);
+    font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+    font-weight: 400;
+    line-height: 1.3;
+    color: var(--color-rosso);
+    margin-bottom: 1.5rem;
+    font-style: italic;
   }
 
   .hero-sub {
