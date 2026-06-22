@@ -223,6 +223,25 @@ const cases = [
     </div>
   </section>
 
+  <!-- COMPETENZE DENTRO IL MANDATO -->
+  <section class="section competenze-section">
+    <div class="container">
+      <div class="competenze-inner fade-in">
+        <h2 class="competenze-title-section">Competenze dentro questo mandato</h2>
+        <div class="competenze-links">
+          <a href="/servizi/fractional-caio/" class="competenza-card">
+            <span class="competenza-name">Fractional CAIO</span>
+            <span class="competenza-frame">Governance AI aziendale — strategia, selezione strumenti, policy, supervisione. Il direttore AI part-time.</span>
+          </a>
+          <a href="/servizi/piattaforma-elearning-aziendale/" class="competenza-card">
+            <span class="competenza-name">Piattaforma E-Learning</span>
+            <span class="competenza-frame">Moodle gestito per formazione interna — setup, corsi, gestione continuativa. Dal 2006.</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- CASI PROGETTO -->
   <section class="section cases-section">
     <div class="container">
@@ -698,6 +717,69 @@ const cases = [
     font-weight: 600;
   }
   /* ─── AGENTI AI CUSTOM ─── */
+
+  /* ─── COMPETENZE DENTRO IL MANDATO ─── */
+  .competenze-section {
+    background: var(--color-crema);
+  }
+
+  .competenze-inner {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .competenze-title-section {
+    font-size: clamp(1.5rem, 3.5vw, 2rem);
+    margin-bottom: 1.5rem;
+  }
+
+  .competenze-links {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  @media (min-width: 768px) {
+    .competenze-links {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .competenza-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 1.25rem 1.5rem;
+    background: var(--color-bianco);
+    border: 1px solid var(--color-bordo);
+    border-radius: 6px;
+    text-decoration: none;
+    transition: border-color 0.2s ease, transform 0.15s ease;
+  }
+
+  .competenza-card:hover {
+    border-color: var(--color-rosso);
+    transform: translateY(-1px);
+  }
+
+  .competenza-name {
+    font-family: var(--font-body);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--color-navy);
+  }
+
+  .competenza-card:hover .competenza-name {
+    color: var(--color-rosso);
+  }
+
+  .competenza-frame {
+    font-size: 0.8125rem;
+    line-height: 1.5;
+    color: var(--color-testo-secondario);
+  }
+
+  /* ─── AGENTI AI CUSTOM (original) ─── */
   .agenti {
     background: var(--color-bianco);
   }
