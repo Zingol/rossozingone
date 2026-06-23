@@ -61,6 +61,7 @@ const competenze = [
 
     <div class="competenze fade-in">
       <h3 class="competenze-title">Dentro un mandato, queste sono le competenze</h3>
+      <p class="competenze-ponte">Competenze diverse, una sola testa che le connette.</p>
       <div class="competenze-grid">
         {competenze.map((c) => (
           <a href={c.href} class="competenza-link">{c.label}</a>
@@ -181,6 +182,13 @@ const competenze = [
     color: var(--color-testo-secondario);
     text-transform: uppercase;
     letter-spacing: 0.04em;
+    margin-bottom: 0.25rem;
+  }
+
+  .competenze-ponte {
+    font-size: 0.875rem;
+    color: var(--color-testo-secondario);
+    font-style: italic;
     margin-bottom: 1.5rem;
   }
 
