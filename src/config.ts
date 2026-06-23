@@ -23,9 +23,7 @@ export const siteConfig = {
 
 export const navigation = [
   { label: 'Chi Sono', href: '/chi-sono/' },
-  { label: 'Fractional CMO/CEO', href: '/servizi/fractional-cmo-ceo/' },
-  { label: 'AI Integration', href: '/servizi/intelligenza-artificiale-per-pmi/' },
-  { label: 'Advisory', href: '/servizi/advisory/' },
+  { label: 'Servizi', href: '/servizi/' },
   { label: 'Clienti', href: '/clienti/' },
   { label: 'Contatti', href: '/contatti/' },
 ] as const;

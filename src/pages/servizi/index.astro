@@ -473,4 +473,49 @@ import CtaFinal from '../../components/CtaFinal.astro';
     background: var(--color-rosso);
     color: var(--color-bianco);
   }
+
+  /* ─── SITI WEB VERTICALI ─── */
+  .verticals {
+    background: var(--color-bianco);
+  }
+
+  .verticals-inner {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .verticals-title {
+    font-size: clamp(1.5rem, 3.5vw, 2rem);
+    margin-bottom: 0.5rem;
+  }
+
+  .verticals-sub {
+    font-size: 0.9375rem;
+    color: var(--color-testo-secondario);
+    margin-bottom: 1.5rem;
+  }
+
+  .verticals-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .vertical-link {
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-testo);
+    text-decoration: none;
+    padding: 0.5rem 1.25rem;
+    border: 1px solid var(--color-bordo);
+    border-radius: 100px;
+    transition: all 0.2s ease;
+  }
+
+  .vertical-link:hover {
+    border-color: var(--color-rosso);
+    color: var(--color-rosso);
+    background: rgba(165, 32, 32, 0.03);
+  }
 </style>
