@@ -28,12 +28,6 @@ export const navigation = [
   { label: 'Contatti', href: '/contatti/' },
 ] as const;
 
-export const servicePillars = [
-  { label: 'Fractional CMO/CEO', href: '/servizi/fractional-cmo-ceo/' },
-  { label: 'AI Integration', href: '/servizi/intelligenza-artificiale-per-pmi/' },
-  { label: 'Advisory & Discovery', href: '/servizi/advisory/' },
-] as const;
-
 // CTA generale — usata da CtaFinal, homepage hero, ecc.
 export const ctaLabel = 'Prenota una Discovery Session';
 export const ctaHref = 'https://tidycal.com/rossozingone';
