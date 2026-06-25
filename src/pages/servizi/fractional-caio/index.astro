@@ -34,6 +34,11 @@ import CtaFinal from '../../../components/CtaFinal.astro';
       answer: "Sì. Il CAIO si interfaccia con IT, operations e management. Non sostituisce il team tecnico — lo indirizza strategicamente e garantisce che le scelte tecnologiche siano allineate agli obiettivi di business.",
     },
   ]}
+  articleSchema={{
+    headline: "Fractional CAIO: cos'è il Chief AI Officer part-time per le PMI",
+    description: "Cos'è un Fractional CAIO, quando serve a una PMI e in cosa si distingue dall'AI Integration. Governance dell'intelligenza artificiale in azienda senza il costo di un executive a tempo pieno.",
+    datePublished: "2026-06-25",
+  }}
 >
 
   <section class="section pillar">
@@ -100,6 +105,41 @@ import CtaFinal from '../../../components/CtaFinal.astro';
           <div class="pillar-network">
             <h3>Approccio</h3>
             <p class="detail-text">Il valore del Fractional CAIO non è sapere quali tool esistono — è sapere <strong>quali tool servono a quella specifica azienda</strong>, in quel contesto, con quei processi e quei dati. 28 anni dentro le PMI italiane permettono di evitare gli errori più comuni: strumenti sovradimensionati, implementazioni senza adozione, AI che crea dipendenza invece di autonomia.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- H2 — FAQ ACCORDION -->
+  <section class="section content-section">
+    <div class="container">
+      <div class="content-inner fade-in">
+        <h2>Domande frequenti sul Fractional CAIO</h2>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">Cos'è un Fractional CAIO?</button>
+            <div class="faq-a">
+              <p>Il Fractional CAIO (Chief AI Officer) è un executive part-time che guida la strategia di intelligenza artificiale in azienda 1-3 giorni a settimana. Definisce la roadmap AI, seleziona gli strumenti, forma il team e supervisiona le implementazioni — senza il costo di un dirigente a tempo pieno.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">Quando serve un Fractional CAIO in una PMI?</button>
+            <div class="faq-a">
+              <p>Quando l'azienda vuole integrare l'AI nei processi ma non ha le competenze interne per farlo in modo strategico. Quando si moltiplicano gli strumenti AI senza un piano coerente. Quando si devono gestire rischi di privacy, compliance e qualità dell'output AI.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">Qual è la differenza tra Fractional CAIO e AI Integration?</button>
+            <div class="faq-a">
+              <p>L'AI Integration è un intervento operativo: si analizzano i processi aziendali, si implementano gli strumenti, si automatizzano i flussi. Il Fractional CAIO è un ruolo continuativo: presidia la strategia AI nel tempo, coordina le scelte tecnologiche e mantiene la governance. Spesso i due servizi si combinano — il CAIO definisce la direzione, l'integrazione AI la mette a terra.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">Il Fractional CAIO lavora anche con team tecnici interni?</button>
+            <div class="faq-a">
+              <p>Sì. Il CAIO si interfaccia con IT, operations e management. Non sostituisce il team tecnico — lo indirizza strategicamente e garantisce che le scelte tecnologiche siano allineate agli obiettivi di business.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -248,4 +288,86 @@ import CtaFinal from '../../../components/CtaFinal.astro';
   .pillar-network strong {
     color: var(--color-navy);
   }
+
+  /* ─── CONTENT SECTION + FAQ ─── */
+  .content-section {
+    background: var(--color-bianco);
+  }
+
+  .content-inner {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .content-inner h2 {
+    font-size: clamp(1.5rem, 3.5vw, 2rem);
+    margin-bottom: 1.25rem;
+    color: var(--color-navy);
+  }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .faq-item {
+    border-bottom: 1px solid var(--color-bordo);
+  }
+
+  .faq-q {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 0;
+    background: none;
+    border: none;
+    font-family: var(--font-body);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--color-navy);
+    cursor: pointer;
+    text-align: left;
+    line-height: 1.4;
+  }
+
+  .faq-q::after {
+    content: '+';
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: var(--color-rosso);
+    margin-left: 1rem;
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+  }
+
+  .faq-q[aria-expanded="true"]::after {
+    content: '−';
+  }
+
+  .faq-a {
+    display: none;
+    padding-bottom: 1.25rem;
+  }
+
+  .faq-a p {
+    font-size: 0.875rem;
+    line-height: 1.7;
+    color: var(--color-testo);
+    margin: 0;
+  }
 </style>
+
+<script>
+  document.querySelectorAll('.faq-q').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!expanded));
+      const answer = btn.nextElementSibling;
+      if (answer) {
+        answer.style.display = expanded ? 'none' : 'block';
+      }
+    });
+  });
+</script>

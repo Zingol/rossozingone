@@ -138,6 +138,11 @@ const webVerticals = [
       answer: "Sì. Francesco Zingone è Google Ads Partner certificato dal 2018. Gestisce campagne Search, Display e Performance Max con focus sul ROI — ogni euro investito deve giustificarsi con dati. Tra i clienti: Wienerberger Italia (campagne nazionali), Gili Edging, SGR e altri.",
     },
   ]}
+  articleSchema={{
+    headline: "Digital marketing per PMI: strategia integrata, non servizi scollegati",
+    description: "Marketing digitale per PMI italiane dentro un mandato Fractional: SEO, Google Ads, social media, email marketing e brand strategy coordinati verso un obiettivo. Costi, tempi e differenza rispetto a un'agenzia.",
+    datePublished: "2026-06-25",
+  }}
 >
 
   <!-- HERO + SERVIZIO -->
@@ -270,6 +275,41 @@ const webVerticals = [
     </div>
   </section>
 
+  <!-- H2 — FAQ ACCORDION -->
+  <section class="section content-section">
+    <div class="container">
+      <div class="content-inner fade-in">
+        <h2>Domande frequenti sul digital marketing</h2>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">Quanto costa una strategia di digital marketing per una PMI?</button>
+            <div class="faq-a">
+              <p>Dipende dal perimetro. Una gestione social media base parte da poche centinaia di euro al mese. Una strategia integrata con SEO, Google Ads, email marketing e contenuti richiede un investimento maggiore. Il punto di partenza è sempre un'analisi degli obiettivi e del budget disponibile — senza quello, qualsiasi cifra è campata in aria.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">Cosa significa avere una strategia digitale integrata?</button>
+            <div class="faq-a">
+              <p>Significa che tutti i canali lavorano insieme verso lo stesso obiettivo. SEO porta traffico organico, Google Ads porta traffico immediato, email marketing fidelizza, social media costruisce brand awareness. Una strategia integrata coordina questi canali e misura il contributo di ognuno al risultato finale.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">Quanto tempo serve per vedere risultati con il SEO?</button>
+            <div class="faq-a">
+              <p>Il SEO è un investimento a medio-lungo termine. I primi segnali si vedono in 3-6 mesi, risultati significativi in 6-12 mesi. Dipende dalla competitività del settore, dallo stato attuale del sito e dalla qualità del lavoro. Google Ads dà risultati immediati ma ha un costo per click — la combinazione dei due è spesso la strategia più efficace.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">RossoZingone gestisce anche la pubblicità su Google?</button>
+            <div class="faq-a">
+              <p>Sì. Francesco Zingone è Google Ads Partner certificato dal 2018. Gestisce campagne Search, Display e Performance Max con focus sul ROI — ogni euro investito deve giustificarsi con dati. Tra i clienti: Wienerberger Italia (campagne nazionali), Gili Edging, SGR e altri.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <CtaFinal headline="Il tuo marketing digitale produce risultati?" sub="Parliamo dei tuoi canali, dei tuoi investimenti e di come farli rendere di più. Nessun impegno, nessun costo." />
 
 </BaseLayout>
@@ -373,4 +413,29 @@ const webVerticals = [
   .case-testimonial p { font-size: 0.9375rem; font-style: italic; line-height: 1.7; color: var(--color-testo); margin: 0 0 0.75rem 0; }
   .case-testimonial footer { font-size: 0.8125rem; color: var(--color-testo-secondario); }
   .case-testimonial footer strong { color: var(--color-navy); font-weight: 600; }
+
+  /* ─── CONTENT SECTION + FAQ ─── */
+  .content-section { background: var(--color-crema); }
+  .content-inner { max-width: 960px; margin: 0 auto; }
+  .content-inner h2 { font-size: clamp(1.5rem, 3.5vw, 2rem); margin-bottom: 1.25rem; color: var(--color-navy); }
+  .faq-list { display: flex; flex-direction: column; gap: 0; }
+  .faq-item { border-bottom: 1px solid var(--color-bordo); }
+  .faq-q { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 0; background: none; border: none; font-family: var(--font-body); font-size: 0.9375rem; font-weight: 600; color: var(--color-navy); cursor: pointer; text-align: left; line-height: 1.4; }
+  .faq-q::after { content: '+'; font-size: 1.25rem; font-weight: 400; color: var(--color-rosso); margin-left: 1rem; flex-shrink: 0; transition: transform 0.2s ease; }
+  .faq-q[aria-expanded="true"]::after { content: '−'; }
+  .faq-a { display: none; padding-bottom: 1.25rem; }
+  .faq-a p { font-size: 0.875rem; line-height: 1.7; color: var(--color-testo); margin: 0; }
 </style>
+
+<script>
+  document.querySelectorAll('.faq-q').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!expanded));
+      const answer = btn.nextElementSibling;
+      if (answer) {
+        answer.style.display = expanded ? 'none' : 'block';
+      }
+    });
+  });
+</script>

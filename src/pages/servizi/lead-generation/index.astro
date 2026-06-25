@@ -73,6 +73,11 @@ const cases = [
       answer: "Le metriche chiave sono: costo per lead (CPL), tasso di qualificazione, tasso di conversione da lead a opportunità, e infine il CAC (costo di acquisizione cliente). Il monitoraggio è continuo: ogni campagna genera dati che permettono di ottimizzare il ciclo successivo.",
     },
   ]}
+  articleSchema={{
+    headline: "Lead generation per PMI: inbound, outbound e pipeline qualificata",
+    description: "Come generare contatti B2B qualificati per una PMI: differenza tra inbound e outbound, metriche di efficacia (CPL, CAC), tempi e metodo. La pipeline costruita dentro un mandato Fractional, non delegata a un'agenzia.",
+    datePublished: "2026-06-25",
+  }}
 >
 
   <section class="section pillar">
@@ -171,6 +176,41 @@ const cases = [
             )}
           </div>
         ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- H2 — FAQ ACCORDION -->
+  <section class="section content-section">
+    <div class="container">
+      <div class="content-inner fade-in">
+        <h2>Domande frequenti sulla lead generation</h2>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">Qual è la differenza tra lead generation inbound e outbound?</button>
+            <div class="faq-a">
+              <p>L'inbound attrae contatti che cercano attivamente la soluzione: SEO, content marketing, campagne a risposta diretta. L'outbound raggiunge proattivamente i prospect target: email marketing, LinkedIn, cold outreach strutturato. Le due strategie si integrano: l'inbound costruisce autorità e volume nel tempo, l'outbound genera risultati più rapidi su target precisi.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">La lead generation funziona per le PMI B2B?</button>
+            <div class="faq-a">
+              <p>Sì, con un approccio diverso dal B2C. Nel B2B i cicli di acquisto sono più lunghi e le decisioni coinvolgono più persone. La lead generation efficace per PMI B2B combina contenuti di valore che costruiscono fiducia, outreach mirato sui decision maker e un sistema di nurturing che mantiene il contatto nel tempo fino alla maturazione del lead.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">Quanti lead si possono generare ogni mese?</button>
+            <div class="faq-a">
+              <p>Dipende dal settore, dal budget e dalla maturità del brand. Non esistono numeri universali. Quello che conta è la qualità: un lead qualificato vale dieci contatti generici. Il lavoro inizia sempre dall'analisi del cliente ideale, del processo di acquisto e dei canali più efficaci per quel mercato specifico.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">Come si misura l'efficacia di una campagna di lead generation?</button>
+            <div class="faq-a">
+              <p>Le metriche chiave sono: costo per lead (CPL), tasso di qualificazione, tasso di conversione da lead a opportunità, e infine il CAC (costo di acquisizione cliente). Il monitoraggio è continuo: ogni campagna genera dati che permettono di ottimizzare il ciclo successivo.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -409,4 +449,29 @@ const cases = [
     color: var(--color-navy);
     font-weight: 600;
   }
+
+  /* ─── CONTENT SECTION + FAQ ─── */
+  .content-section { background: var(--color-crema); }
+  .content-inner { max-width: 960px; margin: 0 auto; }
+  .content-inner h2 { font-size: clamp(1.5rem, 3.5vw, 2rem); margin-bottom: 1.25rem; color: var(--color-navy); }
+  .faq-list { display: flex; flex-direction: column; gap: 0; }
+  .faq-item { border-bottom: 1px solid var(--color-bordo); }
+  .faq-q { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 0; background: none; border: none; font-family: var(--font-body); font-size: 0.9375rem; font-weight: 600; color: var(--color-navy); cursor: pointer; text-align: left; line-height: 1.4; }
+  .faq-q::after { content: '+'; font-size: 1.25rem; font-weight: 400; color: var(--color-rosso); margin-left: 1rem; flex-shrink: 0; transition: transform 0.2s ease; }
+  .faq-q[aria-expanded="true"]::after { content: '−'; }
+  .faq-a { display: none; padding-bottom: 1.25rem; }
+  .faq-a p { font-size: 0.875rem; line-height: 1.7; color: var(--color-testo); margin: 0; }
 </style>
+
+<script>
+  document.querySelectorAll('.faq-q').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!expanded));
+      const answer = btn.nextElementSibling;
+      if (answer) {
+        answer.style.display = expanded ? 'none' : 'block';
+      }
+    });
+  });
+</script>

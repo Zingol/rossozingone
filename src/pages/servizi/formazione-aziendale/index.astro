@@ -38,6 +38,11 @@ import CtaFinal from '../../../components/CtaFinal.astro';
       answer: "Sì. Progettiamo e gestiamo piattaforme e-learning basate su Moodle: setup, configurazione, struttura dei corsi, gestione utenti e supporto continuativo. Un esempio concreto è la piattaforma di Labirinto Cooperativa Sociale, gestita dal 2006 con aggiornamenti costanti di corsi e contenuti.",
     },
   ]}
+  articleSchema={{
+    headline: "Formazione aziendale per PMI: marketing, AI e comunicazione su misura",
+    description: "Formazione operativa per team di PMI su marketing digitale, intelligenza artificiale e comunicazione: modalità, durata, certificazione per fondi interprofessionali e piattaforme e-learning gestite. Programmi costruiti sul contesto aziendale, non corsi da catalogo.",
+    datePublished: "2026-06-25",
+  }}
 >
 
   <section class="section pillar">
@@ -150,6 +155,47 @@ import CtaFinal from '../../../components/CtaFinal.astro';
                   <strong>Luca Pazzaglia</strong> — Responsabile settore disabilità e Salute Mentale, Cooperativa Labirinto
                 </footer>
               </blockquote>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- H2 — FAQ ACCORDION -->
+  <section class="section content-section">
+    <div class="container">
+      <div class="content-inner fade-in">
+        <h2>Domande frequenti sulla formazione aziendale</h2>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">Che tipo di formazione viene erogata?</button>
+            <div class="faq-a">
+              <p>Formazione operativa su marketing digitale, strumenti AI, comunicazione aziendale e piattaforme e-learning. I programmi sono costruiti sul contesto specifico dell'azienda: settore, processi, strumenti già in uso, livello del team. Non corsi standardizzati da catalogo.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">La formazione può essere erogata in azienda?</button>
+            <div class="faq-a">
+              <p>Sì. La modalità preferita è l'affiancamento in azienda (on-site o ibrido) perché permette di lavorare sui casi reali dell'azienda. Sono disponibili anche sessioni remote e programmi e-learning strutturati per team distribuiti.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">Quanto dura un percorso formativo tipico?</button>
+            <div class="faq-a">
+              <p>Dipende dagli obiettivi e dal team. Un corso intensivo su Google Ads o AI tools può coprire 8-16 ore. Un percorso strutturato su marketing digitale completo (come il corso da 80 ore erogato per Wienerberger) richiede mesi di lavoro. La durata si definisce dopo un'analisi delle esigenze.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">La formazione è certificata?</button>
+            <div class="faq-a">
+              <p>I percorsi possono essere strutturati per soddisfare i requisiti dei fondi interprofessionali (Fondimpresa, Fondirigenti) e per l'accesso a bandi formativi regionali. La documentazione necessaria viene predisposta in fase di progettazione del corso.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">Offrite anche piattaforme e-learning gestite?</button>
+            <div class="faq-a">
+              <p>Sì. Progettiamo e gestiamo piattaforme e-learning basate su Moodle: setup, configurazione, struttura dei corsi, gestione utenti e supporto continuativo. Un esempio concreto è la piattaforma di Labirinto Cooperativa Sociale, gestita dal 2006 con aggiornamenti costanti di corsi e contenuti.</p>
             </div>
           </div>
         </div>
@@ -488,4 +534,29 @@ import CtaFinal from '../../../components/CtaFinal.astro';
     color: var(--color-navy);
     font-weight: 600;
   }
+
+  /* ─── CONTENT SECTION + FAQ ─── */
+  .content-section { background: var(--color-bianco); }
+  .content-inner { max-width: 960px; margin: 0 auto; }
+  .content-inner h2 { font-size: clamp(1.5rem, 3.5vw, 2rem); margin-bottom: 1.25rem; color: var(--color-navy); }
+  .faq-list { display: flex; flex-direction: column; gap: 0; }
+  .faq-item { border-bottom: 1px solid var(--color-bordo); }
+  .faq-q { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 0; background: none; border: none; font-family: var(--font-body); font-size: 0.9375rem; font-weight: 600; color: var(--color-navy); cursor: pointer; text-align: left; line-height: 1.4; }
+  .faq-q::after { content: '+'; font-size: 1.25rem; font-weight: 400; color: var(--color-rosso); margin-left: 1rem; flex-shrink: 0; transition: transform 0.2s ease; }
+  .faq-q[aria-expanded="true"]::after { content: '−'; }
+  .faq-a { display: none; padding-bottom: 1.25rem; }
+  .faq-a p { font-size: 0.875rem; line-height: 1.7; color: var(--color-testo); margin: 0; }
 </style>
+
+<script>
+  document.querySelectorAll('.faq-q').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!expanded));
+      const answer = btn.nextElementSibling;
+      if (answer) {
+        answer.style.display = expanded ? 'none' : 'block';
+      }
+    });
+  });
+</script>

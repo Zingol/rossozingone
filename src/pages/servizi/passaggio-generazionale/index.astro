@@ -68,6 +68,11 @@ const cases = [
       answer: "No. Spesso lavoro con figli o figlie che entrano in azienda direttamente dal percorso di studi o da esperienze in altri settori. Il punto di partenza è dove sei, non dove dovresti essere. Costruiamo le competenze necessarie nel contesto reale dell'azienda, non in aula.",
     },
   ]}
+  articleSchema={{
+    headline: "Passaggio generazionale nelle PMI familiari: affiancamento operativo",
+    description: "Come gestire il passaggio generazionale in una PMI familiare: durata del percorso, differenza tra coaching e affiancamento operativo, gestione del conflitto tra generazioni. Lavoro concreto dentro l'azienda, non coaching motivazionale.",
+    datePublished: "2026-06-25",
+  }}
 >
 
   <!-- HERO + SERVIZIO -->
@@ -168,6 +173,41 @@ const cases = [
             )}
           </div>
         ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- H2 — FAQ ACCORDION -->
+  <section class="section content-section">
+    <div class="container">
+      <div class="content-inner fade-in">
+        <h2>Domande frequenti sul passaggio generazionale</h2>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">Quanto dura un percorso di passaggio generazionale?</button>
+            <div class="faq-a">
+              <p>Non esiste una durata standard. Dipende dalla complessità della transizione, dal livello di preparazione della nuova generazione e dalla disponibilità del fondatore a delegare. In media lavoro con le aziende per 12-36 mesi, con presenza 1-2 giorni a settimana. Il passaggio generazionale non è un evento — è un processo.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">Qual è la differenza tra coaching e affiancamento operativo?</button>
+            <div class="faq-a">
+              <p>Il coaching lavora sulla persona, in aula o in sessioni dedicate. Il mio affiancamento lavora dentro l'azienda, sulle decisioni reali, con il team reale. Non faccio role play — risolvo problemi concreti insieme alla nuova generazione mentre impara a gestirli in autonomia.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">Come si gestisce il conflitto tra generazioni in azienda?</button>
+            <div class="faq-a">
+              <p>Il conflitto generazionale in azienda nasce quasi sempre da aspettative non dichiarate e ruoli non chiari. Il mio lavoro è rendere esplicito quello che rimane implicito: chi decide cosa, in quale orizzonte temporale avviene la transizione, quali competenze deve acquisire la nuova generazione. Struttura e chiarezza riducono il conflitto.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">La nuova generazione deve avere già esperienza manageriale?</button>
+            <div class="faq-a">
+              <p>No. Spesso lavoro con figli o figlie che entrano in azienda direttamente dal percorso di studi o da esperienze in altri settori. Il punto di partenza è dove sei, non dove dovresti essere. Costruiamo le competenze necessarie nel contesto reale dell'azienda, non in aula.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -429,4 +469,29 @@ const cases = [
     color: var(--color-navy);
     font-weight: 600;
   }
+
+  /* ─── CONTENT SECTION + FAQ ─── */
+  .content-section { background: var(--color-crema); }
+  .content-inner { max-width: 960px; margin: 0 auto; }
+  .content-inner h2 { font-size: clamp(1.5rem, 3.5vw, 2rem); margin-bottom: 1.25rem; color: var(--color-navy); }
+  .faq-list { display: flex; flex-direction: column; gap: 0; }
+  .faq-item { border-bottom: 1px solid var(--color-bordo); }
+  .faq-q { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 0; background: none; border: none; font-family: var(--font-body); font-size: 0.9375rem; font-weight: 600; color: var(--color-navy); cursor: pointer; text-align: left; line-height: 1.4; }
+  .faq-q::after { content: '+'; font-size: 1.25rem; font-weight: 400; color: var(--color-rosso); margin-left: 1rem; flex-shrink: 0; transition: transform 0.2s ease; }
+  .faq-q[aria-expanded="true"]::after { content: '−'; }
+  .faq-a { display: none; padding-bottom: 1.25rem; }
+  .faq-a p { font-size: 0.875rem; line-height: 1.7; color: var(--color-testo); margin: 0; }
 </style>
+
+<script>
+  document.querySelectorAll('.faq-q').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!expanded));
+      const answer = btn.nextElementSibling;
+      if (answer) {
+        answer.style.display = expanded ? 'none' : 'block';
+      }
+    });
+  });
+</script>
