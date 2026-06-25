@@ -44,6 +44,11 @@ const pageTitle = `${title} | ${siteConfig.name}`;
 const canonicalUrl = new URL(Astro.url.pathname, siteConfig.url).href;
 const ogImageUrl = new URL(ogImage, siteConfig.url).href;
 
+// Normalizza una data "YYYY-MM-DD" in datetime ISO 8601 con fuso Europe/Rome (CEST).
+// Se la stringa contiene già un orario ("T"), viene lasciata invariata.
+const toIsoDateTime = (d: string): string =>
+  d.includes("T") ? d : `${d}T00:00:00+02:00`;
+
 const schemaOrg = {
   "@context": "https://schema.org",
   "@graph": [
@@ -253,8 +258,8 @@ const schemaOrg = {
       "@id": `${canonicalUrl}#article`,
       headline: articleSchema.headline,
       description: articleSchema.description,
-      datePublished: articleSchema.datePublished,
-      dateModified: articleSchema.dateModified ?? articleSchema.datePublished,
+      datePublished: toIsoDateTime(articleSchema.datePublished),
+      dateModified: toIsoDateTime(articleSchema.dateModified ?? articleSchema.datePublished),
       image: articleSchema.image ? new URL(articleSchema.image, siteConfig.url).href : ogImageUrl,
       author: {
         "@id": `${siteConfig.url}/#person`,
