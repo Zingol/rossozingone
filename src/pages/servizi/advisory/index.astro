@@ -121,6 +121,11 @@ const cases = [
       answer: "In tre momenti: prima del deal per preparare l'azienda alla vendita o valutare il target (6-12 mesi di anticipo ideali), durante la transazione per gestire la comunicazione verso stakeholder, e dopo il closing per integrare i brand e mantenere la continuità commerciale nei primi 100 giorni.",
     },
   ]}
+  articleSchema={{
+    headline: `Advisory per PMI: analisi, valutazione e diagnostica aziendale`,
+    description: `L'advisory per una PMI è il lavoro di analisi che precede le decisioni strategiche: analisi di mercato, business valuation, diagnostica BDS, due diligence marketing e supporto M&A. I dati prima delle opinioni.`,
+    datePublished: `2026-06-25`,
+  }}
 >
 
   <!-- HERO + SERVIZIO -->
@@ -192,6 +197,17 @@ const cases = [
       </div>
     </div>
   </section>
+<!-- COSA È (risposta estraibile) -->
+<section class="section content-section">
+  <div class="container">
+    <div class="content-inner fade-in">
+      <h2>Cos'è l'advisory per una PMI</h2>
+      <p>L'advisory per una PMI è il lavoro di analisi che precede le decisioni strategiche. Prima di investire, espandersi, vendere o acquisire, serve capire con dati reali dove si trova l'azienda e cosa vale quello che ha costruito. A differenza della consulenza operativa, che esegue, l'advisory fornisce all'imprenditore la base oggettiva su cui decidere — analisi di mercato, valutazione degli asset, diagnostica dello stato di salute aziendale.</p>
+      <p>Il metodo è strutturato: diagnostica BDS (Business Development System) di AICIM per leggere lo stato dell'azienda, analisi di mercato per capire il contesto competitivo, business valuation per misurare il valore degli asset digitali e immateriali. I dati prima delle opinioni — perché una decisione presa sui numeri sbagliati costa più di una decisione rimandata.</p>
+    </div>
+  </div>
+</section>
+
 <!-- DUE DILIGENCE MARKETING -->
 <section class="section advisory-deep">
   <div class="container">
@@ -262,6 +278,53 @@ const cases = [
             )}
           </div>
         ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ ACCORDION -->
+  <section class="section content-section content-alt">
+    <div class="container">
+      <div class="content-inner fade-in">
+        <h2>Domande frequenti sull'advisory per PMI</h2>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">Cos'è la diagnostica BDS AICIM?</button>
+            <div class="faq-a">
+              <p>Il Business Development System di AICIM è uno strumento diagnostico strutturato per analizzare lo stato di salute di una PMI. Valuta aree chiave come marketing, vendite, organizzazione, finanza e processi. Il risultato è una mappa chiara dei punti di forza e delle aree di miglioramento, con priorità di intervento.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">Come si valutano gli asset digitali di un'azienda?</button>
+            <div class="faq-a">
+              <p>Gli asset digitali includono sito web, database clienti, presenza sui motori di ricerca, profili social, contenuti, software proprietari e reputazione online. La valutazione considera traffico, posizionamento, qualità dei dati, costi di sostituzione e potenziale di monetizzazione. È una componente sempre più rilevante nelle operazioni di M&A.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">RossoZingone supporta l'internazionalizzazione delle PMI?</button>
+            <div class="faq-a">
+              <p>Sì, con focus su mercati DACH (Germania, Austria, Svizzera) e UK. Il supporto include analisi di mercato, identificazione canali di ingresso, adattamento della comunicazione e sviluppo delle prime relazioni commerciali. Tra i casi: BKR Srl (food retail) e NF Trasporti (logistica internazionale).</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">Quando serve un business plan professionale?</button>
+            <div class="faq-a">
+              <p>Quando si cerca finanziamento bancario o da investitori, quando si vuole valutare la fattibilità di un nuovo progetto, o quando si sta pianificando una transizione aziendale. Un business plan serio non è un documento da scaffale — è uno strumento operativo che guida le decisioni nei primi 12-36 mesi.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">Cos'è la due diligence marketing?</button>
+            <div class="faq-a">
+              <p>La due diligence marketing è il processo di analisi approfondita della strategia commerciale di un'azienda target in un'operazione M&A. Valuta posizionamento, canali di acquisizione clienti, KPI, team, stack tecnologico e sostenibilità del fatturato. Per le PMI italiane è particolarmente critica perché il marketing è spesso l'area meno documentata.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">Quando serve il marketing nelle operazioni M&A?</button>
+            <div class="faq-a">
+              <p>In tre momenti: prima del deal per preparare l'azienda alla vendita o valutare il target (6-12 mesi di anticipo ideali), durante la transazione per gestire la comunicazione verso stakeholder, e dopo il closing per integrare i brand e mantenere la continuità commerciale nei primi 100 giorni.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -566,4 +629,102 @@ const cases = [
     color: var(--color-navy);
     font-weight: 600;
   }
+
+  /* ─── CONTENT SECTION + FAQ ACCORDION (AEO) ─── */
+  .content-section {
+    background: var(--color-bianco);
+  }
+
+  .content-alt {
+    background: var(--color-crema);
+  }
+
+  .content-inner {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+  .content-inner h2 {
+    font-size: clamp(1.5rem, 3.5vw, 2rem);
+    color: var(--color-navy);
+    margin-bottom: 1.25rem;
+  }
+
+  .content-inner > p {
+    font-size: 1.0625rem;
+    line-height: 1.75;
+    color: var(--color-testo);
+    margin-bottom: 1rem;
+    max-width: 760px;
+  }
+
+  .content-inner > p:last-child {
+    margin-bottom: 0;
+  }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .faq-item {
+    border-bottom: 1px solid var(--color-bordo);
+  }
+
+  .faq-q {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 0;
+    background: none;
+    border: none;
+    font-family: var(--font-body);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--color-navy);
+    cursor: pointer;
+    text-align: left;
+    line-height: 1.4;
+  }
+
+  .faq-q::after {
+    content: '+';
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: var(--color-rosso);
+    margin-left: 1rem;
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+  }
+
+  .faq-q[aria-expanded="true"]::after {
+    content: '−';
+  }
+
+  .faq-a {
+    display: none;
+    padding-bottom: 1.25rem;
+  }
+
+  .faq-a p {
+    font-size: 0.875rem;
+    line-height: 1.7;
+    color: var(--color-testo);
+    margin: 0;
+  }
 </style>
+
+<script>
+  document.querySelectorAll('.faq-q').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!expanded));
+      const answer = btn.nextElementSibling;
+      if (answer) {
+        answer.style.display = expanded ? 'none' : 'block';
+      }
+    });
+  });
+</script>
