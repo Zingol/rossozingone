@@ -29,8 +29,8 @@ import CtaFinal from '../components/CtaFinal.astro';
         </div>
 
         <h1 class="hero-headline fade-in">
-          Entro dal marketing.<br />
-          Arrivo ai colli di bottiglia del business.
+          <span class="hero-soggetto">Fractional Manager per PMI.</span>
+          Entro dal marketing, arrivo ai colli di bottiglia del business.
         </h1>
 
         <p class="hero-statement fade-in fade-in-delay-1">
@@ -40,8 +40,7 @@ import CtaFinal from '../components/CtaFinal.astro';
         <p class="hero-sub fade-in fade-in-delay-2">
           Part-time nel tempo, full-time nella responsabilità.<br />
           28 anni di PMI italiane, AI integrata nel metodo,<br />
-          e un obiettivo: costruire la tua autonomia.<br />
-          Quando esco, l'azienda sa camminare da sola.
+          e un obiettivo: costruire la tua autonomia.
         </p>
 
         <div class="hero-cta fade-in fade-in-delay-2">
@@ -138,6 +137,17 @@ import CtaFinal from '../components/CtaFinal.astro';
     line-height: 1.1;
     margin-bottom: 1.5rem;
     color: var(--color-navy);
+  }
+
+  .hero-soggetto {
+    display: block;
+    font-family: var(--font-body);
+    font-size: clamp(0.9375rem, 1.6vw, 1.125rem);
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--color-rosso);
+    letter-spacing: 0.01em;
+    margin-bottom: 0.875rem;
   }
 
   .hero-accent {
