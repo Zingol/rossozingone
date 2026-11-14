@@ -50,8 +50,9 @@ import CtaFinal from '../components/CtaFinal.astro';
 
       <div class="hero-visual fade-in fade-in-delay-2">
         <div class="hero-visual-block">
+          <img src="/francesco-zingone-hero.jpg" alt="Francesco Zingone, Fractional Manager per PMI" class="visual-foto" width="720" height="720" fetchpriority="high" />
+          <div class="visual-shade"></div>
           <div class="visual-accent"></div>
-          <img src="/loghi/crescita.png" alt="Crescita controllata" class="visual-crescita" />
           <div class="visual-label">
             <span class="visual-number">28</span>
             <span class="visual-text">anni dentro<br />le PMI italiane</span>
@@ -217,13 +218,19 @@ import CtaFinal from '../components/CtaFinal.astro';
     opacity: 0.15;
   }
 
-  .visual-crescita {
+  .visual-foto {
     position: absolute;
-    bottom: 120px;
-    left: 80px;
-    width: 55%;
-    height: auto;
-    opacity: 0.25;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 20%;
+  }
+
+  .visual-shade {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(26, 35, 50, 0.92) 0%, rgba(26, 35, 50, 0.55) 30%, rgba(26, 35, 50, 0) 55%);
   }
 
   .visual-label {
