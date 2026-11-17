@@ -13,7 +13,7 @@ import { siteConfig } from '../../../config';
     <div class="container">
       <div class="legal-content">
         <h1>Cookie Policy</h1>
-        <p class="legal-update">Ultimo aggiornamento: Marzo 2026</p>
+        <p class="legal-update">Ultimo aggiornamento: Novembre 2026</p>
 
         <h2>Cosa sono i cookie</h2>
         <p>I cookie sono piccoli file di testo che i siti visitati inviano al browser dell'utente, dove vengono memorizzati, per poi essere ritrasmessi agli stessi siti alla visita successiva.</p>
@@ -55,11 +55,27 @@ import { siteConfig } from '../../../config';
               <td>Mantiene lo stato della sessione di navigazione</td>
               <td>2 anni</td>
             </tr>
+            <tr>
+              <td>_clck</td>
+              <td>Microsoft Clarity</td>
+              <td>Assegna un identificativo anonimo per riconoscere lo stesso visitatore nelle visite successive</td>
+              <td>1 anno</td>
+            </tr>
+            <tr>
+              <td>_clsk</td>
+              <td>Microsoft Clarity</td>
+              <td>Collega tra loro le pagine viste nella stessa sessione</td>
+              <td>1 giorno</td>
+            </tr>
           </tbody>
         </table>
 
         <h3>Google Tag Manager</h3>
-        <p>Il sito utilizza Google Tag Manager per gestire l'attivazione dei cookie di analisi. Google Tag Manager non installa cookie propri e non raccoglie dati personali direttamente. Gestisce l'attivazione di Google Analytics in base al consenso espresso dall'utente.</p>
+        <p>Il sito utilizza Google Tag Manager per gestire l'attivazione dei cookie di analisi. Google Tag Manager non installa cookie propri e non raccoglie dati personali direttamente. Gestisce l'attivazione di Google Analytics e Microsoft Clarity in base al consenso espresso dall'utente.</p>
+
+        <h3>Microsoft Clarity</h3>
+        <p>Il sito utilizza Microsoft Clarity, servizio di Microsoft Corporation, per capire come i visitatori usano le pagine attraverso mappe di calore e registrazioni anonime delle sessioni (clic, scorrimento, movimenti del cursore). Clarity viene attivato solo dopo il consenso ai cookie di analisi. I contenuti inseriti nei campi dei moduli e gli altri testi sensibili vengono mascherati e non sono registrati.</p>
+        <p>Oltre ai cookie indicati in tabella, Clarity può impostare cookie di terza parte sui domini Microsoft (ad esempio CLID, MUID, SM, MR e ANONCHK). Servono a riconoscere lo stesso browser su siti diversi che usano Clarity; il cookie MUID è utilizzato da Microsoft anche per finalità pubblicitarie e operative sui propri servizi. I dati possono essere trasferiti negli Stati Uniti: Microsoft aderisce all'EU-U.S. Data Privacy Framework. Informativa: <a href="https://privacy.microsoft.com/it-it/privacystatement" target="_blank" rel="noopener noreferrer">privacy.microsoft.com/it-it/privacystatement</a> — elenco dei cookie: <a href="https://learn.microsoft.com/it-it/clarity/clarity-cookies" target="_blank" rel="noopener noreferrer">learn.microsoft.com/clarity/clarity-cookies</a></p>
 
         <h3>Cookie di terze parti</h3>
         <p><strong>Google Fonts</strong> — Il sito carica font da Google Fonts. Google potrebbe raccogliere dati di navigazione (indirizzo IP) tramite questo servizio. Informativa: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">policies.google.com/privacy</a></p>
@@ -67,7 +83,7 @@ import { siteConfig } from '../../../config';
         <p><strong>Vercel</strong> — Il sito è ospitato su Vercel, che potrebbe raccogliere dati anonimi di navigazione per finalità statistiche. Informativa: <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">vercel.com/legal/privacy-policy</a></p>
 
         <h2>Google Consent Mode v2</h2>
-        <p>Questo sito implementa Google Consent Mode v2 per rispettare le preferenze dell'utente. Quando l'utente rifiuta i cookie di analisi, Google Analytics non raccoglie né trasmette alcun dato identificativo. Se l'utente cambia idea, può cancellare la preferenza eliminando i dati del sito dalle impostazioni del browser e ricaricare la pagina per visualizzare nuovamente il banner.</p>
+        <p>Questo sito implementa Google Consent Mode v2 per rispettare le preferenze dell'utente. Quando l'utente rifiuta i cookie di analisi, Google Analytics non raccoglie né trasmette alcun dato identificativo e Microsoft Clarity non viene attivato. Se l'utente cambia idea, può cancellare la preferenza eliminando i dati del sito dalle impostazioni del browser e ricaricare la pagina per visualizzare nuovamente il banner.</p>
 
         <h2>Come gestire i cookie</h2>
         <p>L'utente può gestire le preferenze relative ai cookie direttamente all'interno del proprio browser, impedendone l'installazione da parte di terzi. Tramite le preferenze del browser è inoltre possibile eliminare i cookie installati in passato.</p>
