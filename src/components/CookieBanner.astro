@@ -147,10 +147,16 @@
 
     if (acceptBtn) {
       acceptBtn.addEventListener('click', function() {
+        var alreadyAccepted = localStorage.getItem('cookie-consent') === 'accepted';
         localStorage.setItem('cookie-consent', 'accepted');
         gtag('consent', 'update', {
           'analytics_storage': 'granted'
         });
+        // Evento per GTM: attiva subito i tag che richiedono analytics_storage
+        // (es. Microsoft Clarity) nella stessa pagina in cui l'utente accetta.
+        if (!alreadyAccepted) {
+          window.dataLayer.push({ event: 'cookie_consent_granted' });
+        }
         if (banner) banner.classList.remove('visible');
       });
     }
