@@ -67,6 +67,7 @@ const year = new Date().getFullYear();
       <div class="footer-legal-links">
         <a href="/legal/privacy/" class="footer-small-link">Privacy Policy</a>
         <a href="/legal/cookie-policy/" class="footer-small-link">Cookie Policy</a>
+        <button type="button" class="footer-small-link footer-cookie-prefs" data-cookie-prefs>Preferenze cookie</button>
         <a href="/fractional-manager/" class="footer-small-link">Cos'è un Fractional Manager</a>
       </div>
     </div>
@@ -203,5 +204,14 @@ const year = new Date().getFullYear();
 
   .footer-small-link:hover {
     color: rgba(255, 255, 255, 0.75);
+  }
+
+  .footer-cookie-prefs {
+    background: none;
+    border: 0;
+    padding: 0;
+    font-family: inherit;
+    line-height: inherit;
+    cursor: pointer;
   }
 </style>

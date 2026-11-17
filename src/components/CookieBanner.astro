@@ -5,7 +5,7 @@
   <div class="cookie-inner">
     <div class="cookie-text">
       <h3 class="cookie-title">Cookie</h3>
-      <p>Questo sito utilizza cookie tecnici e, con il tuo consenso, cookie di analisi (Google Analytics) per migliorare la tua esperienza. Puoi accettare o rifiutare. Per maggiori informazioni consulta la <a href="/legal/cookie-policy/">cookie policy</a>.</p>
+      <p>Questo sito utilizza cookie tecnici e, con il tuo consenso, cookie di analisi (Google Analytics e Microsoft Clarity) per migliorare la tua esperienza. Puoi accettare o rifiutare, e cambiare idea in ogni momento da «Preferenze cookie» in fondo alla pagina. Per maggiori informazioni consulta la <a href="/legal/cookie-policy/">cookie policy</a>.</p>
     </div>
     <div class="cookie-actions">
       <button class="cookie-btn cookie-btn-reject" id="cookie-reject">Rifiuta</button>
@@ -118,6 +118,26 @@
     var acceptBtn = document.getElementById('cookie-accept');
     var rejectBtn = document.getElementById('cookie-reject');
     var storedConsent = localStorage.getItem('cookie-consent');
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){window.dataLayer.push(arguments);}
+
+    function deleteAnalyticsCookies() {
+      var host = location.hostname.replace(/^www\./, '');
+      document.cookie.split(';').forEach(function(c) {
+        var name = c.split('=')[0].trim();
+        if (/^(_ga|_ga_.+|_clck|_clsk)$/.test(name)) {
+          ['', '; domain=' + host, '; domain=.' + host].forEach(function(d) {
+            document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/' + d;
+          });
+        }
+      });
+    }
+
+    document.querySelectorAll('[data-cookie-prefs]').forEach(function(el) {
+      el.addEventListener('click', function() {
+        if (banner) banner.classList.add('visible');
+      });
+    });
 
     if (!storedConsent) {
       setTimeout(function() {
@@ -128,8 +148,6 @@
     if (acceptBtn) {
       acceptBtn.addEventListener('click', function() {
         localStorage.setItem('cookie-consent', 'accepted');
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){window.dataLayer.push(arguments);}
         gtag('consent', 'update', {
           'analytics_storage': 'granted'
         });
@@ -139,8 +157,14 @@
 
     if (rejectBtn) {
       rejectBtn.addEventListener('click', function() {
+        var wasAccepted = localStorage.getItem('cookie-consent') === 'accepted';
         localStorage.setItem('cookie-consent', 'rejected');
+        gtag('consent', 'update', {
+          'analytics_storage': 'denied'
+        });
+        deleteAnalyticsCookies();
         if (banner) banner.classList.remove('visible');
+        if (wasAccepted) location.reload();
       });
     }
   })();
